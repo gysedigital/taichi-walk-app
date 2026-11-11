@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#faf8f5">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Tai Chi Walk · Mi Espacio de Bienestar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f5;--paper:#fff;--ink:#282d28;--muted:#62665e;--line:#e5e3db;--green:#3c6750;--sage:#eff3e9;--sage-line:#dce5d5;--coral:#b84538;--rose:#f9eee9;--radius:22px;--shadow:0 10px 30px rgba(56, 61, 40, 0.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}button{cursor:pointer;border:0}a{color:var(--green);text-decoration:none}h1,h2,h3,p{margin:0}h1{font-size:28px;line-height:1.15;letter-spacing:-1px;font-weight:800}h2{font-size:20px;line-height:1.25;letter-spacing:-.5px}h3{font-size:15px;line-height:1.4}p{line-height:1.7;color:var(--muted)}
+.app-shell{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:100dvh}
+.sidebar{position:fixed;inset:0 auto 0 0;width:240px;border-right:1px solid var(--line);padding:28px 20px;background:var(--paper);display:flex;flex-direction:column;z-index:10}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}.brand-mark{width:38px;height:42px;border-radius:13px;background:var(--coral);color:white;display:grid;place-items:center;flex-shrink:0}.brand-mark svg{width:24px;height:24px}.brand strong{font-size:17px;letter-spacing:-.7px;color:var(--ink);display:block}.brand small{display:block;letter-spacing:1.5px;text-transform:uppercase;font-size:8px;color:var(--muted);margin-top:2px}
+.side-label{font-size:9px;color:var(--muted);letter-spacing:1.8px;font-weight:800;margin:35px 8px 12px}.nav{display:grid;gap:6px}.nav-btn{display:flex;align-items:center;gap:11px;background:transparent;border-radius:12px;padding:12px 14px;color:var(--muted);font-size:12px;font-weight:700;min-height:46px;width:100%;text-align:left}.nav-btn svg{width:18px;height:18px;stroke:currentColor}.nav-btn[aria-current=page]{background:var(--sage);color:var(--green)}.nav-btn:hover{color:var(--green);background:var(--sage)}.sidebar-foot{margin-top:auto;padding:20px 8px 0;border-top:1px solid var(--line)}.sidebar-foot p{font-size:10px;color:var(--muted);line-height:1.6}.app-body{grid-column:2;min-width:0}
+.topbar{border-bottom:1px solid var(--line);height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 36px;background:var(--bg);gap:16px;position:sticky;top:0;z-index:5}.mobile-brand{display:none}.topbar-label{font-size:10px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;font-weight:800}.top-actions{display:flex;align-items:center;gap:12px}.select-wrap{position:relative}.select-wrap svg{position:absolute;width:14px;height:14px;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--green)}#level-select{appearance:none;background:white;border:1px solid var(--line);color:var(--green);border-radius:11px;padding:10px 34px 10px 14px;font-size:12px;font-weight:700;min-height:42px}
+.main{max-width:1100px;margin:auto;padding:32px 36px 60px}.view{animation:appear .25s ease}@keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.page-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:24px}.eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:1.6px;color:var(--green);font-weight:800;display:flex;align-items:center;gap:6px;margin-bottom:8px}.eyebrow svg{width:14px;height:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-bottom:20px}.home-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:24px;align-items:start}
+.primary{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--coral);color:white;padding:15px 20px;border-radius:13px;font-size:12px;font-weight:800;min-height:50px;width:100%;box-shadow:0 4px 14px rgba(184,69,56,0.2)}.primary:hover{background:#a23b30}.secondary{display:flex;align-items:center;justify-content:center;gap:8px;background:white;border:1px solid var(--line);color:var(--green);padding:12px 16px;border-radius:12px;font-size:12px;font-weight:700;min-height:44px;width:100%}.secondary:hover{background:var(--sage)}.text-btn{background:transparent;color:var(--muted);font-size:11px;display:inline-flex;align-items:center;gap:6px;padding:8px 0;cursor:pointer}.text-btn:hover{color:var(--coral)}
+.week-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#eceae2;padding:5px;border-radius:14px;margin-bottom:20px}.week-tab{padding:10px 8px;background:transparent;color:var(--muted);border-radius:10px;font-size:12px;font-weight:700;text-align:center}.week-tab[aria-selected=true]{background:white;color:var(--green);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.time-row{display:flex;align-items:center;gap:12px;margin:18px 0;border-block:1px solid var(--line);padding:14px 0}.time-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:var(--sage);color:var(--green)}.time-row b{font-size:22px;letter-spacing:-.8px}.time-row p{font-size:11px;margin-top:2px}
+.task-parts{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:10px}.task-parts li{display:flex;gap:10px;font-size:13px;align-items:start}.part-number{width:22px;height:22px;background:var(--bg);border:1px solid var(--line);color:var(--muted);font-size:10px;display:grid;place-items:center;border-radius:50%;flex-shrink:0}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:16px}.day-label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 0;font-size:9px;color:var(--muted);min-height:75px}.day-label input{display:none}.day-label:has(input:checked){background:var(--sage);color:var(--green);border-color:#d2e0c5}.day-check{width:22px;height:22px;border-radius:50%;border:1px solid #d5dbc9;background:white;display:grid;place-items:center}.day-label:has(input:checked) .day-check{background:var(--green);border-color:var(--green);color:white}.day-check svg{width:12px;height:12px;opacity:0}.day-label:has(input:checked) .day-check svg{opacity:1}
+.search-box{display:flex;align-items:center;gap:10px;background:white;border:1px solid var(--line);border-radius:14px;padding:0 16px;min-height:52px;margin-bottom:14px}.search-box svg{color:var(--green);width:18px;height:18px}.search-box input{border:0;outline:none;background:transparent;width:100%;font-size:14px;color:var(--ink)}
+.filters{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:16px}.filter{background:white;border:1px solid var(--line);border-radius:20px;padding:8px 14px;font-size:11px;font-weight:700;color:var(--muted);white-space:nowrap}.filter[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}
+.recipe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.recipe-card{border:1px solid var(--line);background:white;border-radius:16px;overflow:hidden}.recipe-open{display:block;padding:18px;color:var(--ink);background:transparent;width:100%;text-align:left;cursor:pointer}.recipe-category{font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--green);font-weight:800;margin-bottom:10px}.recipe-open h3{font-size:15px;letter-spacing:-.2px}.recipe-open p{font-size:11px;margin-top:8px}
+.materials-list{display:grid;gap:10px}.material{display:flex;align-items:center;gap:14px;padding:16px;background:white;border:1px solid var(--line);border-radius:16px}.file-icon{background:var(--sage);color:var(--green);border:1px solid var(--sage-line);border-radius:10px;width:40px;height:48px;display:grid;place-items:center;flex-shrink:0}.material-text{flex:1}.material h3{font-size:14px}.material p{font-size:11px;margin-top:4px}
+.dialog{max-width:500px;width:calc(100% - 30px);padding:0;border:1px solid var(--line);border-radius:22px;background:var(--bg);box-shadow:0 24px 60px rgba(0,0,0,0.15)}.dialog::backdrop{background:rgba(0,0,0,0.4);backdrop-filter:blur(4px)}.dialog-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line);background:white}.dialog-body{padding:22px}
+.mobile-nav{display:none}
+@media(max-width:900px){.app-shell{display:block}.sidebar{display:none}.topbar{padding:0 20px}.mobile-brand{display:flex}.main{padding:20px 16px 100px}.home-grid{grid-template-columns:1fr;gap:16px}.recipe-grid{grid-template-columns:1fr}.mobile-nav{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(250,248,245,0.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:30;padding:6px 10px calc(6px + env(safe-area-inset-bottom))}.mobile-nav .nav-btn{flex-direction:column;gap:4px;align-items:center;justify-content:center;text-align:center;min-height:50px;padding:4px;font-size:8px}}
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Navegación principal">
+    <a href="#plan" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M4 19C2 8 11 3 21 3c0 11-6 19-16 16M5 19 16 8"/></svg></span>
+      <span><strong>tai chi walk.</strong><small>Mi espacio</small></span>
+    </a>
+    <div class="side-label">TU CAMINO</div>
+    <nav class="nav">
+      <button type="button" class="nav-btn" data-nav="plan" aria-current="page"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg><span>Mi día</span></button>
+      <button type="button" class="nav-btn" data-nav="routines"><svg viewBox="0 0 24 24"><path d="M2 8c4-6 6 6 10 0s6 6 10 0M2 15c4-6 6 6 10 0s6 6 10 0"/></svg><span>Rutinas y extras</span></button>
+      <button type="button" class="nav-btn" data-nav="infusions"><svg viewBox="0 0 24 24"><path d="M4 9h13v5a6.5 6.5 0 0 1-13 0V9Zm13 0h2a3 3 0 0 1 0 6h-2M7 3v3m5-3v3M3 22h16"/></svg><span>Mis infusiones</span></button>
+      <button type="button" class="nav-btn" data-nav="materials"><svg viewBox="0 0 24 24"><path d="M12 5C8 2 4 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-2-1-6-2-10 1v16"/></svg><span>Mis materiales</span></button>
+    </nav>
+  </aside>
+
+  <div class="app-body">
+    <header class="topbar">
+      <div class="topbar-label">Tai Chi Walk · Alumna</div>
+      <a href="#plan" class="brand mobile-brand">
+        <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M4 19C2 8 11 3 21 3c0 11-6 19-16 16M5 19 16 8"/></svg></span>
+        <span><strong>tai chi walk.</strong></span>
+      </a>
+      <div class="top-actions">
+        <div class="select-wrap">
+          <label for="level-select" style="display:none">Nivel</label>
+          <select id="level-select">
+            <option value="1">Nivel 1 · Inicio Suave</option>
+            <option value="2">Nivel 2 · Construcción</option>
+            <option value="3">Nivel 3 · Progresión</option>
+          </select>
+          <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- VISTA PLAN -->
+      <section class="view" id="view-plan">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow"><svg viewBox="0 0 24 24"><path d="M4 19C2 8 11 3 21 3c0 11-6 19-16 16M5 19 16 8"/></svg>Tu programa de 4 semanas</div>
+            <h1 id="heading-plan">Un paso a la vez.</h1>
+            <p id="plan-subtitle">Tu práctica, tu ritmo, tu momento.</p>
+          </div>
+        </div>
+        
+        <div class="week-tabs" id="week-tabs"></div>
+
+        <div class="home-grid">
+          <article class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+              <span id="task-week" style="font-size:11px; font-weight:800; color:var(--green)">SEMANA 1</span>
+              <span id="day-badge" style="background:var(--sage); color:var(--green); font-size:10px; font-weight:700; padding:4px 8px; border-radius:6px">Día a Día</span>
+            </div>
+            <h2 id="task-title" style="font-size:22px; margin-bottom:6px">Caminata suave + calentamiento</h2>
+            <p id="task-focus" style="font-size:13px; margin-bottom:0">Rodillas y tobillos, con un ritmo cómodo.</p>
+            
+            <div class="time-row">
+              <div class="time-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><b id="task-minutes">13 min</b><p>Duración estimada para hoy</p></div>
+            </div>
+
+            <ol class="task-parts" id="task-parts">
+              <li><span class="part-number">1</span><span>3 min de calentamiento articular de rodillas y tobillos.</span></li>
+              <li><span class="part-number">2</span><span>10 min de caminata suave a tu propio ritmo.</span></li>
+            </ol>
+
+            <button class="primary" id="complete-day" type="button"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span>MARCAR DÍA COMPLETADO</span></button>
+          </article>
+
+          <div style="display:grid; gap:20px;">
+            <article class="card" style="margin-bottom:0">
+              <h2 style="font-size:16px; margin-bottom:4px">Tu constancia semanal</h2>
+              <p style="font-size:12px">Tocá cada día cuando lo termines.</p>
+              <div class="days" id="days"></div>
+            </article>
+
+            <article class="card" style="background:var(--sage); border-color:var(--sage-line); margin-bottom:0">
+              <h3 style="font-size:15px; color:var(--green); margin-bottom:6px">💡 Apoyo para tu meta</h3>
+              <p style="font-size:12px; color:#4a5848" id="week-support">La constancia de 10 minutos diarios supera a una sesión larga esporádica. Disfrutá el proceso.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISTA RUTINAS -->
+      <section class="view" id="view-routines" hidden>
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">Complementos esenciales</div>
+            <h1>Rutinas de apoyo.</h1>
+            <p>Movimientos previos y posteriores para cuidar tus articulaciones.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
+          <div class="card">
+            <h3>Bono 1: Calentamiento Articular (5 min)</h3>
+            <p>Movilidad suave de cuello, hombros, caderas y tobillos antes de salir a caminar.</p>
+            <button class="secondary" onclick="alert('Abriendo guía de calentamiento...')">Ver pasos de movilidad</button>
+          </div>
+          <div class="card">
+            <h3>Recuperación Articular Express (3 min)</h3>
+            <p>Estiramientos suaves post-caminata para liberar tensión lumbar y de piernas.</p>
+            <button class="secondary" onclick="alert('Abriendo recuperación express...')">Ver estiramientos</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISTA INFUSIONES -->
+      <section class="view" id="view-infusions" hidden>
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">Bono 2 · Recetario</div>
+            <h1>45 Infusiones Sanadoras.</h1>
+            <p>Buscá por nombre o ingrediente y encontrá tu receta al instante.</p>
+          </div>
+        </div>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg>
+          <input id="recipe-search" type="search" placeholder="Jengibre, manzanilla, limón, cúrcuma…" autocomplete="off">
+        </div>
+        <div class="filters" id="recipe-filters"></div>
+        <div class="recipe-grid" id="recipe-grid"></div>
+      </section>
+
+      <!-- VISTA MATERIALES -->
+      <section class="view" id="view-materials" hidden>
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">Biblioteca digital</div>
+            <h1>Mis Materiales.</h1>
+            <p>Tus manuales originales en PDF listos para descargar.</p>
+          </div>
+        </div>
+        <div class="materials-list">
+          <div class="material">
+            <div class="file-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="material-text">
+              <h3>Programa Principal Tai Chi Walk</h3>
+              <p>Guía de 8 semanas y calendarios por nivel.</p>
+            </div>
+            <button class="secondary" style="width:auto" onclick="alert('Descargando programa...')">Descargar PDF</button>
+          </div>
+          <div class="material">
+            <div class="file-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="material-text">
+              <h3>Recetario 45 Infusiones y Bebidas</h3>
+              <p>Todas las recetas desinflamatorias y digestivas.</p>
+            </div>
+            <button class="secondary" style="width:auto" onclick="alert('Descargando recetario...')">Descargar PDF</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<nav class="mobile-nav">
+  <button type="button" class="nav-btn" data-nav="plan" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg><span>Mi día</span></button>
+  <button type="button" class="nav-btn" data-nav="routines"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M2 8c4-6 6 6 10 0s6 6 10 0M2 15c4-6 6 6 10 0s6 6 10 0"/></svg><span>Rutinas</span></button>
+  <button type="button" class="nav-btn" data-nav="infusions"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 9h13v5a6.5 6.5 0 0 1-13 0V9Zm13 0h2a3 3 0 0 1 0 6h-2M7 3v3m5-3v3M3 22h16"/></svg><span>Infusiones</span></button>
+  <button type="button" class="nav-btn" data-nav="materials"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 5C8 2 4 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-2-1-6-2-10 1v16"/></svg><span>Materiales</span></button>
+</nav>
+
+<dialog id="recipe-dialog" class="dialog">
+  <div class="dialog-header">
+    <strong id="recipe-modal-cat" style="font-size:11px; text-transform:uppercase; color:var(--green)">Categoría</strong>
+    <button type="button" class="secondary" style="width:auto; min-height:32px; padding:4px 10px;" onclick="document.getElementById('recipe-dialog').close()">✕</button>
+  </div>
+  <div class="dialog-body">
+    <h2 id="recipe-modal-title" style="font-size:20px; margin-bottom:12px">Título</h2>
+    <h4 style="font-size:12px; text-transform:uppercase; color:var(--muted); margin-bottom:6px">Ingredientes</h4>
+    <ul id="recipe-modal-ingredients" style="margin:0 0 16px 0; padding-left:18px; font-size:13px; line-height:1.6"></ul>
+    <h4 style="font-size:12px; text-transform:uppercase; color:var(--muted); margin-bottom:6px">Preparación</h4>
+    <p id="recipe-modal-steps" style="font-size:13px; line-height:1.6; margin:0"></p>
+  </div>
+</dialog>
+
+<script>
+// Base de datos limpia de recetas (con cantidades estandarizadas y sin notas molestas de PDF incompleto)
+const RECIPES = [
+  {id:1, name:"Clásica de Jengibre y Limón", category:"digestivas", ingredients:["2-3 rodajas de jengibre fresco", "Jugo de 1/2 limón", "250 ml de agua"], steps:"Hervir el jengibre en agua durante 5 minutos. Apagar el fuego, agregar el jugo de limón, dejar reposar 3 minutos y servir."},
+  {id:2, name:"Hinojo y Menta", category:"digestivas", ingredients:["1 cucharadita de semillas de hinojo", "5 hojas de menta fresca", "250 ml de agua"], steps:"Hervir el agua, verter sobre las semillas y la menta. Infusionar durante 5 minutos y colar."},
+  {id:3, name:"Cáscara de Piña y Canela", category:"digestivas", ingredients:["Cáscara de 1/2 piña limpia", "1 rama de canela", "500 ml de agua"], steps:"Hervir la cáscara y la canela durante 10 minutos. Dejar reposar y colar antes de beber."},
+  {id:4, name:"Cúrcuma y Pimienta Negra", category:"digestivas", ingredients:["1 cucharadita de cúrcuma en polvo", "Una pizca de pimienta negra", "250 ml de agua"], steps:"Hervir el agua, añadir la cúrcuma y la pimienta. Mezclar bien y dejar reposar 5 minutos."},
+  {id:5, name:"Manzanilla con Anís", category:"digestivas", ingredients:["1 bolsita de manzanilla (o 1 cdita de flores)", "1 anís estrellado", "250 ml de agua"], steps:"Hervir el agua y verter sobre las hierbas. Dejar reposar tapado durante 5 minutos y colar."},
+  {id:16, name:"Infusión de Diente de León", category:"detox", ingredients:["1 cucharada de raíz u hojas de diente de león", "250 ml de agua"], steps:"Hervir el agua, agregar la planta y dejar reposar de 5 a 7 minutos. Colar y servir."},
+  {id:17, name:"Té Verde con Matcha y Goji", category:"detox", ingredients:["1 bolsita de té verde", "1/2 cucharadita de matcha", "1 cucharada de bayas de goji", "250 ml de agua"], steps:"Infusionar el té verde en agua caliente durante 3 minutos. Agregar el matcha y las bayas de goji. Mezclar bien."},
+  {id:22, name:"Agua de Limón y Cúrcuma", category:"detox", ingredients:["Jugo de 1/2 limón", "1/2 cucharadita de cúrcuma", "250 ml de agua tibia"], steps:"Mezclar todos los ingredientes en una taza de agua tibia y beber por la mañana."},
+  {id:26, name:"Leche Dorada (Golden Milk)", category:"antiestres", ingredients:["1 taza de leche vegetal (almendras o coco)", "1/2 cucharadita de cúrcuma", "Una pizca de canela", "Una pizca de pimienta negra"], steps:"Calentar la leche sin hervir, agregar las especias y mezclar bien hasta integrar."},
+  {id:28, name:"Té de Ashwagandha", category:"antiestres", ingredients:["1 cucharadita de ashwagandha en polvo", "250 ml de agua caliente"], steps:"Mezclar el polvo en el agua caliente y dejar reposar 5 minutos antes de consumir."},
+  {id:30, name:"Pasiflora y Manzanilla", category:"antiestres", ingredients:["1 cucharadita de pasiflora seca", "1 bolsita de manzanilla", "250 ml de agua"], steps:"Hervir el agua, verter sobre las hierbas y dejar infusionar durante 5 minutos tapado."},
+  {id:33, name:"Tilo y Miel", category:"antiestres", ingredients:["1 cucharada de flores de tilo", "1 cucharadita de miel pura", "250 ml de agua"], steps:"Hervir el agua, agregar el tilo y dejar reposar 5 minutos. Colar y endulzar con la miel."},
+  {id:36, name:"Pepino, Chía y Menta", category:"hidratacion", ingredients:["1/2 pepino en rodajas", "1 cucharada de semillas de chía", "5 hojas de menta fresca", "500 ml de agua"], steps:"Colocar todo en una jarra con agua fría, refrigerar de 4 a 8 horas y beber durante el día."},
+  {id:41, name:"Kiwi y Menta", category:"hidratacion", ingredients:["1 kiwi en rodajas", "5 hojas de menta fresca", "500 ml de agua fría"], steps:"Dejar reposar el kiwi y la menta en el agua durante 2 horas en la heladera para saborizar."},
+  {id:42, name:"Rooibos Frío con Naranja", category:"hidratacion", ingredients:["1 bolsita de té rooibos", "Rodajas de 1/2 naranja", "500 ml de agua"], steps:"Infusionar el rooibos en agua caliente, dejar enfriar a temperatura ambiente y refrigerar con las rodajas de naranja."},
+  {id:43, name:"Mango y Jengibre", category:"hidratacion", ingredients:["1/2 taza de mango en cubos", "2 rodajas de jengibre fresco", "500 ml de agua"], steps:"Dejar reposar el mango y el jengibre en agua fría en la heladera durante 3 horas."},
+  {id:44, name:"Granada y Canela", category:"hidratacion", ingredients:["1/2 taza de granos de granada", "1 rama de canela", "500 ml de agua"], steps:"Mezclar los granos de granada y la canela en agua fría. Dejar en reposo 3 horas antes de consumir."}
+];
+
+// Navegación de vistas
+const views = document.querySelectorAll('.view');
+const navButtons = document.querySelectorAll('.nav-btn');
+
+function switchView(viewName) {
+  views.forEach(v => v.hidden = true);
+  document.getElementById('view-' + viewName).hidden = false;
+  navButtons.forEach(b => {
+    if(b.dataset.nav === viewName) {
+      b.setAttribute('aria-current', 'page');
+    } else {
+      b.removeAttribute('aria-current');
+    }
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+navButtons.forEach(btn => {
+  btn.addEventListener('click', () => switchView(btn.dataset.nav));
+});
+
+// Renderizar Tracker de 7 días
+const daysContainer = document.getElementById('days');
+for(let i=1; i<=7; i++) {
+  const lbl = document.createElement('label');
+  lbl.className = 'day-label';
+  lbl.innerHTML = `<span>Día ${i}</span><div class="day-check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></div><input type="checkbox">`;
+  daysContainer.appendChild(lbl);
+}
+
+// Botón Completar Día
+document.getElementById('complete-day').addEventListener('click', () => {
+  alert('¡Excelente! Sesión registrada con éxito para hoy. ¡A seguir sumando bienestar!');
+});
+
+// Renderizar Recetas
+const recipeGrid = document.getElementById('recipe-grid');
+const recipeSearch = document.getElementById('recipe-search');
+let activeCategory = 'all';
+
+function renderRecipes(filterText = '', category = 'all') {
+  recipeGrid.innerHTML = '';
+  const filtered = RECIPES.filter(r => {
+    const matchesCat = (category === 'all' || r.category === category);
+    const matchesText = r.name.toLowerCase().includes(filterText.toLowerCase()) || r.ingredients.some(i => i.toLowerCase().includes(filterText.toLowerCase()));
+    return matchesCat && matchesText;
+  });
+
+  if(filtered.length === 0) {
+    recipeGrid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:30px;">No se encontraron recetas con esa búsqueda.</p>';
+    return;
+  }
+
+  filtered.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'recipe-card';
+    card.innerHTML = `
+      <button class="recipe-open" type="button">
+        <div class="recipe-category">${r.category}</div>
+        <h3>${r.name}</h3>
+        <p>🕒 Preparación rápida · ${r.ingredients.length} ingredientes</p>
+      </button>
+    `;
+    card.querySelector('button').addEventListener('click', () => openRecipeModal(r));
+    recipeGrid.appendChild(card);
+  });
+}
+
+function openRecipeModal(r) {
+  document.getElementById('recipe-modal-cat').textContent = 'Receta · ' + r.category.toUpperCase();
+  document.getElementById('recipe-modal-title').textContent = r.name;
+  
+  const ingList = document.getElementById('recipe-modal-ingredients');
+  ingList.innerHTML = '';
+  r.ingredients.forEach(ing => {
+    const li = document.createElement('li');
+    li.textContent = ing;
+    ingList.appendChild(li);
+  });
+
+  document.getElementById('recipe-modal-steps').textContent = r.steps;
+  document.getElementById('recipe-dialog').showModal();
+}
+
+// Filtros de categorías
+const categories = [
+  {id:'all', label:'Todas las recetas'},
+  {id:'digestivas', label:'Digestivas'},
+  {id:'detox', label:'Detox'},
+  {id:'antiestres', label:'Anti-estrés'},
+  {id:'hidratacion', label:'Hidratación'}
+];
+
+const filterContainer = document.getElementById('recipe-filters');
+categories.forEach(cat => {
+  const btn = document.createElement('button');
+  btn.className = 'filter';
+  btn.textContent = cat.label;
+  if(cat.id === 'all') btn.setAttribute('aria-pressed', 'true');
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(f => f.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', 'true');
+    activeCategory = cat.id;
+    renderRecipes(recipeSearch.value, activeCategory);
+  });
+  filterContainer.appendChild(btn);
+});
+
+recipeSearch.addEventListener('input', (e) => {
+  renderRecipes(e.target.value, activeCategory);
+});
+
+// Inicializar recetas
+renderRecipes();
+</script>
+</body>
+</html>
