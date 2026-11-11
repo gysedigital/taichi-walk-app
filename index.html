@@ -349,16 +349,23 @@ recipeSearch.addEventListener('input', (e) => {
 });
 
 // Inicializar recetas
-renderRecipes();// Conectar botón de completar día con los círculos superiores
+renderRecipes();// Conectar botón de completar día y marcar el círculo visualmente
 const completeDayBtn = document.getElementById('complete-day');
 if (completeDayBtn) {
     completeDayBtn.addEventListener('click', () => {
-        // Muestra tu alerta de éxito
+        // Muestra la alerta de éxito
         alert('¡Excelente! Sesión registrada con éxito para hoy. ¡A seguir sumando bienestar!');
         
-        // Busca el primer círculo disponible sin completar y marcalo visualmente
-        const dayCircles = document.querySelectorAll('.day-circle, [class*="day"]'); 
-        // O si usas un selector específico para tus círculos de días, se actualiza aquí
+        // Busca los círculos de los días en la parte superior y marca el primero pendiente
+        const dayCircles = document.querySelectorAll('.days-list button, .day-circle, [class*="day"]');
+        for (let circle of dayCircles) {
+            if (!circle.classList.contains('completed') && !circle.classList.contains('done')) {
+                circle.classList.add('completed'); // O le cambia el fondo
+                circle.style.backgroundColor = '#2d3748'; // Color oscuro o verde para indicar completado
+                circle.style.color = '#fff';
+                break; // Marca solo el día actual y sale
+            }
+        }
     });
 }
 </script>
