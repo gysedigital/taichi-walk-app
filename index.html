@@ -348,7 +348,23 @@ recipeSearch.addEventListener('input', (e) => {
 });
 
 // Inicializar recetas
-renderRecipes();// Conectar botón de completar día y rellenar el círculo correcto
+renderRecipes();// Control para cambiar de nivel en la MiniApp
+    const levelSelect = document.getElementById('level-select');
+    if (levelSelect) {
+        levelSelect.addEventListener('change', function(e) {
+            const selectedLevel = e.target.value;
+            document.querySelectorAll('.level-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            const activeContent = document.getElementById('content-' + selectedLevel);
+            if (activeContent) {
+                activeContent.style.display = 'block';
+            }
+        });
+    }
+
+    // Inicializar recetas
+    renderRecipes();// Conectar botón de completar día y rellenar el círculo correcto
 const completeDayBtn = document.getElementById('complete-day');
 if (completeDayBtn) {
     completeDayBtn.addEventListener('click', () => {
