@@ -349,7 +349,18 @@ recipeSearch.addEventListener('input', (e) => {
 });
 
 // Inicializar recetas
-renderRecipes();
+renderRecipes();// Conectar botón de completar día con los círculos superiores
+const completeDayBtn = document.getElementById('complete-day');
+if (completeDayBtn) {
+    completeDayBtn.addEventListener('click', () => {
+        // Muestra tu alerta de éxito
+        alert('¡Excelente! Sesión registrada con éxito para hoy. ¡A seguir sumando bienestar!');
+        
+        // Busca el primer círculo disponible sin completar y marcalo visualmente
+        const dayCircles = document.querySelectorAll('.day-circle, [class*="day"]'); 
+        // O si usas un selector específico para tus círculos de días, se actualiza aquí
+    });
+}
 </script>
 </body>
 </html>
