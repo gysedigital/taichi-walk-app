@@ -349,21 +349,22 @@ recipeSearch.addEventListener('input', (e) => {
 });
 
 // Inicializar recetas
-renderRecipes();// Conectar botón de completar día y marcar el círculo visualmente
+renderRecipes();// Conectar botón de completar día y rellenar el círculo correcto
 const completeDayBtn = document.getElementById('complete-day');
 if (completeDayBtn) {
     completeDayBtn.addEventListener('click', () => {
-        // Muestra la alerta de éxito
         alert('¡Excelente! Sesión registrada con éxito para hoy. ¡A seguir sumando bienestar!');
         
-        // Busca los círculos de los días en la parte superior y marca el primero pendiente
-        const dayCircles = document.querySelectorAll('.days-list button, .day-circle, [class*="day"]');
-        for (let circle of dayCircles) {
-            if (!circle.classList.contains('completed') && !circle.classList.contains('done')) {
-                circle.classList.add('completed'); // O le cambia el fondo
-                circle.style.backgroundColor = '#2d3748'; // Color oscuro o verde para indicar completado
-                circle.style.color = '#fff';
-                break; // Marca solo el día actual y sale
+        // Busca específicamente los círculos pequeños dentro de los días
+        const smallCircles = document.querySelectorAll('.days-list .day-circle, .days-container div, .constancy-grid span, .day-box circle, div[class*="day"] div');
+        
+        for (let circle of smallCircles) {
+            // Verifica que sea un elemento pequeño (círculo) y no la tarjeta entera
+            if (circle.offsetWidth < 50 && !circle.classList.contains('checked')) {
+                circle.classList.add('checked');
+                circle.style.backgroundColor = '#10b981'; // Color verde de éxito o tono oscuro elegante
+                circle.style.borderColor = '#10b981';
+                break; 
             }
         }
     });
