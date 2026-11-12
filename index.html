@@ -45,6 +45,20 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 @media print{.sidebar,.topbar,.mobile-nav,.timer-controls,.primary,.text-btn,.icon-button,.toast{display:none!important}.app-shell{display:block}.main{padding:0}.home-grid{grid-template-columns:1fr 1fr}.card{box-shadow:none;break-inside:avoid}.app-body{margin:0}}
 @media(max-width:359px){.topbar{gap:8px}.topbar .brand{gap:6px}.topbar .brand strong{font-size:13px}.topbar .brand small{display:none}.topbar .brand-mark{width:26px;height:31px}.topbar .brand-mark svg{width:20px;height:20px}}
+
+/* Selector de nivel: dos líneas legibles y control nativo accesible. */
+.top-actions{min-width:0}
+.select-wrap{position:relative;flex:0 0 176px;width:176px;height:54px;border:1px solid var(--sage-line);border-radius:14px;background:var(--paper);box-shadow:0 2px 8px #293b3105;transition:border-color .15s,box-shadow .15s}
+.select-wrap:hover{border-color:#a7b8a0}
+.select-wrap:focus-within{outline:3px solid var(--coral);outline-offset:3px;border-color:var(--coral)}
+.level-summary{height:100%;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:8px 37px 8px 14px;pointer-events:none;min-width:0}
+.level-summary-number{font-size:9px;line-height:1.1;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;color:var(--muted);white-space:nowrap}
+.level-summary-name{font-size:15px;line-height:1.2;letter-spacing:-.2px;font-weight:700;color:var(--green);white-space:nowrap}
+.select-wrap>svg{position:absolute;right:13px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--green);pointer-events:none;z-index:1}
+.select-wrap #level-select{appearance:none;position:absolute;inset:0;z-index:2;opacity:0;width:100%;height:100%;min-height:100%;max-width:none;margin:0;padding:0;border:0;cursor:pointer;font-size:16px;outline:none}
+@media(max-width:900px){.select-wrap{flex-basis:166px;width:166px;height:52px}}
+@media(max-width:650px){.topbar{gap:12px}.select-wrap{flex-basis:clamp(150px,42vw,172px);width:clamp(150px,42vw,172px);height:52px;border-radius:13px}.level-summary{padding:8px 33px 8px 12px;gap:4px}.level-summary-name{font-size:14.5px}.level-summary-number{font-size:9px;letter-spacing:1px}.select-wrap>svg{right:11px;width:14px;height:14px}}
+@media(max-width:359px){.topbar{gap:8px}.select-wrap{flex-basis:148px;width:148px;height:50px}.level-summary{padding-left:11px}.level-summary-name{font-size:14px}}
 </style>
 </head>
 <body>
@@ -80,7 +94,7 @@
 <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
 <symbol id="drop" viewBox="0 0 24 24"><path d="M12 2c-2 4-7 9-7 13a7 7 0 0 0 14 0c0-4-5-9-7-13Z"/></symbol></defs></svg>
 <div class="app-shell"><aside class="sidebar" aria-label="Navegación principal"><div class="brand"><span class="brand-mark"><svg aria-hidden="true"><use href="#leaf"/></svg></span><span><strong>tai chi walk.</strong><small>Mi espacio de bienestar</small></span></div><div class="side-label">TU CAMINO</div><nav class="nav" aria-label="Secciones del programa"><button type="button" class="nav-btn" data-nav="plan" aria-current="page"><svg aria-hidden="true"><use href="#home"/></svg><span>Mi día</span></button><button type="button" class="nav-btn" data-nav="routines"><svg aria-hidden="true"><use href="#wave"/></svg><span>Rutinas y extras</span></button><button type="button" class="nav-btn" data-nav="infusions"><svg aria-hidden="true"><use href="#cup"/></svg><span>Mis infusiones</span></button><button type="button" class="nav-btn" data-nav="materials"><svg aria-hidden="true"><use href="#book"/></svg><span>Mis materiales</span></button></nav><div class="sidebar-foot"><svg class="small-leaf" aria-hidden="true"><use href="#leaf"/></svg><p>La constancia empieza<br>con un paso amable.</p><small>4 SEMANAS · A TU RITMO</small></div></aside>
-<div class="app-body"><header class="topbar"><div class="topbar-label">Mi espacio · Tai Chi Walk</div><div class="brand mobile-brand"><span class="brand-mark"><svg aria-hidden="true"><use href="#leaf"/></svg></span><span><strong>tai chi walk.</strong><small>Mi espacio de bienestar</small></span></div><div class="top-actions"><div class="select-wrap"><label for="level-select" class="sr-only">Tu nivel asignado</label><select id="level-select"><option value="1">Nivel 1 · Inicio Suave</option><option value="2">Nivel 2 · Construcción</option><option value="3">Nivel 3 · Progresión</option></select><svg aria-hidden="true"><use href="#chevron"/></svg></div><button class="icon-button" type="button" data-help aria-label="Cómo usar mi espacio"><svg aria-hidden="true"><use href="#info"/></svg></button></div></header>
+<div class="app-body"><header class="topbar"><div class="topbar-label">Mi espacio · Tai Chi Walk</div><div class="brand mobile-brand"><span class="brand-mark"><svg aria-hidden="true"><use href="#leaf"/></svg></span><span><strong>tai chi walk.</strong><small>Mi espacio de bienestar</small></span></div><div class="top-actions"><div class="select-wrap"><label for="level-select" class="sr-only">Tu nivel asignado</label><span class="level-summary" aria-hidden="true"><span class="level-summary-number" id="level-current-number">Nivel 1</span><span class="level-summary-name" id="level-current-name">Inicio Suave</span></span><select id="level-select"><option value="1">Nivel 1 · Inicio Suave</option><option value="2">Nivel 2 · Construcción</option><option value="3">Nivel 3 · Progresión</option></select><svg aria-hidden="true"><use href="#chevron"/></svg></div><button class="icon-button" type="button" data-help aria-label="Cómo usar mi espacio"><svg aria-hidden="true"><use href="#info"/></svg></button></div></header>
 <main id="main" class="main">
 
 <div id="pwa-banner" class="pwa-banner" style="display:none;">
@@ -186,9 +200,15 @@ function renderView(focus=true){
  if(activeView==='plan')renderPlan();if(activeView==='infusions')renderRecipes();if(activeView==='materials')renderMaterials();
  if(focus){window.scrollTo({top:0,behavior:'instant'});requestAnimationFrame(()=>$('heading-'+activeView).focus({preventScroll:true}));}
 }
+function syncLevelSelector(){
+ const level=CONTENT.levels[state.level];
+ $('level-select').value=String(state.level);
+ $('level-current-number').textContent='Nivel '+state.level;
+ $('level-current-name').textContent=level.name;
+}
 function renderPlan(restoreFocus=null){
  const level=CONTENT.levels[state.level],week=level.weeks[state.week],task=getTask(state),key=progressKey(state.level,state.week,state.day),status=state.progress[key]?.status;
- $('level-select').value=state.level;
+ syncLevelSelector();
  const total=countDone(state),weekly=countDone(state,state.week);
  $('month-count').innerHTML=`${total}<span style="font-size:11px;color:var(--muted)">/28</span>`;
  $('meter-fill').style.strokeDashoffset=201.062*(1-total/28);$('month-meter').setAttribute('aria-label',`${total} de 28 días completados en este nivel`);
@@ -324,11 +344,11 @@ $('export-progress').addEventListener('click',downloadJson);
 $('import-progress').addEventListener('click',()=>$('backup-file').click());
 $('backup-file').addEventListener('change',async event=>{
  const file=event.target.files?.[0];event.target.value='';if(!file)return;
- try{if(file.size>100000)throw new Error('size');const value=validateState(JSON.parse(await file.text()));if(!value)throw new Error('schema');askConfirmation('¿Restaurar esta copia?','Reemplazará el progreso y las favoritas de este navegador. Podés guardar una copia actual antes de continuar.',()=>{state=value;state.onboarded=true;saveState();configurePlanTimer();$('level-select').value=state.level;renderPlan();renderRecipes();toast('Tu copia de progreso se restauró.');});}catch{toast('Esta copia no tiene un formato válido de Tai Chi Walk. Tus datos actuales no se modificaron.');}
+ try{if(file.size>100000)throw new Error('size');const value=validateState(JSON.parse(await file.text()));if(!value)throw new Error('schema');askConfirmation('¿Restaurar esta copia?','Reemplazará el progreso y las favoritas de este navegador. Podés guardar una copia actual antes de continuar.',()=>{state=value;state.onboarded=true;saveState();configurePlanTimer();syncLevelSelector();renderPlan();renderRecipes();toast('Tu copia de progreso se restauró.');});}catch{toast('Esta copia no tiene un formato válido de Tai Chi Walk. Tus datos actuales no se modificaron.');}
 });
 $('reset-level').addEventListener('click',()=>askConfirmation('¿Borrar el progreso del Nivel '+state.level+'?','Se borrarán sus 28 días de registro. Tus favoritas y el progreso de los otros niveles se conservarán.',()=>{for(const key of Object.keys(state.progress))if(key.startsWith(state.level+'-'))delete state.progress[key];saveState();renderPlan();toast('El progreso de este nivel se borró.');}));
 window.addEventListener('hashchange',()=>renderView(true));
-showStorageMessage();$('level-select').value=state.level;configurePlanTimer();renderView(false);renderMaterials();
+showStorageMessage();syncLevelSelector();configurePlanTimer();renderView(false);renderMaterials();
 if(!state.onboarded)$('level-dialog').showModal();
 
 // Instalación: conservar manifest.json del proyecto existente.
