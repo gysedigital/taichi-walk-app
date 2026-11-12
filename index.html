@@ -732,16 +732,64 @@ function updateRoutineDisplay() {
 let currentRoutineObj = null;
 let currentStepIndex = 0;
 
-// Reemplaza o complementa tu función openRoutineModal con esto:
+// Control directo y seguro de los pasos en las guías
+let activeRoutineData = null;
+let stepIndex = 0;
+
 window.openRoutineModal = function(routineId) {
-    currentRoutineObj = appData.routines.find(r => r.id === routineId);
-    if(!currentRoutineObj) return;
+    activeRoutineData = appData.routines.find(r => r.id === routineId);
+    if(!activeRoutineData) return;
     
-    currentStepIndex = 0;
-    renderRoutineStep();
+    stepIndex = 0;
+    renderCurrentStep();
     
     const dialog = document.getElementById('routine-dialog');
-    if(dialog) dialog.showModal();
+    if(dialog) {
+        dialog.showModal();
+    }
+};
+
+function renderCurrentStep() {
+    if(!activeRoutineData) return;
+    const currentStep = activeRoutineData.steps[stepIndex];
+    
+    document.getElementById('routine-name').textContent = activeRoutineData.label;
+    document.getElementById('routine-step-title').textContent = currentStep.title;
+    document.getElementById('routine-dose').textContent = currentStep.dose;
+    document.getElementById('routine-step-count').textContent = `Paso ${stepIndex + 1} de ${activeRoutineData.steps.length}`;
+    
+    const instructionsList = document.getElementById('routine-step-instructions');
+    instructionsList.innerHTML = '';
+    currentStep.text.forEach(line => {
+        const li = document.createElement('li');
+        li.textContent = line;
+        instructionsList.appendChild(li);
+    });
+}
+
+const nextStepBtn = document.getElementById('routine-next');
+const prevStepBtn = document.getElementById('routine-prev');
+
+if(nextStepBtn) {
+    nextStepBtn.onclick = function(e) {
+        e.preventDefault();
+        if(activeRoutineData && stepIndex < activeRoutineData.steps.length - 1) {
+            stepIndex++;
+            renderCurrentStep();
+        } else {
+            showToast("¡Completaste todos los pasos de esta guía! 🎉");
+        }
+    };
+}
+
+if(prevStepBtn) {
+    prevStepBtn.onclick = function(e) {
+        e.preventDefault();
+        if(activeRoutineData && stepIndex > 0) {
+            stepIndex--;
+            renderCurrentStep();
+        }
+    };
 }
 
 function renderRoutineStep() {
