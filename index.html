@@ -562,7 +562,59 @@
       document.getElementById(modalId)?.close();
     });
   });
+function initApp() {
+  if(levelSelect) {
+    levelSelect.value = currentLevel;
+    levelSelect.addEventListener('change', (e) => {
+      currentLevel = e.target.value;
+      currentWeekIndex = 0;
+      currentDayIndex = 0;
+      renderAll();
+    });
+  }
 
+  document.querySelectorAll('[data-nav]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchView(btn.getAttribute('data-nav'));
+    });
+  });
+
+  // Conectar las tarjetas rápidas de calentamiento y recuperación
+  document.querySelectorAll('[data-routine]').forEach(card => {
+    card.addEventListener('click', () => {
+      const routineId = card.getAttribute('data-routine');
+      openRoutineModal(routineId);
+    });
+  });
+
+  renderMaterials();
+  renderRecipes();
+  setupFilters();
+  setupSearch();
+  setupTimer();
+  renderAll();
+}
+
+// Función para abrir el modal de rutinas correctamente
+function openRoutineModal(routineId) {
+  const routine = appData.routines.find(r => r.id === routineId);
+  if(!routine) return;
+  
+  const dialog = document.getElementById('routine-dialog');
+  document.getElementById('routine-name').textContent = routine.label;
+  document.getElementById('routine-step-title').textContent = routine.name;
+  document.getElementById('routine-dose').textContent = routine.subtitle;
+  
+  const list = document.getElementById('routine-step-instructions');
+  list.innerHTML = '';
+  routine.steps.forEach(s => {
+    const li = document.createElement('li');
+    li.innerHTML = `<b>${s.title} (${s.dose})</b><br>` + s.text.join('<br>');
+    list.appendChild(li);
+  });
+  
+  if(dialog) dialog.showModal();
+}
   document.addEventListener('DOMContentLoaded', initApp);
 })();
 </script>
