@@ -517,18 +517,10 @@
   }
 
   function downloadPdfMock(title, filename) {
-    const content = `--- TAI CHI WALK · ${title.toUpperCase()} ---\n\nEste documento forma parte del material exclusivo de tu MiniApp.\nPuedes consultarlo directamente desde la plataforma en cualquier momento.\n\nContenido digital integrado para ${filename}.`;
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename.replace('.pdf', '.txt');
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showToast(`📥 ¡${title} descargado con éxito!`);
-  }
+    const driveUrl = "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
+    window.open(driveUrl, '_blank');
+    showToast(`📄 Abriendo ${title} en Google Drive...`);
+}
 
   function renderRecipes(filterCategory = 'all', searchQuery = '', onlyFavs = false) {
     const grid = document.getElementById('recipe-grid');
