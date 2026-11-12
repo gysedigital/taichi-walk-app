@@ -693,7 +693,9 @@
         <button class="secondary download-btn" type="button">Ver guía</button>
       `;
       div.querySelector('button').addEventListener('click', () => {
-        downloadPdfMock(m.title, m.filename);
+       div.querySelector('button').addEventListener('click', () => {
+        showToast(`📖 Guía "${m.title}" disponible directamente en la plataforma.`);
+      });
       });
       list.appendChild(div);
     });
