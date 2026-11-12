@@ -614,7 +614,61 @@ function openRoutineModal(routineId) {
   });
   
   if(dialog) dialog.showModal();
+// Control de temporizadores para rutinas (Calentamiento / Recuperación)
+let routineTimerInterval = null;
+let routineSecondsLeft = 0;
+let isRoutineRunning = false;
+
+const routineToggleBtn = document.querySelector('[data-timer-toggle="routine"]');
+const routineResetBtn = document.querySelector('[data-timer-reset="routine"]');
+const routineDisplay = document.querySelector('[data-timer-display="routine"]');
+
+if (routineToggleBtn && routineDisplay) {
+    routineSecondsLeft = 300; // 5 minutos por defecto para calentamiento
+    updateRoutineDisplay();
+
+    routineToggleBtn.onclick = function() {
+        if (!isRoutineRunning) {
+            isRoutineRunning = true;
+            routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#pause"/></svg><span>Pausar</span>`;
+            
+            routineTimerInterval = setInterval(() => {
+                if (routineSecondsLeft > 0) {
+                    routineSecondsLeft--;
+                    updateRoutineDisplay();
+                } else {
+                    clearInterval(routineTimerInterval);
+                    isRoutineRunning = false;
+                    routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
+                    alert("¡Guía completada con éxito!");
+                }
+            }, 1000);
+        } else {
+            clearInterval(routineTimerInterval);
+            isRoutineRunning = false;
+            routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
+        }
+    };
 }
+
+if (routineResetBtn && routineDisplay) {
+    routineResetBtn.onclick = function() {
+        clearInterval(routineTimerInterval);
+        isRoutineRunning = false;
+        routineSecondsLeft = 300;
+        updateRoutineDisplay();
+        if (routineToggleBtn) {
+            routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
+        }
+    };
+}
+
+function updateRoutineDisplay() {
+    if (!routineDisplay) return;
+    const m = Math.floor(routineSecondsLeft / 60);
+    const s = routineSecondsLeft % 60;
+    routineDisplay.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+}}
   document.addEventListener('DOMContentLoaded', initApp);
 })();
 </script>
