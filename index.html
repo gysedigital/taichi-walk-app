@@ -732,9 +732,7 @@
 </body>
 </html>
 function downloadPdfMock(title, filename) {
-    showToast(`📖 Abriendo guía integrada: ${title}`);
-}function downloadPdfMock(title, filename) {
-    // Tus enlaces oficiales de Google Drive
+    // Enlaces oficiales de Google Drive para cada material
     const driveLinks = {
         "Tai_Chi_Walk_Plan_4_Semanas.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
         "Tai_Chi_Walk_Manual_General.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
@@ -744,6 +742,7 @@ function downloadPdfMock(title, filename) {
         "Tai_Chi_Walk_Tracker_Habitos.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg"
     };
     
+    // Si coincide con el archivo abre el enlace correspondiente, sino abre el enlace general de respaldo
     const url = driveLinks[filename] || "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
     window.open(url, '_blank');
     showToast(`📄 Abriendo ${title} en Google Drive...`);
