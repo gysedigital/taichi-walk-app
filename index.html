@@ -717,15 +717,16 @@
 
   document.addEventListener('DOMContentLoaded', initApp);
 })();
-   function downloadPdfMock(title, filename) {
+ function downloadPdfMock(title, filename) {
     const driveLinks = {
-        "Tai_Chi_Walk_Plan_4_Semanas.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Manual_General.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Calentamiento_Articular.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Recuperacion_Express.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_45_Infusiones.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Tracker_Habitos.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg"
+        "Tai_Chi_Walk_Plan_4_Semanas.pdf": "AQUí_PEGA_EL_LINK_DE_4_SEMANAS",
+        "Tai_Chi_Walk_Manual_General.pdf": "AQUÍ_PEGA_EL_LINK_DEL_MANUAL_GENERAL",
+        "Tai_Chi_Walk_Calentamiento_Articular.pdf": "AQUÍ_PEGA_EL_LINK_DE_CALENTAMIENTO",
+        "Tai_Chi_Walk_Recuperacion_Express.pdf": "AQUÍ_PEGA_EL_LINK_DE_RECUPERACION",
+        "Tai_Chi_Walk_45_Infusiones.pdf": "AQUÍ_PEGA_EL_LINK_DE_INFUSIONES",
+        "Tai_Chi_Walk_Tracker_Habitos.pdf": "AQUÍ_PEGA_EL_LINK_DE_TRACKER"
     };
+    
     const url = driveLinks[filename] || "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
     window.open(url, '_blank');
     showToast(`📄 Abriendo ${title} en Google Drive...`);
