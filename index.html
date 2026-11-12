@@ -690,7 +690,7 @@
           <h3>${m.title}</h3>
           <p>${m.description} (${m.size})</p>
         </div>
-        <button class="secondary download-btn" type="button">Consultar</button>
+        <button class="secondary download-btn" type="button">Ver guía</button>
       `;
       div.querySelector('button').addEventListener('click', () => {
         downloadPdfMock(m.title, m.filename);
@@ -703,19 +703,7 @@
       btn.addEventListener('click', () => {
         const type = btn.getAttribute('data-download') || 'infusions';
         const found = pdfMeta.find(p => p.id === type) || pdfMeta[4];
- function downloadPdfMock(title, filename) {
-    const content = `--- TAI CHI WALK · ${title.toUpperCase()} ---\n\nEste documento forma parte del material exclusivo de tu MiniApp.\nPuedes consultarlo directamente desde la plataforma en cualquier momento.\n\nContenido digital integrado para ${filename}.`;
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename.replace('.pdf', '.txt');
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showToast(`📥 ¡${title} descargado con éxito!`);
-}
+
       });
     });
   }
@@ -741,3 +729,6 @@
 
 </body>
 </html>
+function downloadPdfMock(title, filename) {
+    showToast(`📖 Abriendo guía integrada: ${title}`);
+}
