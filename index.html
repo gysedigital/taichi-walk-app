@@ -733,4 +733,18 @@
 </html>
 function downloadPdfMock(title, filename) {
     showToast(`📖 Abriendo guía integrada: ${title}`);
+}function downloadPdfMock(title, filename) {
+    // Tus enlaces oficiales de Google Drive
+    const driveLinks = {
+        "Tai_Chi_Walk_Plan_4_Semanas.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
+        "Tai_Chi_Walk_Manual_General.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
+        "Tai_Chi_Walk_Calentamiento_Articular.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
+        "Tai_Chi_Walk_Recuperacion_Express.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
+        "Tai_Chi_Walk_45_Infusiones.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
+        "Tai_Chi_Walk_Tracker_Habitos.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg"
+    };
+    
+    const url = driveLinks[filename] || "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
+    window.open(url, '_blank');
+    showToast(`📄 Abriendo ${title} en Google Drive...`);
 }
