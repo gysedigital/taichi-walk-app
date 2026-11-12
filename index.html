@@ -2,6 +2,9 @@
 <html lang="es-AR">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf8f5"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="description" content="Tu espacio de Tai Chi Walk: plan de cuatro semanas, hábitos, rutinas de apoyo, recetario y materiales."><title>Tai Chi Walk · Mi espacio</title>
+<!-- Versión corregida: controladores restaurados; enlaces PDF centralizados.
+ Mantener este archivo como index.html. Conservar el manifest.json existente.
+ El acceso para alumnas se controla desde la plataforma que entrega la app. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233c6750'/%3E%3Cpath d='M17 43C17 20 39 13 48 16c0 22-12 33-28 28m1-2 21-20' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.json">
 <style>
@@ -93,697 +96,255 @@
 <div class="week-tabs" id="week-tabs" role="tablist" aria-label="Elegí una semana"></div>
 <div id="week-panel" role="tabpanel"><div class="home-grid"><article class="card task-card"><div class="task-top"><div class="day-select-wrap"><label for="day-select" class="sr-only">Día de la semana que querés consultar</label><select id="day-select" class="day-selector"></select><svg aria-hidden="true"><use href="#chevron"/></svg></div><span class="badge neutral" id="day-status">A tu ritmo</span></div><div class="task-week" id="task-week"></div><h2 id="task-title"></h2><p class="task-focus" id="task-focus"></p><div class="time-row"><div class="time-icon"><svg aria-hidden="true" id="task-icon"><use href="#clock"/></svg></div><div><b id="task-minutes"></b><p id="task-time-note"></p></div></div><ol class="task-parts" id="task-parts"></ol><div id="plan-timer" class="timer-panel"><div class="timer-top"><div><div class="timer-label">Tu temporizador opcional</div><span class="timer-value" data-timer-display="plan" role="timer" aria-live="off">00:00</span></div><div class="timer-controls"><button type="button" class="timer-btn" data-timer-toggle="plan"><svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span></button><button type="button" class="timer-btn" data-timer-reset="plan" aria-label="Reiniciar temporizador de la práctica"><svg aria-hidden="true"><use href="#reset"/></svg></button></div></div><p class="timer-note">El tiempo orienta tu práctica. El día se registra cuando vos lo marcás.</p></div>
 
-<div class="soft-mode-card">
-    <b>🛡️ ¿Dolor de rodilla o espalda hoy?</b>
-    <p>Activa variantes de bajo impacto y pasos más cortos sin perder el ritmo.</p>
-    <button class="btn-soft" type="button" onclick="alert('Modo Suave Activado: Reduce la flexión de rodillas, apóyate en una pared o silla firme y prioriza respirar con comodidad.')">Activar Modo Suave</button>
-</div>
+<div class="soft-mode-card"><b>Un recordatorio de cuidado</b><p>Si aparece dolor, detené la práctica. Podés registrar una pausa y retomar el plan cuando corresponda.</p><button class="btn-soft" type="button" id="care-advice">Cómo usar mi plan con calma</button></div>
 
 <button class="primary" id="complete-day" type="button" style="margin-top:16px"><svg aria-hidden="true"><use href="#check"/></svg><span>MARCAR DÍA COMPLETADO</span></button><button class="text-btn pause-action" id="pause-day" type="button"><svg aria-hidden="true"><use href="#moon"/></svg><span>Hoy necesito una pausa</span></button><div class="task-source"><svg aria-hidden="true"><use href="#book"/></svg><button type="button" id="task-source"></button></div></article>
 <div class="aside-stack"><section class="card tracker" aria-labelledby="tracker-title"><div class="section-heading"><h2 id="tracker-title">Tu constancia</h2><span id="week-count">0 de 7 días</span></div><p class="tracker-intro">Tocá cada casilla cuando termines su día.</p><div class="days" id="days"></div><div class="progress-track" role="progressbar" aria-label="Días completados esta semana" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="week-progress"><div class="progress-bar" id="week-progress-bar"></div></div><p class="tracker-note" id="motivation"></p></section><article class="support-card"><div class="eyebrow">El foco de esta semana</div><h3 id="week-focus-title"></h3><p id="week-support"></p><button class="text-btn" type="button" id="support-action">Ver recomendaciones de apoyo →</button></article><div class="quick-links"><button class="quick-link" type="button" data-routine="warmup"><span class="quick-icon"><svg aria-hidden="true"><use href="#sun"/></svg></span><span><b>Antes de empezar</b><small>Calentamiento articular · 3–5 min</small></span><svg class="chevron" aria-hidden="true"><use href="#arrow"/></svg></button><button class="quick-link" type="button" data-routine="recovery"><span class="quick-icon" style="background:var(--sage);color:var(--green)"><svg aria-hidden="true"><use href="#wave"/></svg></span><span><b>Tu cierre suave</b><small>Recuperación Express · 3 min</small></span><svg class="chevron" aria-hidden="true"><use href="#arrow"/></svg></button></div></div></div></div>
 <details class="source-detail"><summary id="source-summary">Sobre el calendario de este nivel</summary><p id="source-note"></p><p>Los descansos indicados en el calendario también forman parte del plan. Una pausa extra se registra con un guion y no suma una sesión completada.</p></details><p class="safety-line"><svg aria-hidden="true"><use href="#heart"/></svg><span>Practicá con suavidad y sin forzar. Si aparece dolor, detenete. Si tenés una limitación o una molestia persistente, consultá antes de practicar. El nivel del quiz es orientativo.</span></p></section>
-<section class="view" id="view-routines" aria-labelledby="heading-routines" hidden><div class="page-heading"><div><div class="eyebrow">Pequeños gestos de cuidado</div><h1 id="heading-routines" tabindex="-1">Antes y después.</h1><p class="subtitle">Dos guías simples para acompañar tu caminata.</p></div></div><div class="routine-grid"><article class="routine-card"><div class="routine-art"><svg aria-hidden="true"><use href="#sun"/></svg></div><div class="eyebrow">BONO 1 · 3–5 MINUTOS</div><h2>Calentamiento<br>articular</h2><p>Una guía paso a paso para empezar con movilidad suave.</p><ol class="routine-preview"><li>Alineación y respiración</li><li>Cuello y hombros</li><li>Pelvis y tobillos</li></ol><button class="primary" type="button" data-routine="warmup">ABRIR GUÍA DE 5 PASOS<svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="secondary" type="button" data-download="warmup"><svg aria-hidden="true"><use href="#download"/></svg>Descargar PDF</button></article><article class="routine-card coral"><div class="routine-art"><svg aria-hidden="true"><use href="#wave"/></svg></div><div class="eyebrow">EXTRA INCLUIDO · 3 MINUTOS</div><h2>Recuperación<br>Articular Express</h2><p>Un cierre con estiramientos suaves después de tu sesión.</p><ol class="routine-preview"><li>Mecedora suave · zona lumbar</li><li>La ola · caderas</li><li>Talón a tierra · pantorrillas</li></ol><button class="primary" type="button" data-routine="recovery">ABRIR GUÍA DE 3 PASOS<svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="secondary" type="button" data-download="recovery"><svg aria-hidden="true"><use href="#download"/></svg>Descargar PDF</button></article></div><article class="routine-note"><h3>Sin apuro, sin buscar dolor.</h3><p>Seguí las repeticiones de la guía a tu ritmo. El temporizador es una referencia opcional y no cambia de movimiento automáticamente. Usá una pared o silla firme cuando necesites apoyo.</p></article></section>
-<section class="view" id="view-infusions" aria-labelledby="heading-infusions" hidden><div class="page-heading"><div><div class="eyebrow"><svg aria-hidden="true"><use href="#cup"/></svg>Tu recetario, más simple</div><h1 id="heading-infusions" tabindex="-1">Una pausa en tu taza.</h1><p class="subtitle">45 recetas del material original. Buscá por nombre o ingrediente y guardá tus favoritas.</p></div></div><div class="search-box"><svg aria-hidden="true"><use href="#search"/></svg><label for="recipe-search" class="sr-only">Buscar entre las 45 recetas</label><input id="recipe-search" type="search" placeholder="Jengibre, manzanilla, limón…" autocomplete="off" spellcheck="false"><button id="clear-search" type="button" aria-label="Borrar búsqueda" hidden><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="filters" id="recipe-filters" role="group" aria-label="Categorías del recetario"></div><div class="recipe-toolbar"><p id="recipe-count" role="status" aria-live="polite">45 recetas</p><button class="favorite-filter" id="favorite-filter" type="button" aria-pressed="false"><svg aria-hidden="true"><use href="#star"/></svg>Mis favoritas</button></div><div class="recipe-grid" id="recipe-grid"></div><details class="source-detail herb-note"><summary>Antes de elegir una infusión</summary><p>Las categorías Digestivas, Detox y Anti-estrés son los nombres del recetario. No constituyen una indicación médica ni garantizan esos efectos. No hay evidencia convincente de que los programas “detox” eliminen toxinas.</p><ul><li>Las hierbas pueden interactuar con medicamentos. Si tomás medicación, estás embarazada o amamantando, o tenés una condición de salud, consultá antes de consumirlas.</li><li>Las fichas conservan los ingredientes y pasos disponibles. Cuando el PDF omite datos, se indica sin completarlos por suposición.</li><li>La ficha de aloe se mantiene para identificarla, con la preparación pendiente de revisión por seguridad.</li></ul><p>Fuentes de consulta: <a href="https://www.nccih.nih.gov/health/ashwagandha" target="_blank" rel="noopener noreferrer">NCCIH · Ashwagandha</a>, <a href="https://www.nccih.nih.gov/health/aloe-vera" target="_blank" rel="noopener noreferrer">NCCIH · Aloe vera</a> y <a href="https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know" target="_blank" rel="noopener noreferrer">NCCIH · Detox</a>.</p></details></section>
-<section class="view" id="view-materials" aria-labelledby="heading-materials" hidden><div class="page-heading"><div><div class="eyebrow">Tu biblioteca personal</div><h1 id="heading-materials" tabindex="-1">Todo, a mano.</h1><p class="subtitle">Tus manuales completos para guardar y consultar cuando quieras.</p></div><button class="icon-button" type="button" data-help aria-label="Cómo usar mi espacio"><svg aria-hidden="true"><use href="#info"/></svg></button></div><div class="materials-intro"><svg aria-hidden="true"><use href="#book"/></svg><div><b>Los PDFs están incluidos en esta app.</b><p>Podés descargarlos sin conexión. Se conserva su contenido y diseño.</p></div></div><div class="materials-list" id="materials-list"></div><article class="card data-card"><h2>Tu progreso te acompaña.</h2><p>Se guarda en este navegador y dispositivo. Para llevarlo a otro, guardá una copia y restaurala allí.</p><div class="backup-actions"><button class="secondary" id="export-progress" type="button"><svg aria-hidden="true"><use href="#download"/></svg>Guardar mi progreso</button><button class="secondary" id="import-progress" type="button"><svg aria-hidden="true"><use href="#upload"/></svg>Restaurar una copia</button><input id="backup-file" type="file" accept="application/json,.json" hidden></div><button class="text-btn" type="button" id="reset-level">Borrar el progreso de este nivel</button></article></section>
+<section class="view" id="view-routines" aria-labelledby="heading-routines" hidden><div class="page-heading"><div><div class="eyebrow">Pequeños gestos de cuidado</div><h1 id="heading-routines" tabindex="-1">Antes y después.</h1><p class="subtitle">Dos guías simples para acompañar tu caminata.</p></div></div><div class="routine-grid"><article class="routine-card"><div class="routine-art"><svg aria-hidden="true"><use href="#sun"/></svg></div><div class="eyebrow">BONO 1 · 3–5 MINUTOS</div><h2>Calentamiento<br>articular</h2><p>Una guía paso a paso para empezar con movilidad suave.</p><ol class="routine-preview"><li>Alineación y respiración</li><li>Cuello y hombros</li><li>Pelvis y tobillos</li></ol><button class="primary" type="button" data-routine="warmup">ABRIR GUÍA DE 5 PASOS<svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="secondary" type="button" data-download="warmup"><svg aria-hidden="true"><use href="#download"/></svg>Ver PDF en Google Drive</button></article><article class="routine-card coral"><div class="routine-art"><svg aria-hidden="true"><use href="#wave"/></svg></div><div class="eyebrow">EXTRA INCLUIDO · 3 MINUTOS</div><h2>Recuperación<br>Articular Express</h2><p>Un cierre con estiramientos suaves después de tu sesión.</p><ol class="routine-preview"><li>Mecedora suave · zona lumbar</li><li>La ola · caderas</li><li>Talón a tierra · pantorrillas</li></ol><button class="primary" type="button" data-routine="recovery">ABRIR GUÍA DE 3 PASOS<svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="secondary" type="button" data-download="recovery"><svg aria-hidden="true"><use href="#download"/></svg>Ver PDF en Google Drive</button></article></div><article class="routine-note"><h3>Sin apuro, sin buscar dolor.</h3><p>Seguí las repeticiones de la guía a tu ritmo. El temporizador es una referencia opcional y no cambia de movimiento automáticamente. Usá una pared o silla firme cuando necesites apoyo.</p></article></section>
+<section class="view" id="view-infusions" aria-labelledby="heading-infusions" hidden><div class="page-heading"><div><div class="eyebrow"><svg aria-hidden="true"><use href="#cup"/></svg>Tu recetario, más simple</div><h1 id="heading-infusions" tabindex="-1">Una pausa en tu taza.</h1><p class="subtitle">45 recetas del material original. Buscá por nombre o ingrediente y guardá tus favoritas.</p></div></div><div class="search-box"><svg aria-hidden="true"><use href="#search"/></svg><label for="recipe-search" class="sr-only">Buscar entre las 45 recetas</label><input id="recipe-search" type="search" placeholder="Jengibre, manzanilla, limón…" autocomplete="off" spellcheck="false"><button id="clear-search" type="button" aria-label="Borrar búsqueda" hidden><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="filters" id="recipe-filters" role="group" aria-label="Categorías del recetario"></div><div class="recipe-toolbar"><p id="recipe-count" role="status" aria-live="polite">45 recetas</p><button class="favorite-filter" id="favorite-filter" type="button" aria-pressed="false"><svg aria-hidden="true"><use href="#star"/></svg>Mis favoritas</button></div><div class="recipe-grid" id="recipe-grid"></div><details class="source-detail herb-note"><summary>Antes de elegir una infusión</summary><p>Las categorías Digestivas, Detox y Anti-estrés son los nombres del recetario. No constituyen una indicación médica ni garantizan esos efectos. No hay evidencia convincente de que los programas “detox” eliminen toxinas.</p><ul><li>Las hierbas pueden interactuar con medicamentos. Si tomás medicación, estás embarazada o amamantando, o tenés una condición de salud, consultá antes de consumirlas.</li><li>Personalizá el sabor de los ingredientes culinarios según tu preferencia. Para las hierbas, seguí las indicaciones de uso y preparación del producto que utilices.</li><li>La combinación con aloe requiere orientación profesional para confirmar el producto apto para consumo y su uso adecuado.</li></ul><p>Fuentes de consulta: <a href="https://www.nccih.nih.gov/health/ashwagandha" target="_blank" rel="noopener noreferrer">NCCIH · Ashwagandha</a>, <a href="https://www.nccih.nih.gov/health/aloe-vera" target="_blank" rel="noopener noreferrer">NCCIH · Aloe vera</a> y <a href="https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know" target="_blank" rel="noopener noreferrer">NCCIH · Detox</a>.</p></details></section>
+<section class="view" id="view-materials" aria-labelledby="heading-materials" hidden><div class="page-heading"><div><div class="eyebrow">Tu biblioteca personal</div><h1 id="heading-materials" tabindex="-1">Todo, a mano.</h1><p class="subtitle">Tus manuales completos para guardar y consultar cuando quieras.</p></div><button class="icon-button" type="button" data-help aria-label="Cómo usar mi espacio"><svg aria-hidden="true"><use href="#info"/></svg></button></div><div class="materials-intro"><svg aria-hidden="true"><use href="#book"/></svg><div><b>Tus manuales originales en Google Drive.</b><p>Necesitás conexión para abrirlos. Después podés guardarlos en tu dispositivo.</p></div></div><div class="materials-list" id="materials-list"></div><article class="card data-card"><h2>Tu progreso te acompaña.</h2><p>Se guarda en este navegador y dispositivo. Para llevarlo a otro, guardá una copia y restaurala allí.</p><div class="backup-actions"><button class="secondary" id="export-progress" type="button"><svg aria-hidden="true"><use href="#download"/></svg>Guardar mi progreso</button><button class="secondary" id="import-progress" type="button"><svg aria-hidden="true"><use href="#upload"/></svg>Restaurar una copia</button><input id="backup-file" type="file" accept="application/json,.json" hidden></div><button class="text-btn" type="button" id="reset-level">Borrar el progreso de este nivel</button></article></section>
 <footer class="app-footer">TAI CHI WALK · Tu espacio de bienestar.<br>Un día de práctica, un paso de constancia.</footer></main></div></div>
 <nav class="mobile-nav" aria-label="Navegación principal móvil"><button type="button" class="nav-btn" data-nav="plan" aria-current="page"><svg aria-hidden="true"><use href="#home"/></svg><span>Mi día</span></button><button type="button" class="nav-btn" data-nav="routines"><svg aria-hidden="true"><use href="#wave"/></svg><span>Rutinas</span></button><button type="button" class="nav-btn" data-nav="infusions"><svg aria-hidden="true"><use href="#cup"/></svg><span>Infusiones</span></button><button type="button" class="nav-btn" data-nav="materials"><svg aria-hidden="true"><use href="#book"/></svg><span>Materiales</span></button></nav>
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 <dialog id="level-dialog" class="dialog" aria-labelledby="level-dialog-title"><div class="dialog-header"><div class="eyebrow"><svg aria-hidden="true"><use href="#leaf"/></svg>Bienvenida a tu espacio</div></div><div class="dialog-body"><h2 id="level-dialog-title">Tu camino empieza<br>a tu ritmo.</h2><p>Confirmá el nivel que te asignó el quiz. Podés cambiarlo desde el selector superior.</p><form id="level-form"><fieldset class="level-options"><legend class="sr-only">Elegí tu nivel inicial</legend><div class="level-option"><input type="radio" id="initial-level-1" name="initial-level" value="1" checked><label for="initial-level-1"><span class="level-num">1</span><span><b>Inicio Suave</b><small>Plan oficial de 4 semanas.<br>Un comienzo gradual.</small></span><span class="radio-mark" aria-hidden="true"></span></label></div><div class="level-option"><input type="radio" id="initial-level-2" name="initial-level" value="2"><label for="initial-level-2"><span class="level-num">2</span><span><b>Construcción</b><small>Primeras 4 semanas del manual general.</small></span><span class="radio-mark" aria-hidden="true"></span></label></div><div class="level-option"><input type="radio" id="initial-level-3" name="initial-level" value="3"><label for="initial-level-3"><span class="level-num">3</span><span><b>Progresión</b><small>Primeras 4 semanas del manual general.</small></span><span class="radio-mark" aria-hidden="true"></span></label></div></fieldset><p class="onboard-note" style="color:var(--muted);margin-top:17px;line-height:1.8">El tiempo disponible no determina por sí solo tu nivel físico. Seguí el nivel indicado para vos y evitá forzar.</p><div class="dialog-actions"><button class="primary" type="submit">ENTRAR A MI PLAN<svg aria-hidden="true"><use href="#arrow"/></svg></button></div></form></div></dialog>
-<dialog id="recipe-dialog" class="dialog" aria-labelledby="recipe-detail-title"><div class="dialog-header"><div class="eyebrow" id="recipe-detail-label">Tu recetario</div><button type="button" class="icon-button" data-close="recipe-dialog" aria-label="Cerrar receta"><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="dialog-body recipe-detail"><h2 id="recipe-detail-title"></h2><p id="recipe-detail-note" class="recipe-note" hidden></p><h3 id="ingredients-heading">Ingredientes del original</h3><ul id="recipe-ingredients" aria-labelledby="ingredients-heading"></ul><div id="recipe-preparation"><h3 id="preparation-heading">Preparación</h3><ol id="recipe-steps" aria-labelledby="preparation-heading"></ol></div><p class="recipe-disclaimer">Receta de consulta, no una prescripción de consumo. Si usás medicamentos o tenés una condición de salud, consultá antes de elegir hierbas.</p><p class="recipe-source" id="recipe-detail-source"></p><button type="button" class="secondary recipe-fav" id="recipe-detail-favorite"><svg aria-hidden="true"><use href="#star"/></svg><span>Guardar en favoritas</span></button><button type="button" class="text-btn" data-download-pdf="infusions" style="width:100%;margin-top:9px">Descargar recetario completo<svg aria-hidden="true"><use href="#download"/></svg></button><p id="recipe-health-link" class="recipe-source" hidden></p></div></dialog>
+<dialog id="recipe-dialog" class="dialog" aria-labelledby="recipe-detail-title"><div class="dialog-header"><div class="eyebrow" id="recipe-detail-label">Tu recetario</div><button type="button" class="icon-button" data-close="recipe-dialog" aria-label="Cerrar receta"><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="dialog-body recipe-detail"><h2 id="recipe-detail-title"></h2><p id="recipe-detail-note" class="recipe-note" hidden></p><h3 id="ingredients-heading">Ingredientes del original</h3><ul id="recipe-ingredients" aria-labelledby="ingredients-heading"></ul><div id="recipe-preparation"><h3 id="preparation-heading">Preparación</h3><ol id="recipe-steps" aria-labelledby="preparation-heading"></ol></div><p class="recipe-disclaimer">Receta de consulta, no una prescripción de consumo. Si usás medicamentos o tenés una condición de salud, consultá antes de elegir hierbas.</p><p class="recipe-source" id="recipe-detail-source"></p><button type="button" class="secondary recipe-fav" id="recipe-detail-favorite"><svg aria-hidden="true"><use href="#star"/></svg><span>Guardar en favoritas</span></button><button type="button" class="text-btn" data-download-pdf="infusions" style="width:100%;margin-top:9px">Abrir recetario completo<svg aria-hidden="true"><use href="#download"/></svg></button><p id="recipe-health-link" class="recipe-source" hidden></p></div></dialog>
 <dialog id="routine-dialog" class="dialog" aria-labelledby="routine-step-title"><div class="dialog-header"><div class="eyebrow" id="routine-name"></div><button type="button" class="icon-button" data-close="routine-dialog" aria-label="Cerrar guía"><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="dialog-body"><div class="routine-progress" id="routine-progress" aria-hidden="true"></div><div class="routine-step-count" id="routine-step-count"></div><h2 id="routine-step-title" tabindex="-1"></h2><span class="routine-dose" id="routine-dose"></span><ol class="routine-steps" id="routine-step-instructions"></ol><div class="timer-panel routine-timer"><div class="timer-top"><div><div class="timer-label">Tiempo de referencia de la guía completa</div><span class="timer-value" data-timer-display="routine" role="timer" aria-live="off">00:00</span></div><div class="timer-controls"><button type="button" class="timer-btn" data-timer-toggle="routine"><svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span></button><button class="timer-btn" type="button" data-timer-reset="routine" aria-label="Reiniciar temporizador de la guía"><svg aria-hidden="true"><use href="#reset"/></svg></button></div></div></div><p class="timer-note">Sin cambios automáticos de paso. Hacé solo los movimientos que te resulten cómodos y detenete si aparece dolor.</p><div class="routine-step-controls"><button type="button" id="routine-prev" class="secondary" aria-label="Paso anterior"><svg aria-hidden="true"><use href="#back"/></svg></button><button type="button" id="routine-next" class="primary"><span>SIGUIENTE PASO</span><svg aria-hidden="true"><use href="#arrow"/></svg></button></div></div></dialog>
 <dialog id="help-dialog" class="dialog" aria-labelledby="help-title"><div class="dialog-header"><div class="eyebrow">Tu espacio, sin complicaciones</div><button type="button" class="icon-button" data-close="help-dialog" aria-label="Cerrar ayuda"><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="dialog-body"><h2 id="help-title">Así usás tu plan.</h2><div class="help-list"><div class="help-item"><span class="part-number">1</span><div><b>Confirmá tu nivel</b><p>Usá el selector superior. El calendario y los checks se guardan por separado para cada nivel.</p></div></div><div class="help-item"><span class="part-number">2</span><div><b>Elegí semana y día</b><p>Consultá la actividad y sus minutos. El temporizador es opcional y nunca marca una sesión por vos.</p></div></div><div class="help-item"><span class="part-number">3</span><div><b>Celebrá tu constancia</b><p>Marcá el día completado. Si necesitás una pausa extra, registrala sin presión. Podés desmarcar un check si lo tocaste por error.</p></div></div><div class="help-item"><span class="part-number">4</span><div><b>Todo tu apoyo, a mano</b><p>Encontrá el calentamiento, la recuperación y tus infusiones. Mis materiales también te permiten guardar una copia de tu progreso.</p></div></div></div><p style="font-size:11px;color:var(--muted);margin-top:25px">El progreso queda en este navegador; no se sincroniza automáticamente con otros dispositivos.</p></div></dialog>
 <dialog id="confirm-dialog" class="dialog confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-body"><h2 id="confirm-title"></h2><p id="confirm-text"></p><div class="dialog-actions"><button id="confirm-action" class="primary" type="button">CONFIRMAR</button><button class="secondary" type="button" data-close="confirm-dialog">Cancelar</button></div></div></dialog>
 <noscript><div class="noscript"><h2>Activá JavaScript para usar tu espacio.</h2><p>El calendario, las recetas y las descargas están incluidos en el archivo y necesitan JavaScript para mostrarse.</p></div></noscript>
-<script id="content-data" type="application/json">{"levels":{"1":{"name":"Inicio Suave","source":"Plan oficial de 4 semanas · pág. 2","sourceDoc":"plan4","note":"El plan oficial indica una actividad por semana. La misma referencia se muestra en sus siete días.","weeks":[{"title":"Adaptación y alivio","focus":"Rodillas y tobillos: empezá sin apuro.","days":[{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false}],"support":"El PDF propone Jengibre y Limón como complemento. La infusión es opcional; podés consultar su receta."},{"title":"Constancia y ritmo","focus":"Prestá atención a tu postura y al compás de tu respiración.","days":[{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false}],"support":"El PDF propone agua tibia con cúrcuma como hábito de apoyo. Es opcional; la receta del recetario también incluye limón."},{"title":"Activación metabólica","focus":"Sumá un balanceo suave de brazos y tronco.","days":[{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false}],"support":"Cerrá la caminata con la guía de Recuperación Articular Express de 3 minutos."},{"title":"Consolidación","focus":"Un ritmo firme y relajado, con atención a la postura.","days":[{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false}],"support":"Revisá tu registro de hábitos. El tracker original abarca 8 semanas; en este panel usás las primeras cuatro."}]},"2":{"name":"Construcción","source":"Manual general · semanas 1–4 · págs. 10–11","sourceDoc":"general","note":"El PDF de 4 semanas recibido solo detalla Nivel 1. Este nivel usa las primeras cuatro semanas del manual general de 8 semanas.","weeks":[{"title":"Adaptación y estabilidad","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata moderada","minutes":18,"focus":"Ritmo conversacional, postura cómoda.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":10,"focus":"Secuencia básica del manual.","parts":["10 min de secuencia básica."],"rest":false},{"title":"Caminata moderada","minutes":20,"focus":"Atención a tu apoyo y respiración.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":5,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":25,"focus":"Continuidad, sin apurar el movimiento.","parts":["15 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata fluida","minutes":20,"focus":"Ritmo cómodo y continuo.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Adaptación y estabilidad","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata moderada","minutes":18,"focus":"Ritmo conversacional, postura cómoda.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":10,"focus":"Secuencia básica del manual.","parts":["10 min de secuencia básica."],"rest":false},{"title":"Caminata moderada","minutes":20,"focus":"Atención a tu apoyo y respiración.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":5,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":25,"focus":"Continuidad, sin apurar el movimiento.","parts":["15 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata fluida","minutes":20,"focus":"Ritmo cómodo y continuo.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y flujo","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Variá el ritmo con comodidad.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Sostené un movimiento cómodo.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y flujo","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Variá el ritmo con comodidad.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Sostené un movimiento cómodo.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."}]},"3":{"name":"Progresión","source":"Manual general · semanas 1–4 · pág. 14","sourceDoc":"general","note":"El PDF de 4 semanas recibido solo detalla Nivel 1. Este nivel usa las primeras cuatro semanas del manual general de 8 semanas.","weeks":[{"title":"Adaptación superior","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata activa","minutes":22,"focus":"Ritmo cómodo, sin agotarte.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":12,"focus":"Secuencia fluida del manual.","parts":[],"rest":false},{"title":"Caminata activa","minutes":25,"focus":"Movimiento continuo y postura.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":10,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":30,"focus":"Integración de la práctica.","parts":["20 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata a ritmo variable","minutes":25,"focus":"Mantené el control de la respiración.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Adaptación superior","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata activa","minutes":22,"focus":"Ritmo cómodo, sin agotarte.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":12,"focus":"Secuencia fluida del manual.","parts":[],"rest":false},{"title":"Caminata activa","minutes":25,"focus":"Movimiento continuo y postura.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":10,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":30,"focus":"Integración de la práctica.","parts":["20 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata a ritmo variable","minutes":25,"focus":"Mantené el control de la respiración.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y tono","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y tono","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."}]}},"recipes":[{"id":1,"name":"Clásica de Jengibre y Limón","category":"digestivas","ingredients":["2–3 rodajas de jengibre fresco","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el jengibre durante 5 minutos.","Apagá el fuego y agregá el limón.","Dejá reposar 3 minutos y serví."],"page":4,"note":"","review":false},{"id":2,"name":"Hinojo y Menta","category":"digestivas","ingredients":["1 cucharadita de semillas de hinojo","5 hojas de menta","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Colá."],"page":4,"note":"","review":false},{"id":3,"name":"Cáscara de Piña y Canela","category":"digestivas","ingredients":["Cáscara de ½ piña","1 rama de canela","500 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":4,"note":"","review":false},{"id":4,"name":"Cúrcuma y Pimienta Negra","category":"digestivas","ingredients":["1 cucharadita de cúrcuma","Una pizca de pimienta negra","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":4,"note":"","review":false},{"id":5,"name":"Manzanilla con Anís","category":"digestivas","ingredients":["1 bolsita de manzanilla","1 anís estrellado"],"steps":[],"page":5,"note":"El PDF no indica cantidad de agua ni preparación para esta receta. No se completan esos datos por suposición.","review":false},{"id":6,"name":"Salvia y Limón","category":"digestivas","ingredients":["5 hojas de salvia fresca o 1 cucharadita seca","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el agua.","Agregá la salvia y dejá reposar 5 minutos.","Colá y añadí el limón."],"page":5,"note":"","review":false},{"id":7,"name":"Cardamomo y Naranja","category":"digestivas","ingredients":["2 vainas de cardamomo","Cáscara de naranja","250 ml de agua"],"steps":["Machacá levemente el cardamomo.","Herví durante 5 minutos con la cáscara.","Colá."],"page":5,"note":"","review":false},{"id":8,"name":"Comino y Limón","category":"digestivas","ingredients":["½ cucharadita de semillas de comino","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el comino durante 5 minutos.","Apagá y agregá el limón."],"page":6,"note":"","review":false},{"id":9,"name":"Manzana y Canela","category":"digestivas","ingredients":["½ manzana en rodajas","1 rama de canela","300 ml de agua"],"steps":["Herví durante 10 minutos.","Dejá reposar y colá."],"page":6,"note":"","review":false},{"id":10,"name":"Romero y Limón","category":"digestivas","ingredients":["1 ramita de romero","Jugo de limón (cantidad no indicada)","250 ml de agua"],"steps":["Herví el romero durante 5 minutos.","Añadí el limón al final."],"page":6,"note":"","review":false},{"id":11,"name":"Albahaca y Jengibre","category":"digestivas","ingredients":["5 hojas de albahaca","2 rodajas de jengibre","250 ml de agua"],"steps":["Herví el jengibre durante 5 minutos.","Agregá la albahaca y dejá reposar 3 minutos."],"page":7,"note":"","review":false},{"id":12,"name":"Perejil y Limón","category":"digestivas","ingredients":["1 cucharada de perejil fresco","Jugo de ½ limón","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Agregá el limón."],"page":7,"note":"","review":false},{"id":13,"name":"Zanahoria y Jengibre","category":"digestivas","ingredients":["½ zanahoria en rodajas finas","2 rodajas de jengibre","300 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":7,"note":"","review":false},{"id":14,"name":"Tomillo y Miel","category":"digestivas","ingredients":["1 cucharadita de tomillo","1 cucharadita de miel","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Añadí la miel al final."],"page":8,"note":"","review":false},{"id":15,"name":"Calabaza y Canela","category":"digestivas","ingredients":["½ taza de calabaza en cubos","1 rama de canela","400 ml de agua"],"steps":["Herví durante 15 minutos.","Colá o licuá suavemente."],"page":8,"note":"","review":false},{"id":16,"name":"Infusión de Diente de León","category":"detox","ingredients":["1 cucharada de raíz u hojas de diente de león","250 ml de agua"],"steps":["Herví el agua.","Agregá la planta y dejá reposar de 5 a 7 minutos.","Colá y serví."],"page":10,"note":"","review":false},{"id":17,"name":"Té Verde con Matcha y Goji","category":"detox","ingredients":["1 bolsita de té verde","½ cucharadita de matcha","1 cucharada de bayas de goji","250 ml de agua"],"steps":["Infusioná el té verde durante 3 minutos.","Agregá el matcha y las bayas de goji.","Mezclá bien."],"page":10,"note":"Contiene té verde y matcha, fuentes de cafeína.","review":false},{"id":18,"name":"Agua de Alcachofa y Cardo Mariano","category":"detox","ingredients":["1 hoja de alcachofa","1 cucharadita de cardo mariano","500 ml de agua"],"steps":["Herví durante 10 minutos.","Dejá reposar 5 minutos.","Colá."],"page":11,"note":"","review":false},{"id":19,"name":"Té de Ortiga y Manzana","category":"detox","ingredients":["1 cucharada de ortiga seca","½ manzana en rodajas","300 ml de agua"],"steps":["Herví durante 5 minutos.","Dejá reposar 3 minutos.","Colá."],"page":11,"note":"","review":false},{"id":20,"name":"Infusión de Boldo y Menta","category":"detox","ingredients":["5 hojas de boldo","5 hojas de menta","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":11,"note":"","review":false},{"id":21,"name":"Té de Raíz de Bardana","category":"detox","ingredients":["1 cucharadita de raíz de bardana","300 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":12,"note":"","review":false},{"id":22,"name":"Agua de Limón y Cúrcuma","category":"detox","ingredients":["Jugo de ½ limón","½ cucharadita de cúrcuma","250 ml de agua tibia"],"steps":["Mezclá todos los ingredientes."],"page":12,"note":"","review":false},{"id":23,"name":"Infusión de Espirulina y Limón","category":"detox","ingredients":["½ cucharadita de espirulina","Jugo de limón (cantidad no indicada)","250 ml de agua"],"steps":["Mezclá sin hervir."],"page":12,"note":"","review":false},{"id":24,"name":"Té de Cola de Caballo","category":"detox","ingredients":["1 cucharada de cola de caballo","250 ml de agua"],"steps":["Infusioná de 5 a 7 minutos."],"page":13,"note":"","review":false},{"id":25,"name":"Infusión de Raíz de Achicoria","category":"detox","ingredients":["1 cucharadita de raíz de achicoria","300 ml de agua"],"steps":["Herví durante 5 minutos.","Dejá reposar 5 minutos."],"page":13,"note":"","review":false},{"id":26,"name":"Leche Dorada (Golden Milk)","category":"antiestres","ingredients":["1 taza de leche vegetal","½ cucharadita de cúrcuma","Una pizca de canela","Una pizca de pimienta negra"],"steps":["Calentá la leche sin hervir.","Agregá las especias.","Mezclá bien."],"page":15,"note":"","review":false},{"id":27,"name":"Lavanda y Valeriana","category":"antiestres","ingredients":["1 cucharadita de lavanda","1 cucharadita de valeriana","250 ml de agua"],"steps":["Infusioná de 5 a 7 minutos."],"page":15,"note":"Las mezclas de hierbas pueden interactuar con medicamentos, incluidos sedantes. Consultá si los usás.","review":false},{"id":28,"name":"Té de Ashwagandha","category":"antiestres","ingredients":["1 cucharadita de ashwagandha en polvo","250 ml de agua caliente"],"steps":["Mezclá y dejá reposar 5 minutos."],"page":16,"note":"Consultá antes de usar ashwagandha: se han reportado lesiones hepáticas y posibles interacciones. Evitala durante embarazo o lactancia; no se recomienda con trastornos tiroideos o autoinmunes. Fuente: NCCIH.","review":false},{"id":29,"name":"Melisa con Piel de Naranja","category":"antiestres","ingredients":["1 cucharada de melisa","Cáscara de naranja","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":16,"note":"","review":false},{"id":30,"name":"Pasiflora y Manzanilla","category":"antiestres","ingredients":["1 cucharadita de pasiflora","1 bolsita de manzanilla"],"steps":["Infusioná durante 5 minutos."],"page":16,"note":"El PDF no especifica la cantidad de agua.","review":false},{"id":31,"name":"Té de Espino Blanco","category":"antiestres","ingredients":["1 cucharadita de espino blanco","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":17,"note":"","review":false},{"id":32,"name":"Leche de Avena y Canela","category":"antiestres","ingredients":["1 taza de leche de avena","Una pizca de canela"],"steps":["Calentá y mezclá."],"page":17,"note":"","review":false},{"id":33,"name":"Tilo y Miel","category":"antiestres","ingredients":["1 cucharada de tilo","1 cucharadita de miel"],"steps":["Infusioná durante 5 minutos.","Endulzá con la miel."],"page":17,"note":"El PDF no especifica la cantidad de agua.","review":false},{"id":34,"name":"Té de Rhodiola","category":"antiestres","ingredients":["1 cucharadita de rhodiola","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":18,"note":"","review":false},{"id":35,"name":"Cacao y Canela","category":"antiestres","ingredients":["1 cucharadita de cacao puro","Una pizca de canela","250 ml de leche vegetal o agua"],"steps":["Calentá y mezclá."],"page":18,"note":"","review":false},{"id":36,"name":"Pepino, Chía y Menta","category":"hidratacion","ingredients":["½ pepino en rodajas","1 cucharada de chía","5 hojas de menta","500 ml de agua"],"steps":["Colocá todo en una jarra.","Refrigerá de 4 a 8 horas.","Colá si lo preferís."],"page":20,"note":"","review":false},{"id":37,"name":"Hibiscus (Jamaica) y Canela","category":"hidratacion","ingredients":["1 cucharadita de flor de hibiscus","1 rama de canela","500 ml de agua"],"steps":["Infusioná en frío durante 6 horas.","Colá."],"page":20,"note":"","review":false},{"id":38,"name":"Aloe Vera y Frutos Rojos","category":"hidratacion","ingredients":["El original menciona gel de aloe, frutos rojos y agua."],"steps":[],"page":"20","note":"Revisión necesaria: el PDF no identifica un producto de aloe apto para consumo. El látex y algunos extractos de hoja pueden causar efectos adversos. No se muestra una preparación para ingerir. Consultá antes de usar aloe por vía oral. Fuente: NCCIH.","review":true},{"id":39,"name":"Sandía y Albahaca","category":"hidratacion","ingredients":["1 taza de sandía en cubos","4 hojas de albahaca","500 ml de agua"],"steps":[],"page":21,"note":"El PDF no detalla la preparación ni el tiempo de reposo.","review":false},{"id":40,"name":"Frutilla (Fresa) y Romero","category":"hidratacion","ingredients":["5 fresas o frutillas","1 ramita de romero"],"steps":[],"page":21,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":41,"name":"Kiwi y Menta","category":"hidratacion","ingredients":["1 kiwi en rodajas","5 hojas de menta"],"steps":[],"page":21,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":42,"name":"Rooibos Frío con Naranja","category":"hidratacion","ingredients":["1 bolsita de rooibos","Rodajas de naranja (cantidad no indicada)","500 ml de agua"],"steps":["Infusioná en caliente.","Dejá enfriar y refrigerá."],"page":21,"note":"","review":false},{"id":43,"name":"Mango y Jengibre","category":"hidratacion","ingredients":["½ taza de mango","2 rodajas de jengibre"],"steps":[],"page":22,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":44,"name":"Granada y Canela","category":"hidratacion","ingredients":["½ taza de granada","1 rama de canela"],"steps":[],"page":22,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":45,"name":"Agua de Coco y Chía","category":"hidratacion","ingredients":["500 ml de agua de coco","1 cucharada de chía"],"steps":["Dejá reposar de 2 a 4 horas."],"page":22,"note":"","review":false}],"routines":[{"id":"warmup","name":"Calentamiento articular","duration":300,"label":"3–5 min · Antes de caminar","subtitle":"Movilidad suave para preparar tu sesión.","doc":"warmup","steps":[{"title":"Alineación y respiración","dose":"3 respiraciones","text":["Pies al ancho de las caderas y rodillas relajadas.","Inhalá por la nariz hacia el abdomen durante 3 segundos.","Exhalá suavemente por la boca durante 4 segundos, aflojando los hombros."]},{"title":"Péndulo suave de cuello","dose":"5 hacia cada lado","text":["Acercá suavemente la barbilla al pecho, sin forzar.","Dibujá un medio círculo lento hacia un hombro.","Volvé al centro y alterná hacia el otro lado. No busques un rango que moleste."]},{"title":"Círculos de hombros","dose":"8 círculos hacia atrás","text":["Elevá suavemente los hombros.","Llevalos hacia atrás con una apertura cómoda del pecho.","Dejalos caer de forma fluida, con respiración tranquila."]},{"title":"Balanceo de pelvis","dose":"8 movimientos lentos","text":["Colocá las manos sobre la cadera.","Inhalá llevando la pelvis levemente hacia atrás.","Exhalá basculando suavemente la pelvis hacia adelante."]},{"title":"Movilidad de tobillos","dose":"10 elevaciones fluidas","text":["Usá una pared o silla firme si necesitás apoyo.","Elevá los talones de forma lenta y sostené 1 segundo.","Bajá con control y luego elevá levemente las puntas con los talones apoyados."]}]},{"id":"recovery","name":"Recuperación Articular Express","duration":180,"label":"3 min · Después de caminar","subtitle":"Un cierre suave para espalda, caderas y piernas.","doc":"recovery","steps":[{"title":"Mecedora suave","dose":"1 minuto · zona lumbar","text":["De pie, pies al ancho de las caderas y rodillas relajadas.","Exhalá llevando la barbilla hacia el pecho y dejando caer suavemente brazos y torso, sin buscar tocar el suelo.","Balanceá los hombros levemente de un lado al otro. Volvé a erguirte despacio."]},{"title":"La ola","dose":"30 segundos por lado","text":["Apoyá una mano en una pared o silla firme.","Llevá un pie un pequeño paso hacia atrás y flexioná suavemente la rodilla de adelante.","Acercá la pelvis levemente hacia adelante. Sostené con comodidad y cambiá de lado."]},{"title":"Talón a tierra","dose":"30 segundos por lado","text":["Frente a una pared, apoyá ambas manos a la altura de los hombros.","Llevá una pierna hacia atrás y apoyá el talón en el suelo.","Mantené el estiramiento suave en la pantorrilla y cambiá de lado. No fuerces ni bloquees la rodilla."]}]}]}</script>
+<script id="content-data" type="application/json">{"levels":{"1":{"name":"Inicio Suave","source":"Plan oficial de 4 semanas · pág. 2","sourceDoc":"plan4","note":"El plan oficial indica una actividad por semana. La misma referencia se muestra en sus siete días.","weeks":[{"title":"Adaptación y alivio","focus":"Rodillas y tobillos: empezá sin apuro.","days":[{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false}],"support":"El PDF propone Jengibre y Limón como complemento. La infusión es opcional; podés consultar su receta."},{"title":"Constancia y ritmo","focus":"Prestá atención a tu postura y al compás de tu respiración.","days":[{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false}],"support":"El PDF propone agua tibia con cúrcuma como hábito de apoyo. Es opcional; la receta del recetario también incluye limón."},{"title":"Activación metabólica","focus":"Sumá un balanceo suave de brazos y tronco.","days":[{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false}],"support":"Cerrá la caminata con la guía de Recuperación Articular Express de 3 minutos."},{"title":"Consolidación","focus":"Un ritmo firme y relajado, con atención a la postura.","days":[{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false}],"support":"Revisá tu registro de hábitos. El tracker original abarca 8 semanas; en este panel usás las primeras cuatro."}]},"2":{"name":"Construcción","source":"Manual general · semanas 1–4 · págs. 10–11","sourceDoc":"general","note":"El PDF de 4 semanas recibido solo detalla Nivel 1. Este nivel usa las primeras cuatro semanas del manual general de 8 semanas.","weeks":[{"title":"Adaptación y estabilidad","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata moderada","minutes":18,"focus":"Ritmo conversacional, postura cómoda.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":10,"focus":"Secuencia básica del manual.","parts":["10 min de secuencia básica."],"rest":false},{"title":"Caminata moderada","minutes":20,"focus":"Atención a tu apoyo y respiración.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":5,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":25,"focus":"Continuidad, sin apurar el movimiento.","parts":["15 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata fluida","minutes":20,"focus":"Ritmo cómodo y continuo.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Adaptación y estabilidad","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata moderada","minutes":18,"focus":"Ritmo conversacional, postura cómoda.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":10,"focus":"Secuencia básica del manual.","parts":["10 min de secuencia básica."],"rest":false},{"title":"Caminata moderada","minutes":20,"focus":"Atención a tu apoyo y respiración.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":5,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":25,"focus":"Continuidad, sin apurar el movimiento.","parts":["15 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata fluida","minutes":20,"focus":"Ritmo cómodo y continuo.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y flujo","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Variá el ritmo con comodidad.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Sostené un movimiento cómodo.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y flujo","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Variá el ritmo con comodidad.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Sostené un movimiento cómodo.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."}]},"3":{"name":"Progresión","source":"Manual general · semanas 1–4 · pág. 14","sourceDoc":"general","note":"El PDF de 4 semanas recibido solo detalla Nivel 1. Este nivel usa las primeras cuatro semanas del manual general de 8 semanas.","weeks":[{"title":"Adaptación superior","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata activa","minutes":22,"focus":"Ritmo cómodo, sin agotarte.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":12,"focus":"Secuencia fluida del manual.","parts":[],"rest":false},{"title":"Caminata activa","minutes":25,"focus":"Movimiento continuo y postura.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":10,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":30,"focus":"Integración de la práctica.","parts":["20 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata a ritmo variable","minutes":25,"focus":"Mantené el control de la respiración.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Adaptación superior","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata activa","minutes":22,"focus":"Ritmo cómodo, sin agotarte.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":12,"focus":"Secuencia fluida del manual.","parts":[],"rest":false},{"title":"Caminata activa","minutes":25,"focus":"Movimiento continuo y postura.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":10,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":30,"focus":"Integración de la práctica.","parts":["20 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata a ritmo variable","minutes":25,"focus":"Mantené el control de la respiración.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y tono","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y tono","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."}]}},"recipes":[{"id":1,"name":"Clásica de Jengibre y Limón","category":"digestivas","ingredients":["2–3 rodajas de jengibre fresco","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el jengibre durante 5 minutos.","Apagá el fuego y agregá el limón.","Dejá reposar 3 minutos y serví."],"page":4,"note":"","review":false},{"id":2,"name":"Hinojo y Menta","category":"digestivas","ingredients":["1 cucharadita de semillas de hinojo","5 hojas de menta","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Colá."],"page":4,"note":"","review":false},{"id":3,"name":"Cáscara de Piña y Canela","category":"digestivas","ingredients":["Cáscara de ½ piña","1 rama de canela","500 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":4,"note":"","review":false},{"id":4,"name":"Cúrcuma y Pimienta Negra","category":"digestivas","ingredients":["1 cucharadita de cúrcuma","Una pizca de pimienta negra","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":4,"note":"","review":false},{"id":5,"name":"Manzanilla con Anís","category":"digestivas","ingredients":["1 bolsita de manzanilla","1 anís estrellado"],"steps":[],"page":5,"note":"Para preparar tu infusión, seguí las indicaciones de uso y proporción de agua de la manzanilla y el anís que utilices.","review":false},{"id":6,"name":"Salvia y Limón","category":"digestivas","ingredients":["5 hojas de salvia fresca o 1 cucharadita seca","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el agua.","Agregá la salvia y dejá reposar 5 minutos.","Colá y añadí el limón."],"page":5,"note":"","review":false},{"id":7,"name":"Cardamomo y Naranja","category":"digestivas","ingredients":["2 vainas de cardamomo","Cáscara de naranja","250 ml de agua"],"steps":["Machacá levemente el cardamomo.","Herví durante 5 minutos con la cáscara.","Colá."],"page":5,"note":"","review":false},{"id":8,"name":"Comino y Limón","category":"digestivas","ingredients":["½ cucharadita de semillas de comino","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el comino durante 5 minutos.","Apagá y agregá el limón."],"page":6,"note":"","review":false},{"id":9,"name":"Manzana y Canela","category":"digestivas","ingredients":["½ manzana en rodajas","1 rama de canela","300 ml de agua"],"steps":["Herví durante 10 minutos.","Dejá reposar y colá."],"page":6,"note":"","review":false},{"id":10,"name":"Romero y Limón","category":"digestivas","ingredients":["1 ramita de romero","Jugo de limón, a gusto personal","250 ml de agua"],"steps":["Herví el romero durante 5 minutos.","Añadí el limón al final."],"page":6,"note":"","review":false},{"id":11,"name":"Albahaca y Jengibre","category":"digestivas","ingredients":["5 hojas de albahaca","2 rodajas de jengibre","250 ml de agua"],"steps":["Herví el jengibre durante 5 minutos.","Agregá la albahaca y dejá reposar 3 minutos."],"page":7,"note":"","review":false},{"id":12,"name":"Perejil y Limón","category":"digestivas","ingredients":["1 cucharada de perejil fresco","Jugo de ½ limón","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Agregá el limón."],"page":7,"note":"","review":false},{"id":13,"name":"Zanahoria y Jengibre","category":"digestivas","ingredients":["½ zanahoria en rodajas finas","2 rodajas de jengibre","300 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":7,"note":"","review":false},{"id":14,"name":"Tomillo y Miel","category":"digestivas","ingredients":["1 cucharadita de tomillo","1 cucharadita de miel","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Añadí la miel al final."],"page":8,"note":"","review":false},{"id":15,"name":"Calabaza y Canela","category":"digestivas","ingredients":["½ taza de calabaza en cubos","1 rama de canela","400 ml de agua"],"steps":["Herví durante 15 minutos.","Colá o licuá suavemente."],"page":8,"note":"","review":false},{"id":16,"name":"Infusión de Diente de León","category":"detox","ingredients":["1 cucharada de raíz u hojas de diente de león","250 ml de agua"],"steps":["Herví el agua.","Agregá la planta y dejá reposar de 5 a 7 minutos.","Colá y serví."],"page":10,"note":"","review":false},{"id":17,"name":"Té Verde con Matcha y Goji","category":"detox","ingredients":["1 bolsita de té verde","½ cucharadita de matcha","1 cucharada de bayas de goji","250 ml de agua"],"steps":["Infusioná el té verde durante 3 minutos.","Agregá el matcha y las bayas de goji.","Mezclá bien."],"page":10,"note":"Contiene té verde y matcha, fuentes de cafeína.","review":false},{"id":18,"name":"Agua de Alcachofa y Cardo Mariano","category":"detox","ingredients":["1 hoja de alcachofa","1 cucharadita de cardo mariano","500 ml de agua"],"steps":["Herví durante 10 minutos.","Dejá reposar 5 minutos.","Colá."],"page":11,"note":"","review":false},{"id":19,"name":"Té de Ortiga y Manzana","category":"detox","ingredients":["1 cucharada de ortiga seca","½ manzana en rodajas","300 ml de agua"],"steps":["Herví durante 5 minutos.","Dejá reposar 3 minutos.","Colá."],"page":11,"note":"","review":false},{"id":20,"name":"Infusión de Boldo y Menta","category":"detox","ingredients":["5 hojas de boldo","5 hojas de menta","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":11,"note":"","review":false},{"id":21,"name":"Té de Raíz de Bardana","category":"detox","ingredients":["1 cucharadita de raíz de bardana","300 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":12,"note":"","review":false},{"id":22,"name":"Agua de Limón y Cúrcuma","category":"detox","ingredients":["Jugo de ½ limón","½ cucharadita de cúrcuma","250 ml de agua tibia"],"steps":["Mezclá todos los ingredientes."],"page":12,"note":"","review":false},{"id":23,"name":"Infusión de Espirulina y Limón","category":"detox","ingredients":["½ cucharadita de espirulina","Jugo de limón, a gusto personal","250 ml de agua"],"steps":["Mezclá sin hervir."],"page":12,"note":"","review":false},{"id":24,"name":"Té de Cola de Caballo","category":"detox","ingredients":["1 cucharada de cola de caballo","250 ml de agua"],"steps":["Infusioná de 5 a 7 minutos."],"page":13,"note":"","review":false},{"id":25,"name":"Infusión de Raíz de Achicoria","category":"detox","ingredients":["1 cucharadita de raíz de achicoria","300 ml de agua"],"steps":["Herví durante 5 minutos.","Dejá reposar 5 minutos."],"page":13,"note":"","review":false},{"id":26,"name":"Leche Dorada (Golden Milk)","category":"antiestres","ingredients":["1 taza de leche vegetal","½ cucharadita de cúrcuma","Una pizca de canela","Una pizca de pimienta negra"],"steps":["Calentá la leche sin hervir.","Agregá las especias.","Mezclá bien."],"page":15,"note":"","review":false},{"id":27,"name":"Lavanda y Valeriana","category":"antiestres","ingredients":["1 cucharadita de lavanda","1 cucharadita de valeriana","250 ml de agua"],"steps":["Infusioná de 5 a 7 minutos."],"page":15,"note":"Las mezclas de hierbas pueden interactuar con medicamentos, incluidos sedantes. Consultá si los usás.","review":false},{"id":28,"name":"Té de Ashwagandha","category":"antiestres","ingredients":["1 cucharadita de ashwagandha en polvo","250 ml de agua caliente"],"steps":["Mezclá y dejá reposar 5 minutos."],"page":16,"note":"Consultá antes de usar ashwagandha: se han reportado lesiones hepáticas y posibles interacciones. Evitala durante embarazo o lactancia; no se recomienda con trastornos tiroideos o autoinmunes. Fuente: NCCIH.","review":false},{"id":29,"name":"Melisa con Piel de Naranja","category":"antiestres","ingredients":["1 cucharada de melisa","Cáscara de naranja","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":16,"note":"","review":false},{"id":30,"name":"Pasiflora y Manzanilla","category":"antiestres","ingredients":["1 cucharadita de pasiflora","1 bolsita de manzanilla"],"steps":["Infusioná durante 5 minutos."],"page":16,"note":"Prepará tu momento de pausa respetando la proporción de agua recomendada en el envase de las hierbas que elijas.","review":false},{"id":31,"name":"Té de Espino Blanco","category":"antiestres","ingredients":["1 cucharadita de espino blanco","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":17,"note":"","review":false},{"id":32,"name":"Leche de Avena y Canela","category":"antiestres","ingredients":["1 taza de leche de avena","Una pizca de canela"],"steps":["Calentá y mezclá."],"page":17,"note":"","review":false},{"id":33,"name":"Tilo y Miel","category":"antiestres","ingredients":["1 cucharada de tilo","1 cucharadita de miel"],"steps":["Infusioná durante 5 minutos.","Endulzá con la miel."],"page":17,"note":"Dulzor a gusto personal. Para la proporción de agua, seguí las indicaciones del tilo que utilices.","review":false},{"id":34,"name":"Té de Rhodiola","category":"antiestres","ingredients":["1 cucharadita de rhodiola","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":18,"note":"","review":false},{"id":35,"name":"Cacao y Canela","category":"antiestres","ingredients":["1 cucharadita de cacao puro","Una pizca de canela","250 ml de leche vegetal o agua"],"steps":["Calentá y mezclá."],"page":18,"note":"","review":false},{"id":36,"name":"Pepino, Chía y Menta","category":"hidratacion","ingredients":["½ pepino en rodajas","1 cucharada de chía","5 hojas de menta","500 ml de agua"],"steps":["Colocá todo en una jarra.","Refrigerá de 4 a 8 horas.","Colá si lo preferís."],"page":20,"note":"","review":false},{"id":37,"name":"Hibiscus (Jamaica) y Canela","category":"hidratacion","ingredients":["1 cucharadita de flor de hibiscus","1 rama de canela","500 ml de agua"],"steps":["Infusioná en frío durante 6 horas.","Colá."],"page":20,"note":"","review":false},{"id":38,"name":"Aloe Vera y Frutos Rojos","category":"hidratacion","ingredients":["Gel de aloe, frutos rojos y agua. La elección del producto y la proporción de aloe requieren orientación profesional."],"steps":[],"page":"20","note":"Para esta combinación, confirmá primero con un profesional el producto de aloe apto para consumo y su uso adecuado. El látex y algunos extractos de hoja pueden causar efectos adversos. Fuente: NCCIH.","review":true},{"id":39,"name":"Sandía y Albahaca","category":"hidratacion","ingredients":["1 taza de sandía en cubos","4 hojas de albahaca","500 ml de agua"],"steps":[],"page":21,"note":"Ajustá la intensidad del sabor a tu preferencia personal.","review":false},{"id":40,"name":"Frutilla (Fresa) y Romero","category":"hidratacion","ingredients":["5 fresas o frutillas","1 ramita de romero"],"steps":[],"page":21,"note":"Agua a gusto personal para equilibrar el sabor de la frutilla.","review":false},{"id":41,"name":"Kiwi y Menta","category":"hidratacion","ingredients":["1 kiwi en rodajas","5 hojas de menta"],"steps":[],"page":21,"note":"Proporción de agua adaptable a tu gusto, para un sabor más suave o frutal.","review":false},{"id":42,"name":"Rooibos Frío con Naranja","category":"hidratacion","ingredients":["1 bolsita de rooibos","Rodajas de naranja, a gusto personal","500 ml de agua"],"steps":["Infusioná en caliente.","Dejá enfriar y refrigerá."],"page":21,"note":"","review":false},{"id":43,"name":"Mango y Jengibre","category":"hidratacion","ingredients":["½ taza de mango","2 rodajas de jengibre"],"steps":[],"page":22,"note":"Ajustá la proporción de agua según la intensidad de fruta que prefieras.","review":false},{"id":44,"name":"Granada y Canela","category":"hidratacion","ingredients":["½ taza de granada","1 rama de canela"],"steps":[],"page":22,"note":"Agua a gusto personal para una bebida más suave o con mayor sabor a granada.","review":false},{"id":45,"name":"Agua de Coco y Chía","category":"hidratacion","ingredients":["500 ml de agua de coco","1 cucharada de chía"],"steps":["Dejá reposar de 2 a 4 horas."],"page":22,"note":"","review":false}],"routines":[{"id":"warmup","name":"Calentamiento articular","duration":300,"label":"3–5 min · Antes de caminar","subtitle":"Movilidad suave para preparar tu sesión.","doc":"warmup","steps":[{"title":"Alineación y respiración","dose":"3 respiraciones","text":["Pies al ancho de las caderas y rodillas relajadas.","Inhalá por la nariz hacia el abdomen durante 3 segundos.","Exhalá suavemente por la boca durante 4 segundos, aflojando los hombros."]},{"title":"Péndulo suave de cuello","dose":"5 hacia cada lado","text":["Acercá suavemente la barbilla al pecho, sin forzar.","Dibujá un medio círculo lento hacia un hombro.","Volvé al centro y alterná hacia el otro lado. No busques un rango que moleste."]},{"title":"Círculos de hombros","dose":"8 círculos hacia atrás","text":["Elevá suavemente los hombros.","Llevalos hacia atrás con una apertura cómoda del pecho.","Dejalos caer de forma fluida, con respiración tranquila."]},{"title":"Balanceo de pelvis","dose":"8 movimientos lentos","text":["Colocá las manos sobre la cadera.","Inhalá llevando la pelvis levemente hacia atrás.","Exhalá basculando suavemente la pelvis hacia adelante."]},{"title":"Movilidad de tobillos","dose":"10 elevaciones fluidas","text":["Usá una pared o silla firme si necesitás apoyo.","Elevá los talones de forma lenta y sostené 1 segundo.","Bajá con control y luego elevá levemente las puntas con los talones apoyados."]}]},{"id":"recovery","name":"Recuperación Articular Express","duration":180,"label":"3 min · Después de caminar","subtitle":"Un cierre suave para espalda, caderas y piernas.","doc":"recovery","steps":[{"title":"Mecedora suave","dose":"1 minuto · zona lumbar","text":["De pie, pies al ancho de las caderas y rodillas relajadas.","Exhalá llevando la barbilla hacia el pecho y dejando caer suavemente brazos y torso, sin buscar tocar el suelo.","Balanceá los hombros levemente de un lado al otro. Volvé a erguirte despacio."]},{"title":"La ola","dose":"30 segundos por lado","text":["Apoyá una mano en una pared o silla firme.","Llevá un pie un pequeño paso hacia atrás y flexioná suavemente la rodilla de adelante.","Acercá la pelvis levemente hacia adelante. Sostené con comodidad y cambiá de lado."]},{"title":"Talón a tierra","dose":"30 segundos por lado","text":["Frente a una pared, apoyá ambas manos a la altura de los hombros.","Llevá una pierna hacia atrás y apoyá el talón en el suelo.","Mantené el estiramiento suave en la pantorrilla y cambiá de lado. No fuerces ni bloquees la rodilla."]}]}]}</script>
 <script id="pdf-meta" type="application/json">[{"id":"plan4","title":"Mi plan oficial · 4 semanas","description":"Nivel 1 · Actividades y foco semanal.","filename":"Tai_Chi_Walk_Plan_4_Semanas.pdf","pages":2,"size":"27 KB"},{"id":"general","title":"Manual general · 8 semanas","description":"Incluye los 3 niveles. Referencia de semanas 1–4 para Niveles 2 y 3.","filename":"Tai_Chi_Walk_Manual_General.pdf","pages":32,"size":"3.5 MB"},{"id":"warmup","title":"Bono 1 · Calentamiento articular","description":"Guía ilustrada de movilidad de 3 a 5 minutos.","filename":"Tai_Chi_Walk_Calentamiento_Articular.pdf","pages":8,"size":"2.8 MB"},{"id":"recovery","title":"Recuperación Articular Express","description":"3 minutos de estiramiento suave post-caminata.","filename":"Tai_Chi_Walk_Recuperacion_Express.pdf","pages":2,"size":"41 KB"},{"id":"infusions","title":"Bono 2 · 45 infusiones y bebidas","description":"Recetario completo con sus categorías originales.","filename":"Tai_Chi_Walk_45_Infusiones.pdf","pages":23,"size":"4.1 MB"},{"id":"tracker","title":"Bono 3 · Tracker de hábitos","description":"Plantilla original de 8 semanas. Usá sus primeras 4 semanas.","filename":"Tai_Chi_Walk_Tracker_Habitos.pdf","pages":7,"size":"1.1 MB"}]</script>
 
-<script>
-(function(){
-  const dataNode = document.getElementById('content-data');
-  const metaNode = document.getElementById('pdf-meta');
-  if(!dataNode) return;
-  const appData = JSON.parse(dataNode.textContent);
-  const pdfMeta = metaNode ? JSON.parse(metaNode.textContent) : [];
-
-  let currentLevel = '1';
-  let currentWeekIndex = 0;
-  let currentDayIndex = 0;
-  let favorites = JSON.parse(localStorage.getItem('taichi_favs') || '[]');
-
-  let planTimerInterval = null;
-  let planSecondsLeft = 0;
-  let isTimerRunning = false;
-
-  let routineTimerInterval = null;
-  let routineSecondsLeft = 0;
-  let isRoutineRunning = false;
-
-  let activeRoutineData = null;
-  let stepIndex = 0;
-
-  const levelSelect = document.getElementById('level-select');
-  const daySelect = document.getElementById('day-select');
-  const weekTabsContainer = document.getElementById('week-tabs');
-  const daysContainer = document.getElementById('days');
-
-  function initApp() {
-    if(levelSelect) {
-      levelSelect.value = currentLevel;
-      levelSelect.addEventListener('change', (e) => {
-        currentLevel = e.target.value;
-        currentWeekIndex = 0;
-        currentDayIndex = 0;
-        renderAll();
-      });
-    }
-
-    document.querySelectorAll('[data-nav]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        switchView(btn.getAttribute('data-nav'));
-      });
-    });
-
-    document.querySelectorAll('[data-routine]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const routineId = btn.getAttribute('data-routine');
-        openRoutineModal(routineId);
-      });
-    });
-
-    // Enlace de recomendaciones de apoyo corregido
-    const supportActionBtn = document.getElementById('support-action');
-    if(supportActionBtn) {
-      supportActionBtn.onclick = () => {
-        const week = appData.levels[currentLevel].weeks[currentWeekIndex];
-        showToast(`💡 Recomendación: ${week.support}`);
-      };
-    }
-
-    renderMaterials();
-    renderRecipes();
-    setupFilters();
-    setupSearch();
-    setupTimer();
-    setupRoutineModalLogic();
-    renderAll();
-  }
-
-  function switchView(viewName) {
-    document.querySelectorAll('.view').forEach(v => v.hidden = true);
-    const target = document.getElementById('view-' + viewName);
-    if(target) target.hidden = false;
-
-    document.querySelectorAll('[data-nav]').forEach(b => {
-      if(b.getAttribute('data-nav') === viewName) {
-        b.setAttribute('aria-current', 'page');
-      } else {
-        b.removeAttribute('aria-current');
-      }
-    });
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
-
-  function renderAll() {
-    renderWeeks();
-    renderDaySelector();
-    renderDayContent();
-    renderTracker();
-    renderSupportCard();
-  }
-
-  function renderWeeks() {
-    if(!weekTabsContainer) return;
-    weekTabsContainer.innerHTML = '';
-    const weeks = appData.levels[currentLevel].weeks;
-    weeks.forEach((w, idx) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'week-tab';
-      btn.setAttribute('role', 'tab');
-      if(idx === currentWeekIndex) btn.setAttribute('aria-selected', 'true');
-      btn.innerHTML = `Semana ${idx+1} <span class="week-count">· ${w.days.length} días</span>`;
-      btn.addEventListener('click', () => {
-        currentWeekIndex = idx;
-        currentDayIndex = 0;
-        renderAll();
-      });
-      weekTabsContainer.appendChild(btn);
-    });
-  }
-
-  function renderDaySelector() {
-    if(!daySelect) return;
-    daySelect.innerHTML = '';
-    const days = appData.levels[currentLevel].weeks[currentWeekIndex].days;
-    days.forEach((d, idx) => {
-      const opt = document.createElement('option');
-      opt.value = idx;
-      opt.textContent = `Día ${idx + 1} · ${d.title.substring(0, 22)}`;
-      if(idx === currentDayIndex) opt.selected = true;
-      daySelect.appendChild(opt);
-    });
-    daySelect.onchange = (e) => {
-      currentDayIndex = parseInt(e.target.value, 10);
-      renderDayContent();
-    };
-  }
-
-  function renderDayContent() {
-    const week = appData.levels[currentLevel].weeks[currentWeekIndex];
-    const day = week.days[currentDayIndex];
-
-    document.getElementById('task-week').textContent = `SEMANA ${currentWeekIndex + 1} · DÍA ${currentDayIndex + 1}`;
-    document.getElementById('task-title').textContent = day.title;
-    document.getElementById('task-focus').textContent = day.focus;
-    document.getElementById('task-minutes').innerHTML = `${day.minutes} <span>minutos</span>`;
-    document.getElementById('task-time-note').textContent = day.rest ? "Día de descanso programado." : "Práctica guiada de baja intensidad.";
-
-    const partsList = document.getElementById('task-parts');
-    partsList.innerHTML = '';
-    if(day.parts && day.parts.length > 0) {
-      day.parts.forEach((p, i) => {
-        const li = document.createElement('li');
-        li.innerHTML = `<span class="part-number">${i+1}</span><span>${p}</span>`;
-        partsList.appendChild(li);
-      });
-    } else {
-      const li = document.createElement('li');
-      li.innerHTML = `<span class="part-number">✓</span><span>Práctica libre a tu propio ritmo, con atención a la respiración.</span>`;
-      partsList.appendChild(li);
-    }
-
-    const completeBtn = document.getElementById('complete-day');
-    const globalDayNum = (currentWeekIndex * 7) + (currentDayIndex + 1);
-    const isCompleted = localStorage.getItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`) === 'true';
-
-    if(isCompleted) {
-      completeBtn.classList.add('completed');
-      completeBtn.innerHTML = `<svg aria-hidden="true"><use href="#check"/></svg><span>¡DÍA ${globalDayNum} COMPLETADO! ✓</span>`;
-    } else {
-      completeBtn.classList.remove('completed');
-      completeBtn.innerHTML = `<svg aria-hidden="true"><use href="#check"/></svg><span>MARCAR DÍA COMPLETADO</span>`;
-    }
-
-    completeBtn.onclick = () => {
-      const currentStatus = localStorage.getItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`) === 'true';
-      localStorage.setItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`, !currentStatus);
-      renderAll();
-      showToast(!currentStatus ? `¡Excelente! Día ${globalDayNum} registrado con éxito.` : `Día ${globalDayNum} desmarcado.`);
-    };
-
-    document.getElementById('task-source').textContent = appData.levels[currentLevel].source;
-
-    planSecondsLeft = (day.minutes || 10) * 60;
-    updateTimerDisplay();
-  }
-
-  function renderTracker() {
-    if(!daysContainer) return;
-    daysContainer.innerHTML = '';
-    const weekDays = appData.levels[currentLevel].weeks[currentWeekIndex].days;
-    let completedCount = 0;
-
-    weekDays.forEach((d, idx) => {
-      const globalDayNum = (currentWeekIndex * 7) + (idx + 1);
-      const isCompleted = localStorage.getItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`) === 'true';
-      if(isCompleted) completedCount++;
-
-      const label = document.createElement('label');
-      label.className = `day-label ${isCompleted ? 'checked' : ''}`;
-      label.innerHTML = `<span>Día ${idx+1}</span><div class="day-check"><svg><use href="#check"/></svg></div><input type="checkbox" ${isCompleted ? 'checked' : ''}>`;
-      
-      label.querySelector('input').addEventListener('change', (e) => {
-        localStorage.setItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`, e.target.checked);
-        renderAll();
-      });
-      daysContainer.appendChild(label);
-    });
-
-    document.getElementById('week-count').textContent = `${completedCount} de 7 días`;
-    const progressBar = document.getElementById('week-progress-bar');
-    if(progressBar) progressBar.style.width = `${(completedCount / 7) * 100}%`;
-
-    let totalCompleted28 = 0;
-    for(let i = 1; i <= 28; i++) {
-      if(localStorage.getItem(`taichi_lvl_${currentLevel}_day_${i}`) === 'true') totalCompleted28++;
-    }
-    document.getElementById('month-count').innerHTML = `${totalCompleted28}<span style="font-size:11px;color:var(--muted)">/28</span>`;
-    const meterFill = document.getElementById('meter-fill');
-    if(meterFill) {
-      const offset = 201.062 - (201.062 * (totalCompleted28 / 28));
-      meterFill.style.strokeDashoffset = offset;
-    }
-  }
-
-  function renderSupportCard() {
-    const week = appData.levels[currentLevel].weeks[currentWeekIndex];
-    document.getElementById('week-focus-title').textContent = week.title;
-    document.getElementById('week-support').textContent = week.support;
-  }
-
-  function setupTimer() {
-    const timerToggleBtn = document.querySelector('[data-timer-toggle="plan"]');
-    const timerResetBtn = document.querySelector('[data-timer-reset="plan"]');
-    const timerDisplay = document.querySelector('[data-timer-display="plan"]');
-
-    if (timerToggleBtn && timerDisplay) {
-      planSecondsLeft = 10 * 60;
-      updateTimerDisplay();
-
-      timerToggleBtn.onclick = function() {
-        if (!isTimerRunning) {
-          isTimerRunning = true;
-          timerToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#pause"/></svg><span>Pausar</span>`;
-          
-          planTimerInterval = setInterval(() => {
-            if (planSecondsLeft > 0) {
-              planSecondsLeft--;
-              updateTimerDisplay();
-            } else {
-              clearInterval(planTimerInterval);
-              isTimerRunning = false;
-              timerToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
-              showToast("¡Excelente sesión completada con éxito!");
-            }
-          }, 1000);
-        } else {
-          clearInterval(planTimerInterval);
-          isTimerRunning = false;
-          timerToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
-        }
-      };
-    }
-
-    if (timerResetBtn && timerDisplay) {
-      timerResetBtn.onclick = function() {
-        clearInterval(planTimerInterval);
-        isTimerRunning = false;
-        const week = appData.levels[currentLevel].weeks[currentWeekIndex];
-        const day = week.days[currentDayIndex];
-        planSecondsLeft = (day.minutes || 10) * 60;
-        updateTimerDisplay();
-        if (timerToggleBtn) {
-          timerToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
-        }
-      };
-    }
-
-    const routineToggleBtn = document.querySelector('[data-timer-toggle="routine"]');
-    const routineResetBtn = document.querySelector('[data-timer-reset="routine"]');
-    const routineDisplay = document.querySelector('[data-timer-display="routine"]');
-
-    if (routineToggleBtn && routineDisplay) {
-      routineSecondsLeft = 300;
-      updateRoutineTimerDisplay();
-
-      routineToggleBtn.onclick = function() {
-        if (!isRoutineRunning) {
-          isRoutineRunning = true;
-          routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#pause"/></svg><span>Pausar</span>`;
-          
-          routineTimerInterval = setInterval(() => {
-            if (routineSecondsLeft > 0) {
-              routineSecondsLeft--;
-              updateRoutineTimerDisplay();
-            } else {
-              clearInterval(routineTimerInterval);
-              isRoutineRunning = false;
-              routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
-            }
-          }, 1000);
-        } else {
-          clearInterval(routineTimerInterval);
-          isRoutineRunning = false;
-          routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
-        }
-      };
-    }
-
-    if (routineResetBtn && routineDisplay) {
-      routineResetBtn.onclick = function() {
-        clearInterval(routineTimerInterval);
-        isRoutineRunning = false;
-        routineSecondsLeft = activeRoutineData ? activeRoutineData.duration : 300;
-        updateRoutineTimerDisplay();
-        if (routineToggleBtn) {
-          routineToggleBtn.innerHTML = `<svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span>`;
-        }
-      };
-    }
-  }
-
-  function updateTimerDisplay() {
-    const timerDisplay = document.querySelector('[data-timer-display="plan"]');
-    if (!timerDisplay) return;
-    const m = Math.floor(planSecondsLeft / 60);
-    const s = planSecondsLeft % 60;
-    timerDisplay.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-  }
-
-  function updateRoutineTimerDisplay() {
-    const routineDisplay = document.querySelector('[data-timer-display="routine"]');
-    if (!routineDisplay) return;
-    const m = Math.floor(routineSecondsLeft / 60);
-    const s = routineSecondsLeft % 60;
-    routineDisplay.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-  }
-
-  window.openRoutineModal = function(routineId) {
-    activeRoutineData = appData.routines.find(r => r.id === routineId);
-    if(!activeRoutineData) return;
-    
-    stepIndex = 0;
-    routineSecondsLeft = activeRoutineData.duration || 300;
-    updateRoutineTimerDisplay();
-    renderCurrentStep();
-    
-    const dialog = document.getElementById('routine-dialog');
-    if(dialog) {
-      dialog.showModal();
-      dialog.scrollTop = 0;
-    }
-  };
-
-  function renderCurrentStep() {
-    if(!activeRoutineData) return;
-    const currentStep = activeRoutineData.steps[stepIndex];
-    
-    document.getElementById('routine-name').textContent = activeRoutineData.label;
-    document.getElementById('routine-step-title').textContent = currentStep.title;
-    document.getElementById('routine-dose').textContent = currentStep.dose;
-    document.getElementById('routine-step-count').textContent = `Paso ${stepIndex + 1} de ${activeRoutineData.steps.length}`;
-    
-    const instructionsList = document.getElementById('routine-step-instructions');
-    instructionsList.innerHTML = '';
-    currentStep.text.forEach(line => {
-      const li = document.createElement('li');
-      li.textContent = line;
-      instructionsList.appendChild(li);
-    });
-
-    const dialog = document.getElementById('routine-dialog');
-    if(dialog) dialog.scrollTop = 0;
-  }
-
-  function setupRoutineModalLogic() {
-    const nextStepBtn = document.getElementById('routine-next');
-    const prevStepBtn = document.getElementById('routine-prev');
-
-    if(nextStepBtn) {
-      nextStepBtn.onclick = function(e) {
-        e.preventDefault();
-        if(!activeRoutineData) return;
-
-        if(stepIndex < activeRoutineData.steps.length - 1) {
-          stepIndex++;
-          renderCurrentStep();
-        } else {
-          showToast("¡Felicitaciones! Completaste la guía con éxito. 🎉");
-          const dialog = document.getElementById('routine-dialog');
-          if(dialog) dialog.close();
-        }
-      };
-    }
-
-    if(prevStepBtn) {
-      prevStepBtn.onclick = function(e) {
-        e.preventDefault();
-        if(activeRoutineData && stepIndex > 0) {
-          stepIndex--;
-          renderCurrentStep();
-        }
-      };
-    }
-  }
-
-  function downloadPdfMock(title, filename) {
-    const driveUrl = "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
-    window.open(driveUrl, '_blank');
-    showToast(`📄 Abriendo ${title} en Google Drive...`);
+<script id="domain-script">
+'use strict';
+const CONTENT=JSON.parse(document.getElementById('content-data').textContent);
+const PDF_META=JSON.parse(document.getElementById('pdf-meta').textContent);
+const STORAGE_KEY='tai-chi-walk:pospago:4semanas:v1';
+const CATEGORIES={all:'Todas',digestivas:'Digestivas',detox:'Detox',antiestres:'Anti-estrés',hidratacion:'Hidratación'};
+const DAY_NAMES=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+function defaultState(){return {version:1,level:1,week:0,day:0,onboarded:false,progress:{},favorites:[]};}
+function progressKey(level,week,day){return `${level}-${week}-${day}`;}
+function countDone(state,week=null){return Object.entries(state.progress).filter(([k,v])=>k.startsWith(state.level+'-')&&v.status==='done'&&(week===null||Number(k.split('-')[1])===week)).length;}
+function getTask(state){return CONTENT.levels[state.level].weeks[state.week].days[state.day];}
+function normalizeSearch(s){return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();}
+function filterRecipes(query,category,favoriteOnly,favorites){const q=normalizeSearch(query);return CONTENT.recipes.filter(r=>(category==='all'||r.category===category)&&(!favoriteOnly||favorites.includes(r.id))&&(!q||normalizeSearch(r.name+' '+r.ingredients.join(' ')).includes(q)));}
+function validateState(value){
+ if(!value||typeof value!=='object'||Array.isArray(value)||value.version!==1)return null;
+ if(!Number.isInteger(value.level)||value.level<1||value.level>3||!Number.isInteger(value.week)||value.week<0||value.week>3||!Number.isInteger(value.day)||value.day<0||value.day>6||typeof value.onboarded!=='boolean')return null;
+ if(!value.progress||typeof value.progress!=='object'||Array.isArray(value.progress)||Object.keys(value.progress).length>84||!Array.isArray(value.favorites)||value.favorites.length>45)return null;
+ if(value.favorites.some(x=>!Number.isInteger(x)||x<1||x>45)||new Set(value.favorites).size!==value.favorites.length)return null;
+ const safe=defaultState();safe.level=value.level;safe.week=value.week;safe.day=value.day;safe.onboarded=value.onboarded;safe.favorites=[...value.favorites];
+ for(const [k,v] of Object.entries(value.progress)){
+  if(!/^[1-3]-[0-3]-[0-6]$/.test(k)||!v||typeof v!=='object'||!['done','pause'].includes(v.status)||typeof v.at!=='string'||v.at.length>40||!Number.isFinite(Date.parse(v.at)))return null;
+  safe.progress[k]={status:v.status,at:v.at};
+ }
+ return safe;
 }
+function formatTime(seconds){const n=Math.max(0,Math.ceil(seconds));return `${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`;}
+function remainingSeconds(timer,now){return timer.running?Math.max(0,Math.ceil((timer.end-now)/1000)):timer.remaining;}
 
-  function renderRecipes(filterCategory = 'all', searchQuery = '', onlyFavs = false) {
-    const grid = document.getElementById('recipe-grid');
-    if(!grid) return;
-    grid.innerHTML = '';
+// Enlaces proporcionados en el archivo actual; no se envían datos personales.
+const PDF_LINKS={"plan4":"https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg","general":"https://drive.google.com/open?id=1sct98yerBuk1-SBIsZHcUmYRO_demvXBL32xXNX8TLc","warmup":"https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=sharing","recovery":"https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing","infusions":"https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing","tracker":"https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing"};
+</script>
+<script id="app-script">
+'use strict';
+const $=id=>document.getElementById(id);
+const icon=(name)=>`<svg aria-hidden="true"><use href="#${name}"/></svg>`;
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let state=defaultState(),storageAvailable=true,storageMessage='',toastTimer,activeView='plan',recipeCategory='all',favoriteOnly=false,openRecipeId=null,openRoutine=null,routineStep=0,pendingAction=null;
+const timers={plan:{duration:0,remaining:0,running:false,end:0},routine:{duration:0,remaining:0,running:false,end:0}};
 
-    let filtered = appData.recipes.filter(r => {
-      const matchCat = filterCategory === 'all' || r.category === filterCategory;
-      const matchSearch = searchQuery === '' || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.ingredients.some(i => i.toLowerCase().includes(searchQuery.toLowerCase()));
-      const matchFav = !onlyFavs || favorites.includes(r.id);
-      return matchCat && matchSearch && matchFav;
-    });
+try{const raw=localStorage.getItem(STORAGE_KEY);if(raw){const v=validateState(JSON.parse(raw));if(v)state=v;else storageMessage='No pudimos leer el progreso anterior. Si tenés una copia, restaurala desde Mis materiales.';}}catch{storageAvailable=false;storageMessage='Este navegador no permite guardar el progreso. Podés usar la app durante esta visita y guardar una copia desde Mis materiales.';}
 
-    document.getElementById('recipe-count').textContent = `${filtered.length} recetas`;
-
-    if(filtered.length === 0) {
-      grid.innerHTML = `<div class="empty-state"><svg><use href="#cup"/></svg><h3>No se encontraron recetas</h3><p>Probá con otro término de búsqueda.</p></div>`;
-      return;
-    }
-
-    filtered.forEach(r => {
-      const isFav = favorites.includes(r.id);
-      const card = document.createElement('article');
-      card.className = 'recipe-card';
-      card.innerHTML = `
-        <button class="recipe-open" type="button">
-          <div class="recipe-category"><svg><use href="#cup"/></svg>${r.category.toUpperCase()}</div>
-          <h3>${r.name}</h3>
-          <p><svg><use href="#clock"/></svg>Pág. ${r.page} · ${r.ingredients.length} ingredientes</p>
-        </button>
-        <button class="favorite-btn" type="button" aria-pressed="${isFav}" aria-label="Guardar en favoritas"><svg><use href="#star"/></svg></button>
-      `;
-
-      card.querySelector('.recipe-open').addEventListener('click', () => openRecipeDetail(r));
-      card.querySelector('.favorite-btn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleFavorite(r.id);
-      });
-      grid.appendChild(card);
-    });
+// Migración aditiva de las claves usadas por la versión publicada anterior.
+// No se borran sus claves ni se reemplazan registros del formato actual.
+try{
+ let migrated=false;
+ for(let level=1;level<=3;level++)for(let n=1;n<=28;n++){
+  const key=progressKey(level,Math.floor((n-1)/7),(n-1)%7);
+  if(!state.progress[key]&&localStorage.getItem(`taichi_lvl_${level}_day_${n}`)==='true'){
+   state.progress[key]={status:'done',at:new Date().toISOString()};migrated=true;
   }
+ }
+ const oldFavorites=JSON.parse(localStorage.getItem('taichi_favs')||'[]');
+ if(Array.isArray(oldFavorites))for(const id of oldFavorites){
+  if(Number.isInteger(id)&&id>=1&&id<=45&&!state.favorites.includes(id)){state.favorites.push(id);migrated=true;}
+ }
+ if(migrated){state.onboarded=true;localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}
+}catch{/* El guardado de la aplicación ya informa si localStorage no está disponible. */}
 
-  function toggleFavorite(id) {
-    if(favorites.includes(id)) {
-      favorites = favorites.filter(f => f !== id);
-      showToast("Receta removida de favoritas.");
-    } else {
-      favorites.push(id);
-      showToast("¡Receta guardada en favoritas! ⭐");
-    }
-    localStorage.setItem('taichi_favs', JSON.stringify(favorites));
-    renderRecipes();
-  }
-
-  function openRecipeDetail(r) {
-    const dialog = document.getElementById('recipe-dialog');
-    document.getElementById('recipe-detail-title').textContent = r.name;
-    document.getElementById('recipe-detail-label').textContent = `Categoría: ${r.category.toUpperCase()} · Pág. ${r.page}`;
-    
-    const noteEl = document.getElementById('recipe-detail-note');
-    if(r.note) {
-      noteEl.textContent = r.note;
-      noteEl.hidden = false;
-    } else {
-      noteEl.hidden = true;
-    }
-
-    const ingList = document.getElementById('recipe-ingredients');
-    ingList.innerHTML = '';
-    r.ingredients.forEach(i => {
-      const li = document.createElement('li');
-      li.textContent = i;
-      ingList.appendChild(li);
-    });
-
-    const stepsList = document.getElementById('recipe-steps');
-    stepsList.innerHTML = '';
-    if(r.steps && r.steps.length > 0) {
-      r.steps.forEach(s => {
-        const li = document.createElement('li');
-        li.textContent = s;
-        stepsList.appendChild(li);
-      });
-      document.getElementById('recipe-preparation').hidden = false;
-    } else {
-      document.getElementById('recipe-preparation').hidden = true;
-    }
-
-    const favBtn = document.getElementById('recipe-detail-favorite');
-    const isFav = favorites.includes(r.id);
-    favBtn.querySelector('span').textContent = isFav ? "Quitar de favoritas" : "Guardar en favoritas";
-    favBtn.onclick = () => { toggleFavorite(r.id); openRecipeDetail(r); };
-
-    dialog.showModal();
-  }
-
-  function setupFilters() {
-    const filtersContainer = document.getElementById('recipe-filters');
-    if(!filtersContainer) return;
-    const cats = [
-      {id: 'all', name: 'Todas'},
-      {id: 'digestivas', name: 'Digestivas'},
-      {id: 'detox', name: 'Detox'},
-      {id: 'antiestres', name: 'Anti-estrés'},
-      {id: 'hidratacion', name: 'Hidratación'}
-    ];
-
-    cats.forEach((c, idx) => {
-      const btn = document.createElement('button');
-      btn.className = 'filter';
-      btn.type = 'button';
-      btn.textContent = c.name;
-      if(idx === 0) btn.setAttribute('aria-pressed', 'true');
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter').forEach(f => f.setAttribute('aria-pressed', 'false'));
-        btn.setAttribute('aria-pressed', 'true');
-        renderRecipes(c.id, document.getElementById('recipe-search').value);
-      });
-      filtersContainer.appendChild(btn);
-    });
-
-    const favFilter = document.getElementById('favorite-filter');
-    favFilter.addEventListener('click', () => {
-      const pressed = favFilter.getAttribute('aria-pressed') === 'true';
-      favFilter.setAttribute('aria-pressed', !pressed);
-      renderRecipes('all', document.getElementById('recipe-search').value, !pressed);
-    });
-  }
-
-  function setupSearch() {
-    const searchInput = document.getElementById('recipe-search');
-    const clearBtn = document.getElementById('clear-search');
-    if(!searchInput) return;
-
-    searchInput.addEventListener('input', () => {
-      const val = searchInput.value;
-      clearBtn.hidden = val.length === 0;
-      renderRecipes('all', val);
-    });
-
-    clearBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      clearBtn.hidden = true;
-      renderRecipes();
-    });
-  }
-
-  function renderMaterials() {
-    const list = document.getElementById('materials-list');
-    if(!list) return;
-    list.innerHTML = '';
-
-    pdfMeta.forEach(m => {
-      const div = document.createElement('div');
-      div.className = 'material';
-      div.innerHTML = `
-        <div class="file-icon"><svg><use href="#book"/></svg></div>
-        <div class="material-text">
-          <h3>${m.title}</h3>
-          <p>${m.description} (${m.size})</p>
-        </div>
-        <button class="secondary download-btn" type="button">Ver guía</button>
-      `;
-      div.querySelector('button').addEventListener('click', () => {
-        downloadPdfMock(m.title, m.filename);
-    });
-      list.appendChild(div);
-    });
-
-    // Conectar botones de descarga en la sección de rutinas y recetario
-    document.querySelectorAll('[data-download], [data-download-pdf]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const type = btn.getAttribute('data-download') || 'infusions';
-        const found = pdfMeta.find(p => p.id === type) || pdfMeta[4];
-
-      });
-    });
-  }
-
-  function showToast(msg) {
-    const toast = document.getElementById('toast');
-    if(!toast) return;
-    toast.textContent = msg;
-    toast.hidden = false;
-    setTimeout(() => { toast.hidden = true; }, 3000);
-  }
-
-  document.querySelectorAll('[data-close]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const modalId = btn.getAttribute('data-close');
-      document.getElementById(modalId)?.close();
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', initApp);
-})();
-function downloadPdfMock(title, filename) {
-    const driveLinks = {
-        "plan4": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "general": "https://drive.google.com/open?id=1sct98yerBuk1-SBIsZHcUmYRO_demvXBL32xXNX8TLc",
-        "warmup": https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=drive_link,
-        "recovery": https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing,
-        "infusions": https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=drive_link,
-        "tracker": "https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing"
-    };
-
-    // Buscamos directamente por el identificador del archivo o del título
-    let url = driveLinks[filename] || driveLinks[title];
-
-    // Si por alguna razón no lo encuentra, evaluamos por palabras clave del título
-    if (!url) {
-        const lower = (title + " " + filename).toLowerCase();
-        if (lower.includes("general")) {
-            url = driveLinks["general"];
-        } else if (lower.includes("calentamiento")) {
-            url = driveLinks["warmup"];
-        } else if (lower.includes("recuperacion") || lower.includes("recuperación") || lower.includes("express")) {
-            url = driveLinks["recovery"];
-        } else if (lower.includes("infusion") || lower.includes("infusión")) {
-            url = driveLinks["infusions"];
-        } else if (lower.includes("tracker") || lower.includes("hábito") || lower.includes("habito")) {
-            url = driveLinks["tracker"];
-        } else {
-            url = "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
-        }
-    }
-
-    window.open(url, '_blank');
-    showToast(`📄 Abriendo ${title} en Google Drive...`);
+function showStorageMessage(){if(storageMessage){$('storage-banner').textContent=storageMessage;$('storage-banner').hidden=false;}}
+function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));storageAvailable=true;}catch{storageAvailable=false;storageMessage='No se pudo guardar en este navegador. Conservá una copia desde Mis materiales antes de cerrar la app.';showStorageMessage();}return storageAvailable;}
+function toast(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>{$('toast').hidden=true;},4300);}
+function route(){const s=location.hash.slice(1);return ['plan','routines','infusions','materials'].includes(s)?s:'plan';}
+function navigate(view){if(location.hash!=='#'+view){location.hash=view;}else renderView(true);}
+function renderView(focus=true){
+ activeView=route();
+ for(const view of ['plan','routines','infusions','materials'])$('view-'+view).hidden=view!==activeView;
+ document.querySelectorAll('[data-nav]').forEach(b=>{if(b.dataset.nav===activeView)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+ if(activeView==='plan')renderPlan();if(activeView==='infusions')renderRecipes();if(activeView==='materials')renderMaterials();
+ if(focus){window.scrollTo({top:0,behavior:'instant'});requestAnimationFrame(()=>$('heading-'+activeView).focus({preventScroll:true}));}
 }
+function renderPlan(restoreFocus=null){
+ const level=CONTENT.levels[state.level],week=level.weeks[state.week],task=getTask(state),key=progressKey(state.level,state.week,state.day),status=state.progress[key]?.status;
+ $('level-select').value=state.level;
+ const total=countDone(state),weekly=countDone(state,state.week);
+ $('month-count').innerHTML=`${total}<span style="font-size:11px;color:var(--muted)">/28</span>`;
+ $('meter-fill').style.strokeDashoffset=201.062*(1-total/28);$('month-meter').setAttribute('aria-label',`${total} de 28 días completados en este nivel`);
+ $('week-tabs').innerHTML=Array.from({length:4},(_,w)=>`<button class="week-tab" role="tab" type="button" id="week-${w}" aria-selected="${w===state.week}" aria-label="Semana ${w+1}, ${countDone(state,w)} de 7 días completados" aria-controls="week-panel" tabindex="${w===state.week?0:-1}" data-week="${w}">Semana ${w+1}<span class="week-count">${countDone(state,w)}/7</span></button>`).join('');
+ $('week-panel').setAttribute('aria-labelledby','week-'+state.week);
+ $('day-select').innerHTML=Array.from({length:7},(_,d)=>`<option value="${d}" ${d===state.day?'selected':''}>${state.level===1?'Día '+(d+1):DAY_NAMES[d]}</option>`).join('');
+ $('task-week').textContent=`SEMANA ${state.week+1} · ${week.title}`;
+ $('task-title').textContent=task.title;$('task-focus').textContent=task.focus;
+ $('task-minutes').innerHTML=task.rest?'Tu descanso':`${task.minutes} <span>minutos</span>`;
+ $('task-time-note').textContent=task.rest?'Una pausa prevista en tu calendario.':'Tiempo total indicado para la actividad de hoy.';
+ $('task-icon').innerHTML=`<use href="#${task.rest?'moon':'clock'}"/>`;
+ $('task-parts').innerHTML=(task.parts.length?task.parts:[task.rest?'Hoy no hay una sesión de entrenamiento indicada. Retomá el calendario el próximo día.':`${task.minutes} min de ${task.title.toLowerCase()}, siguiendo el foco de este día.`]).map((p,i)=>`<li><span class="part-number" aria-hidden="true">${i+1}</span><span>${escapeHtml(p)}</span></li>`).join('');
+ $('day-status').className='badge '+(status==='done'?'':status==='pause'?'pause':'neutral');
+ $('day-status').innerHTML=status==='done'?icon('check')+'Completado':status==='pause'?icon('moon')+'Pausa registrada':'A tu ritmo';
+ $('complete-day').classList.toggle('completed',status==='done');$('complete-day').setAttribute('aria-pressed',String(status==='done'));
+ $('complete-day').querySelector('span').textContent=status==='done'?'COMPLETADO · DESMARCAR':task.rest?'REGISTRAR DESCANSO':'MARCAR DÍA COMPLETADO';
+ $('pause-day').hidden=task.rest||status==='done';$('pause-day').querySelector('span').textContent=status==='pause'?'Quitar pausa registrada':'Hoy necesito una pausa';
+ $('plan-timer').hidden=task.rest;
+ $('task-source').textContent=level.source;$('task-source').dataset.download=level.sourceDoc;
+ $('days').innerHTML=Array.from({length:7},(_,d)=>{
+  const v=state.progress[progressKey(state.level,state.week,d)]?.status;
+  const label=state.level===1?'D'+(d+1):DAY_NAMES[d].slice(0,1);
+  return `<label class="day-label ${d===state.day?'selected':''} ${v==='pause'?'paused':''}" for="day-check-${d}"><span>${label}</span><input id="day-check-${d}" type="checkbox" data-day-check="${d}" ${v==='done'?'checked':''} aria-label="${state.level===1?'Día '+(d+1):DAY_NAMES[d]}, semana ${state.week+1}, completado${v==='pause'?', pausa registrada':''}"><span class="day-check" aria-hidden="true">${icon('check')}</span></label>`;
+ }).join('');
+ $('week-count').textContent=`${weekly} de 7 días`;$('week-progress').setAttribute('aria-valuenow',weekly);$('week-progress-bar').style.width=weekly/7*100+'%';
+ $('motivation').textContent=weekly===7?'Semana completa. Celebrá la constancia que estás construyendo.':total===28?'Cuatro semanas registradas. Cada paso cuenta.':weekly===0?'Cada check es un paso. Empezá por el día que te toca.':'Ya sumaste '+weekly+' '+(weekly===1?'día':'días')+' esta semana. Seguí a tu ritmo.';
+ $('week-focus-title').textContent=week.focus;$('week-support').textContent=week.support;
+ const recipeId=state.level===1&&state.week===0?1:state.level===1&&state.week===1?22:null;
+ $('support-action').innerHTML=recipeId?'Ver receta del hábito '+icon('arrow'):state.level===1&&state.week===2?'Abrir recuperación '+icon('arrow'):'Ver mis materiales '+icon('arrow');
+ $('support-action').onclick=()=>recipeId?showRecipe(recipeId):state.level===1&&state.week===2?showRoutine('recovery'):navigate('materials');
+ $('source-summary').textContent='De dónde sale el calendario de este nivel';$('source-note').textContent=level.note;
+ updateTimers();if(restoreFocus)requestAnimationFrame(() => $(restoreFocus)?.focus({preventScroll:true}));
+}
+function changeContext(level,week,day){state.level=Number(level);state.week=Number(week);state.day=Number(day);configurePlanTimer();saveState();renderPlan();}
+function setDayStatus(day,status){const key=progressKey(state.level,state.week,day);if(status)state.progress[key]={status,at:new Date().toISOString()};else delete state.progress[key];}
+function markDay(day,completed){if(completed&&timers.plan.running)toggleTimer('plan');const changedDay=state.day!==day;state.day=day;setDayStatus(day,completed?'done':null);if(changedDay)configurePlanTimer();saveState();renderPlan('day-check-'+day);toast(completed?(getTask(state).rest?'Descanso registrado. Recuperar también cuenta.':countDone(state)===28?'¡Completaste tus 28 días de registro!':'Un día más para vos. Quedó registrado.'):'Check desmarcado. Podés volver a registrarlo.');}
+function configurePlanTimer(){const seconds=getTask(state).minutes*60;timers.plan={duration:seconds,remaining:seconds,running:false,end:0};updateTimers();}
+function setTimer(kind,seconds){timers[kind]={duration:seconds,remaining:seconds,running:false,end:0};updateTimers();}
+function toggleTimer(kind){const t=timers[kind];if(t.running){t.remaining=remainingSeconds(t,Date.now());t.running=false;}else{if(t.remaining<=0)t.remaining=t.duration;if(t.remaining===0)return;t.end=Date.now()+t.remaining*1000;t.running=true;}updateTimers();}
+function resetTimer(kind){const t=timers[kind];t.running=false;t.remaining=t.duration;t.end=0;updateTimers();}
+function updateTimers(){for(const kind of ['plan','routine']){
+ const t=timers[kind],remaining=remainingSeconds(t,Date.now());
+ if(t.running&&remaining===0){t.running=false;t.remaining=0;toast('Terminó el tiempo de referencia. Cerrá con calma y registrá tu práctica cuando quieras.');}
+ document.querySelectorAll(`[data-timer-display="${kind}"]`).forEach(el=>el.textContent=formatTime(remaining));
+ document.querySelectorAll(`[data-timer-toggle="${kind}"]`).forEach(el=>{el.innerHTML=icon(t.running?'pause':'play')+`<span>${t.running?'Pausar':remaining===0?'Repetir':'Iniciar'}</span>`;el.setAttribute('aria-label',(t.running?'Pausar':'Iniciar')+(kind==='plan'?' temporizador de la práctica':' temporizador de la guía'));});
+}}
+setInterval(()=>{if(timers.plan.running||timers.routine.running)updateTimers();},500);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateTimers();});
+function renderRecipes(){
+ const query=$('recipe-search').value;
+ $('clear-search').hidden=!query;
+ $('recipe-filters').innerHTML=Object.entries(CATEGORIES).map(([key,label])=>`<button type="button" class="filter" aria-pressed="${key===recipeCategory}" data-category="${key}">${label}<small>${key==='all'?45:CONTENT.recipes.filter(r=>r.category===key).length}</small></button>`).join('');
+ $('favorite-filter').setAttribute('aria-pressed',String(favoriteOnly));
+ const filtered=filterRecipes(query,recipeCategory,favoriteOnly,state.favorites);
+ $('recipe-count').textContent=`${filtered.length} ${filtered.length===1?'receta':'recetas'}${favoriteOnly?(filtered.length===1?' favorita':' favoritas'):''}`;
+ $('recipe-grid').innerHTML=filtered.length?filtered.map(r=>`<article class="recipe-card"><button type="button" class="recipe-open" data-recipe="${r.id}" aria-label="Ver receta ${escapeHtml(r.name)}"><div class="recipe-category">${icon(r.category==='antiestres'?'moon':r.category==='hidratacion'?'drop':'cup')}${CATEGORIES[r.category]}</div><h3>${escapeHtml(r.name)}</h3><p class="${r.review?'recipe-review':''}">${r.review?'Orientación profesional':'Ver receta'} ${icon('arrow')}</p></button><button type="button" class="favorite-btn" data-favorite="${r.id}" aria-label="${state.favorites.includes(r.id)?'Quitar de':'Guardar en'} favoritas: ${escapeHtml(r.name)}" aria-pressed="${state.favorites.includes(r.id)}">${icon('star')}</button></article>`).join(''):`<div class="empty-state">${icon('search')}<h3>No encontramos recetas.</h3><p>Probá otro ingrediente o quitá los filtros de favoritas y categoría.</p><button type="button" class="secondary" id="reset-filters">Ver las 45 recetas</button></div>`;
+}
+function toggleFavorite(id){const i=state.favorites.indexOf(id);if(i===-1)state.favorites.push(id);else state.favorites.splice(i,1);saveState();renderRecipes();if(openRecipeId===id)updateRecipeFavorite(id);}
+function updateRecipeFavorite(id){const selected=state.favorites.includes(id),b=$('recipe-detail-favorite');b.setAttribute('aria-pressed',String(selected));b.querySelector('span').textContent=selected?'Quitar de favoritas':'Guardar en favoritas';}
+function showRecipe(id){
+ const r=CONTENT.recipes.find(r=>r.id===Number(id));if(!r)return;
+ openRecipeId=r.id;$('recipe-detail-title').textContent=r.name;$('recipe-detail-label').textContent=`RECETA ${r.id} · ${CATEGORIES[r.category]}`;
+ $('recipe-ingredients').replaceChildren(...r.ingredients.map(s=>{const li=document.createElement('li');li.textContent=s;return li;}));
+ $('recipe-steps').replaceChildren(...r.steps.map(s=>{const li=document.createElement('li');li.textContent=s;return li;}));
+ $('recipe-preparation').hidden=!r.steps.length||r.review;
+ $('recipe-detail-note').hidden=!r.note;$('recipe-detail-note').textContent=r.note;
+ $('recipe-detail-source').textContent=`Fuente: Bono 2 · Infusiones y bebidas · página ${r.page} del PDF.`;
+ updateRecipeFavorite(r.id);
+ const link=r.id===28?'https://www.nccih.nih.gov/health/ashwagandha':r.id===38?'https://www.nccih.nih.gov/health/aloe-vera':null;
+ $('recipe-health-link').hidden=!link;$('recipe-health-link').innerHTML=link?`<a href="${link}" target="_blank" rel="noopener noreferrer">Consultar la información de seguridad del NCCIH</a>`:'';
+ $('recipe-dialog').showModal();$('recipe-dialog').scrollTop=0;
+}
+function showRoutine(id){const r=CONTENT.routines.find(r=>r.id===id);if(!r)return;openRoutine=r;routineStep=0;if(timers.plan.running)toggleTimer('plan');setTimer('routine',r.duration);renderRoutineStep();$('routine-dialog').showModal();$('routine-dialog').scrollTop=0;}
+function renderRoutineStep(){
+ const r=openRoutine,step=r.steps[routineStep];if(!r)return;
+ $('routine-name').textContent=r.name;$('routine-step-count').textContent=`PASO ${routineStep+1} DE ${r.steps.length}`;
+ $('routine-progress').innerHTML=r.steps.map((_,i)=>`<span class="${i<=routineStep?'active':''}"></span>`).join('');
+ $('routine-step-title').textContent=step.title;$('routine-dose').textContent=step.dose;
+ $('routine-step-instructions').replaceChildren(...step.text.map(s=>{const li=document.createElement('li');li.textContent=s;return li;}));
+ $('routine-prev').disabled=routineStep===0;$('routine-next').querySelector('span').textContent=routineStep===r.steps.length-1?'TERMINAR GUÍA':'SIGUIENTE PASO';
+}
+function renderMaterials(){
+ $('materials-list').innerHTML=PDF_META.map(d=>`<article class="material"><div class="file-icon">${icon('book')}</div><div class="material-text"><h3>${escapeHtml(d.title)}</h3><p>${escapeHtml(d.description)}<br>PDF · ${d.pages} ${d.pages===1?'página':'páginas'} · Google Drive</p></div><button type="button" class="secondary download-btn" data-download="${d.id}" aria-label="Descargar ${escapeHtml(d.title)}">${icon('download')}Ver PDF</button></article>`).join('');
+}
+function downloadPdf(id,button){
+ const doc=PDF_META.find(d=>d.id===id),url=PDF_LINKS[id];
+ if(!doc||!url){toast('Este material no tiene un enlace configurado.');return;}
+ const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';
+ document.body.append(a);a.click();a.remove();
+ toast('Abriendo '+doc.title+' en Google Drive.');
+}
+function downloadJson(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Tai_Chi_Walk_Mi_Progreso.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);toast('Copia de progreso preparada. Guardala en un lugar que recuerdes.');}
+function askConfirmation(title,text,action){$('confirm-title').textContent=title;$('confirm-text').textContent=text;pendingAction=action;$('confirm-dialog').showModal();}
+function closeDialog(id){const d=$(id);if(d?.open)d.close();}
+document.addEventListener('click',event=>{
+ const target=event.target.closest('button');if(!target)return;
+ if(target.dataset.nav){navigate(target.dataset.nav);return;}
+ if(target.dataset.week!==undefined){changeContext(state.level,target.dataset.week,0);$('week-'+state.week).focus({preventScroll:true});return;}
+ if(target.dataset.routine){showRoutine(target.dataset.routine);return;}
+ if(target.dataset.recipe){showRecipe(target.dataset.recipe);return;}
+ if(target.dataset.favorite){toggleFavorite(Number(target.dataset.favorite));return;}
+ if(target.dataset.category){recipeCategory=target.dataset.category;renderRecipes();document.querySelector(`[data-category="${recipeCategory}"]`)?.focus({preventScroll:true});return;}
+ if(target.dataset.download){downloadPdf(target.dataset.download,target);return;}
+ if(target.dataset.timerToggle){toggleTimer(target.dataset.timerToggle);return;}
+ if(target.dataset.timerReset){resetTimer(target.dataset.timerReset);return;}
+ if(target.dataset.close){closeDialog(target.dataset.close);return;}
+ if(target.hasAttribute('data-help')){$('help-dialog').showModal();return;}
+ if(target.id==='reset-filters'){$('recipe-search').value='';recipeCategory='all';favoriteOnly=false;renderRecipes();$('recipe-search').focus();}
+});
+$('level-select').addEventListener('change',event=>{changeContext(Number(event.target.value),0,0);toast('Nivel actualizado. Cada nivel conserva su propio progreso.');});
+$('day-select').addEventListener('change',event=>changeContext(state.level,state.week,Number(event.target.value)));
+$('days').addEventListener('change',event=>{if(event.target.matches('[data-day-check]'))markDay(Number(event.target.dataset.dayCheck),event.target.checked);});
+$('complete-day').addEventListener('click',()=>{const key=progressKey(state.level,state.week,state.day);markDay(state.day,state.progress[key]?.status!=='done');});
+$('pause-day').addEventListener('click',()=>{const key=progressKey(state.level,state.week,state.day),paused=state.progress[key]?.status==='pause';setDayStatus(state.day,paused?null:'pause');if(timers.plan.running)toggleTimer('plan');saveState();renderPlan();toast(paused?'Pausa quitada.':'Pausa registrada. Escuchar tu ritmo también importa.');});
+$('week-tabs').addEventListener('keydown',event=>{
+ if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();
+ const w=event.key==='Home'?0:event.key==='End'?3:(state.week+(event.key==='ArrowRight'?1:3))%4;
+ changeContext(state.level,w,0);$('week-'+w).focus({preventScroll:true});
+});
+$('recipe-search').addEventListener('input',renderRecipes);
+$('clear-search').addEventListener('click',()=>{$('recipe-search').value='';renderRecipes();$('recipe-search').focus();});
+$('favorite-filter').addEventListener('click',()=>{favoriteOnly=!favoriteOnly;renderRecipes();});
+$('recipe-detail-favorite').addEventListener('click',()=>{if(openRecipeId)toggleFavorite(openRecipeId);});
+$('routine-next').addEventListener('click',()=>{if(routineStep===openRoutine.steps.length-1){closeDialog('routine-dialog');toast('Guía terminada. Continuá a tu ritmo.');}else{routineStep++;renderRoutineStep();$('routine-dialog').scrollTop=0;}});
+$('routine-prev').addEventListener('click',()=>{if(routineStep>0){routineStep--;renderRoutineStep();$('routine-dialog').scrollTop=0;}});
+$('routine-dialog').addEventListener('close',()=>{if(timers.routine.running)toggleTimer('routine');});
+$('level-form').addEventListener('submit',event=>{event.preventDefault();state.onboarded=true;const level=Number(new FormData(event.target).get('initial-level'));changeContext(level,0,0);closeDialog('level-dialog');navigate('plan');$('heading-plan').focus({preventScroll:true});});
+$('level-dialog').addEventListener('cancel',event=>{if(!state.onboarded)event.preventDefault();});
+for(const id of ['recipe-dialog','routine-dialog','help-dialog','confirm-dialog'])$(id).addEventListener('click',event=>{if(event.target===$(id)){const r=event.target.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)event.target.close();}});
+$('confirm-action').addEventListener('click',()=>{const action=pendingAction;pendingAction=null;closeDialog('confirm-dialog');action?.();});
+$('confirm-dialog').addEventListener('close',()=>{pendingAction=null;});
+$('export-progress').addEventListener('click',downloadJson);
+$('import-progress').addEventListener('click',()=>$('backup-file').click());
+$('backup-file').addEventListener('change',async event=>{
+ const file=event.target.files?.[0];event.target.value='';if(!file)return;
+ try{if(file.size>100000)throw new Error('size');const value=validateState(JSON.parse(await file.text()));if(!value)throw new Error('schema');askConfirmation('¿Restaurar esta copia?','Reemplazará el progreso y las favoritas de este navegador. Podés guardar una copia actual antes de continuar.',()=>{state=value;state.onboarded=true;saveState();configurePlanTimer();$('level-select').value=state.level;renderPlan();renderRecipes();toast('Tu copia de progreso se restauró.');});}catch{toast('Esta copia no tiene un formato válido de Tai Chi Walk. Tus datos actuales no se modificaron.');}
+});
+$('reset-level').addEventListener('click',()=>askConfirmation('¿Borrar el progreso del Nivel '+state.level+'?','Se borrarán sus 28 días de registro. Tus favoritas y el progreso de los otros niveles se conservarán.',()=>{for(const key of Object.keys(state.progress))if(key.startsWith(state.level+'-'))delete state.progress[key];saveState();renderPlan();toast('El progreso de este nivel se borró.');}));
+window.addEventListener('hashchange',()=>renderView(true));
+showStorageMessage();$('level-select').value=state.level;configurePlanTimer();renderView(false);renderMaterials();
+if(!state.onboarded)$('level-dialog').showModal();
+
+// Instalación: conservar manifest.json del proyecto existente.
+let installPrompt=null;
+window.addEventListener('beforeinstallprompt',event=>{
+ event.preventDefault();installPrompt=event;
+ const banner=$('pwa-banner');if(banner)banner.style.display='flex';
+});
+$('btn-pwa-install')?.addEventListener('click',async()=>{
+ if(!installPrompt){toast('Usá el menú del navegador para agregar la app a tu pantalla de inicio.');return;}
+ const prompt=installPrompt;installPrompt=null;
+ try{await prompt.prompt();await prompt.userChoice;}finally{if($('pwa-banner'))$('pwa-banner').style.display='none';}
+});
+window.addEventListener('appinstalled',()=>{installPrompt=null;if($('pwa-banner'))$('pwa-banner').style.display='none';});
+$('care-advice')?.addEventListener('click',()=>$('help-dialog').showModal());
 </script>
 
 </body>
 </html>
-function downloadPdfMock(title, filename) {
-    const driveLinks = {
-        "Tai_Chi_Walk_Plan_4_Semanas.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Manual_General.pdf": "https://drive.google.com/open?id=1sct98yerBuk1-SBIsZHcUmYRO_demvXBL32xXNX8TLc",
-        "Tai_Chi_Walk_Calentamiento_Articular.pdf": "https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=sharing",
-        "Tai_Chi_Walk_Recuperacion_Express.pdf": "https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing",
-        "Tai_Chi_Walk_45_Infusiones.pdf": "https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing",
-        "Tai_Chi_Walk_Tracker_Habitos.pdf": "https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing"
-    };
-
-    let url = driveLinks[filename];
-
-    if (!url) {
-        const lower = (title + " " + filename).toLowerCase();
-        if (lower.includes("general") || lower.includes("manual")) {
-            url = driveLinks["Tai_Chi_Walk_Manual_General.pdf"];
-        } else if (lower.includes("calentamiento")) {
-            url = driveLinks["Tai_Chi_Walk_Calentamiento_Articular.pdf"];
-        } else if (lower.includes("recuperacion") || lower.includes("recuperación") || lower.includes("express")) {
-            url = driveLinks["Tai_Chi_Walk_Recuperacion_Express.pdf"];
-        } else if (lower.includes("infusion") || lower.includes("infusión")) {
-            url = driveLinks["Tai_Chi_Walk_45_Infusiones.pdf"];
-        } else if (lower.includes("tracker") || lower.includes("habito") || lower.includes("hábito")) {
-            url = driveLinks["Tai_Chi_Walk_Tracker_Habitos.pdf"];
-        } else {
-            url = driveLinks["Tai_Chi_Walk_Plan_4_Semanas.pdf"];
-        }
-    }
-
-    window.open(url, '_blank');
-    showToast(`📄 Abriendo ${title} en Google Drive...`);
-  }
