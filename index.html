@@ -757,30 +757,34 @@ function downloadPdfMock(title, filename) {
 </html>
 function downloadPdfMock(title, filename) {
     const driveLinks = {
-        "plan4": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "general": "https://drive.google.com/open?id=1sct98yerBuk1-SBIsZHcUmYRO_demvXBL32xXNX8TLc",
-        "warmup": onclick="window.open('https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=sharing', '_blank')",
-        "recovery": onclick="window.open('https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing', '_blank')",
-        "infusions": onclick="window.open('https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing', '_blank')",
-        "tracker": onclick="window.open('https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing', '_blank')"
+        "Tai_Chi_Walk_Plan_4_Semanas.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
+        "Tai_Chi_Walk_Manual_General.pdf": "https://drive.google.com/open?id=1sct98yerBuk1-SBIsZHcUmYRO_demvXBL32xXNX8TLc",
+        "Tai_Chi_Walk_Calentamiento_Articular.pdf": "https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=sharing",
+        "Tai_Chi_Walk_Recuperacion_Express.pdf": "https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing",
+        "Tai_Chi_Walk_45_Infusiones.pdf": "https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing",
+        "Tai_Chi_Walk_Tracker_Habitos.pdf": "https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing"
     };
 
-    const f = (filename || "").toLowerCase();
-    const t = (title || "").toLowerCase();
-    let url = driveLinks["plan4"];
+    let url = driveLinks[filename];
 
-    if (f.includes("calentamiento") || t.includes("calentamiento")) {
-        url = driveLinks["warmup"];
-    } else if (f.includes("recuperacion") || f.includes("recuperación") || t.includes("recuperación") || t.includes("express")) {
-        url = driveLinks["recovery"];
-    } else if (f.includes("infusion") || f.includes("infusión") || t.includes("infusión")) {
-        url = driveLinks["infusions"];
-    } else if (f.includes("tracker") || f.includes("habito") || f.includes("hábito") || t.includes("tracker")) {
-        url = driveLinks["tracker"];
-    } else if (f.includes("general") || t.includes("general")) {
-        url = driveLinks["general"];
+    if (!url) {
+        const lower = (title + " " + filename).toLowerCase();
+        if (lower.includes("general") || lower.includes("manual")) {
+            url = driveLinks["Tai_Chi_Walk_Manual_General.pdf"];
+        } else if (lower.includes("calentamiento")) {
+            url = driveLinks["Tai_Chi_Walk_Calentamiento_Articular.pdf"];
+        } else if (lower.includes("recuperacion") || lower.includes("recuperación") || lower.includes("express")) {
+            url = driveLinks["Tai_Chi_Walk_Recuperacion_Express.pdf"];
+        } else if (lower.includes("infusion") || lower.includes("infusión")) {
+            url = driveLinks["Tai_Chi_Walk_45_Infusiones.pdf"];
+        } else if (lower.includes("tracker") || lower.includes("habito") || lower.includes("hábito")) {
+            url = driveLinks["Tai_Chi_Walk_Tracker_Habitos.pdf"];
+        } else {
+            url = driveLinks["Tai_Chi_Walk_Plan_4_Semanas.pdf"];
+        }
     }
 
     window.open(url, '_blank');
     showToast(`📄 Abriendo ${title} en Google Drive...`);
+}
 }
