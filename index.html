@@ -726,9 +726,28 @@ function downloadPdfMock(title, filename) {
         "infusions": "https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing",
         "tracker": "https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing"
     };
-    
-    // Busca por nombre de archivo o por el identificador interno del material
-    const url = driveLinks[filename] || driveLinks[title] || "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
+
+    // Buscamos directamente por el identificador del archivo o del título
+    let url = driveLinks[filename] || driveLinks[title];
+
+    // Si por alguna razón no lo encuentra, evaluamos por palabras clave del título
+    if (!url) {
+        const lower = (title + " " + filename).toLowerCase();
+        if (lower.includes("general")) {
+            url = driveLinks["general"];
+        } else if (lower.includes("calentamiento")) {
+            url = driveLinks["warmup"];
+        } else if (lower.includes("recuperacion") || lower.includes("recuperación") || lower.includes("express")) {
+            url = driveLinks["recovery"];
+        } else if (lower.includes("infusion") || lower.includes("infusión")) {
+            url = driveLinks["infusions"];
+        } else if (lower.includes("tracker") || lower.includes("hábito") || lower.includes("habito")) {
+            url = driveLinks["tracker"];
+        } else {
+            url = "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
+        }
+    }
+
     window.open(url, '_blank');
     showToast(`📄 Abriendo ${title} en Google Drive...`);
 }
