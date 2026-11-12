@@ -614,7 +614,67 @@ function openRoutineModal(routineId) {
   });
   
   if(dialog) dialog.showModal();
-// Control de temporizadores para rutinas (Calentamiento / Recuperación)
+// Lógica para los botones Siguiente y Anterior en las guías emergentes
+let currentRoutine = null;
+let activeStepIndex = 0;
+
+window.openRoutineModal = function(routineId) {
+    currentRoutine = appData.routines.find(r => r.id === routineId);
+    if(!currentRoutine) return;
+    
+    activeStepIndex = 0;
+    updateRoutineModalContent();
+    
+    const dialog = document.getElementById('routine-dialog');
+    if(dialog) {
+        dialog.showModal();
+        dialog.scrollTop = 0;
+    }
+}
+
+function updateRoutineModalContent() {
+    if(!currentRoutine) return;
+    const step = currentRoutine.steps[activeStepIndex];
+    
+    document.getElementById('routine-name').textContent = currentRoutine.label;
+    document.getElementById('routine-step-title').textContent = step.title;
+    document.getElementById('routine-dose').textContent = step.dose;
+    document.getElementById('routine-step-count').textContent = `Paso ${activeStepIndex + 1} de ${currentRoutine.steps.length}`;
+    
+    const list = document.getElementById('routine-step-instructions');
+    list.innerHTML = '';
+    step.text.forEach(t => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        list.appendChild(li);
+    });
+
+    const dialog = document.getElementById('routine-dialog');
+    if(dialog) dialog.scrollTop = 0;
+}
+
+const nextBtn = document.getElementById('routine-next');
+const prevBtn = document.getElementById('routine-prev');
+
+if(nextBtn) {
+    nextBtn.onclick = function() {
+        if(currentRoutine && activeStepIndex < currentRoutine.steps.length - 1) {
+            activeStepIndex++;
+            updateRoutineModalContent();
+        } else {
+            showToast("¡Completaste todos los pasos de esta guía! 🎉");
+        }
+    };
+}
+
+if(prevBtn) {
+    prevBtn.onclick = function() {
+        if(currentRoutine && activeStepIndex > 0) {
+            activeStepIndex--;
+            updateRoutineModalContent();
+        }
+    };
+}// Control de temporizadores para rutinas (Calentamiento / Recuperación)
 let routineTimerInterval = null;
 let routineSecondsLeft = 0;
 let isRoutineRunning = false;
