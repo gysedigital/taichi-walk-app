@@ -668,7 +668,64 @@ function updateRoutineDisplay() {
     const m = Math.floor(routineSecondsLeft / 60);
     const s = routineSecondsLeft % 60;
     routineDisplay.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-}}
+}}// Lógica para los botones Siguiente y Anterior en las guías emergentes
+let currentRoutineObj = null;
+let currentStepIndex = 0;
+
+// Reemplaza o complementa tu función openRoutineModal con esto:
+window.openRoutineModal = function(routineId) {
+    currentRoutineObj = appData.routines.find(r => r.id === routineId);
+    if(!currentRoutineObj) return;
+    
+    currentStepIndex = 0;
+    renderRoutineStep();
+    
+    const dialog = document.getElementById('routine-dialog');
+    if(dialog) dialog.showModal();
+}
+
+function renderRoutineStep() {
+    if(!currentRoutineObj) return;
+    const step = currentRoutineObj.steps[currentStepIndex];
+    
+    document.getElementById('routine-name').textContent = currentRoutineObj.label;
+    document.getElementById('routine-step-title').textContent = step.title;
+    document.getElementById('routine-dose').textContent = step.dose;
+    
+    const list = document.getElementById('routine-step-instructions');
+    list.innerHTML = '';
+    step.text.forEach(t => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        list.appendChild(li);
+    });
+
+    document.getElementById('routine-step-count').textContent = `Paso ${currentStepIndex + 1} de ${currentRoutineObj.steps.length}`;
+}
+
+// Conectar botones de siguiente y anterior
+const nextBtn = document.getElementById('routine-next');
+const prevBtn = document.getElementById('routine-prev');
+
+if(nextBtn) {
+    nextBtn.onclick = function() {
+        if(currentRoutineObj && currentStepIndex < currentRoutineObj.steps.length - 1) {
+            currentStepIndex++;
+            renderRoutineStep();
+        } else {
+            showToast("¡Llegaste al último paso de la guía! 🎉");
+        }
+    };
+}
+
+if(prevBtn) {
+    prevBtn.onclick = function() {
+        if(currentRoutineObj && currentStepIndex > 0) {
+            currentStepIndex--;
+            renderRoutineStep();
+        }
+    };
+}
   document.addEventListener('DOMContentLoaded', initApp);
 })();
 </script>
