@@ -727,23 +727,12 @@
 
   document.addEventListener('DOMContentLoaded', initApp);
 })();
+    function downloadPdfMock(title, filename) {
+    const driveUrl = "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
+    window.open(driveUrl, '_blank');
+    showToast(`📄 Abriendo ${title} en Google Drive...`);
+}
 </script>
 
 </body>
 </html>
-function downloadPdfMock(title, filename) {
-    // Enlaces oficiales de Google Drive para cada material
-    const driveLinks = {
-        "Tai_Chi_Walk_Plan_4_Semanas.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Manual_General.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Calentamiento_Articular.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Recuperacion_Express.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_45_Infusiones.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
-        "Tai_Chi_Walk_Tracker_Habitos.pdf": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg"
-    };
-    
-    // Si coincide con el archivo abre el enlace correspondiente, sino abre el enlace general de respaldo
-    const url = driveLinks[filename] || "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg";
-    window.open(url, '_blank');
-    showToast(`📄 Abriendo ${title} en Google Drive...`);
-}
