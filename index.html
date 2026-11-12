@@ -755,3 +755,32 @@ function downloadPdfMock(title, filename) {
 
 </body>
 </html>
+function downloadPdfMock(title, filename) {
+    const driveLinks = {
+        "plan4": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
+        "general": "https://drive.google.com/open?id=1sct98yerBuk1-SBIsZHcUmYRO_demvXBL32xXNX8TLc",
+        "warmup": "https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=sharing",
+        "recovery": "https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing",
+        "infusions": "https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing",
+        "tracker": "https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing"
+    };
+
+    const f = (filename || "").toLowerCase();
+    const t = (title || "").toLowerCase();
+    let url = driveLinks["plan4"];
+
+    if (f.includes("calentamiento") || t.includes("calentamiento")) {
+        url = driveLinks["warmup"];
+    } else if (f.includes("recuperacion") || f.includes("recuperación") || t.includes("recuperación") || t.includes("express")) {
+        url = driveLinks["recovery"];
+    } else if (f.includes("infusion") || f.includes("infusión") || t.includes("infusión")) {
+        url = driveLinks["infusions"];
+    } else if (f.includes("tracker") || f.includes("habito") || f.includes("hábito") || t.includes("tracker")) {
+        url = driveLinks["tracker"];
+    } else if (f.includes("general") || t.includes("general")) {
+        url = driveLinks["general"];
+    }
+
+    window.open(url, '_blank');
+    showToast(`📄 Abriendo ${title} en Google Drive...`);
+}
