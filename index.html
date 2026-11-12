@@ -1,399 +1,384 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-AR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tai Chi Walk | Tu Bienestar Diario</title>
-    <link rel="manifest" href="manifest.json">
-    <style>
-        :root {
-            --bg-color: #f7f9f6;
-            --card-bg: #ffffff;
-            --primary: #2d5a27;
-            --primary-light: #e8f0e6;
-            --accent: #4a7c59;
-            --text-main: #2c3e50;
-            --text-muted: #7f8c8d;
-            --success: #27ae60;
-            --border: #d5dbc9;
-        }
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf8f5"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="description" content="Tu espacio de Tai Chi Walk: plan de cuatro semanas, hábitos, rutinas de apoyo, recetario y materiales."><title>Tai Chi Walk · Mi espacio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233c6750'/%3E%3Cpath d='M17 43C17 20 39 13 48 16c0 22-12 33-28 28m1-2 21-20' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#faf8f5;--paper:#fff;--ink:#293b31;--muted:#687167;--green:#3c6750;--sage:#edf2e8;--sage-line:#dce5d5;--coral:#b84538;--rose:#fbefea;--line:#e5e6de;--gold:#8f6c30;--radius:22px;--shadow:0 8px 28px #2b3f3110}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;font-size:15px}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer;border:0}button:disabled{cursor:default;opacity:.6}a{color:var(--green);text-underline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--coral);outline-offset:4px}h1[tabindex]:focus{outline:0}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}h1,h2,h3,p{margin:0}p{line-height:1.65}h1{font-size:34px;line-height:1.13;letter-spacing:-1.4px;font-weight:750}h2{font-size:24px;line-height:1.25;letter-spacing:-.7px}h3{font-size:17px;line-height:1.4;letter-spacing:-.25px}[hidden]{display:none!important}.sprites{position:absolute;width:0;height:0;overflow:hidden}.sr-only{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden;white-space:nowrap}.skip{position:fixed;left:15px;top:-80px;z-index:100;background:white;padding:15px;border:1px solid var(--green)}.skip:focus{top:12px}.app-shell{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100dvh}.sidebar{position:fixed;inset:0 auto 0 0;width:232px;border-right:1px solid var(--line);padding:30px 22px;background:var(--bg);display:flex;flex-direction:column;z-index:10}.brand{display:flex;align-items:center;gap:10px}.brand-mark{display:grid;place-items:center;width:37px;height:41px;border-radius:13px;background:var(--green);color:white;flex-shrink:0}.brand-mark svg{width:25px;height:25px}.brand strong{font-size:18px;letter-spacing:-.7px;display:block}.brand small{display:block;letter-spacing:1.5px;text-transform:uppercase;font-size:8px;color:var(--muted);margin-top:3px}.sidebar .brand{padding:0 5px}.side-label{font-size:9px;color:var(--muted);letter-spacing:1.8px;font-weight:700;margin:46px 10px 15px}.nav{display:grid;gap:8px}.nav-btn{display:flex;align-items:center;gap:11px;text-align:left;background:transparent;border-radius:13px;padding:14px;color:var(--muted);font-size:12px;font-weight:600;min-height:50px}.nav-btn svg{width:20px;height:20px}.nav-btn[aria-current=page]{background:var(--sage);color:var(--green)}.nav-btn:hover{color:var(--green);background:#eff2e9}.sidebar-foot{margin-top:auto;padding:22px 10px 0}.sidebar-foot .small-leaf{color:#8a9c7d;margin-bottom:12px;width:30px;height:30px}.sidebar-foot p{font-size:11px;color:var(--muted);line-height:1.8}.sidebar-foot small{display:block;font-size:8px;color:var(--muted);margin-top:22px;letter-spacing:1px}.app-body{grid-column:2;min-width:0}.topbar{border-bottom:1px solid var(--line);height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 42px;background:var(--bg);gap:16px}.mobile-brand{display:none}.topbar-label{font-size:10px;letter-spacing:1.6px;color:var(--muted);text-transform:uppercase;font-weight:700}.top-actions{display:flex;align-items:center;gap:12px}.select-wrap{position:relative}.select-wrap svg{position:absolute;width:15px;height:15px;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--green)}#level-select{appearance:none;background:white;border:1px solid var(--line);color:var(--green);border-radius:11px;padding:10px 35px 10px 13px;font-size:12px;font-weight:650;min-height:42px;max-width:230px}.icon-button{min-width:42px;min-height:42px;background:white;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:var(--muted)}.icon-button:hover{color:var(--green);background:var(--sage)}.icon-button svg{width:19px;height:19px}.main{max-width:1180px;margin:auto;padding:35px 42px 40px}.view{animation:appear .25s ease}@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:1.7px;color:var(--green);font-weight:750;display:flex;align-items:center;gap:7px}.eyebrow svg{width:14px;height:14px}.subtitle{color:var(--muted);font-size:13px;margin-top:12px;line-height:1.8;max-width:650px}.page-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:28px}.page-heading .eyebrow{margin-bottom:12px}.month-meter{position:relative;width:77px;height:77px;display:grid;place-items:center;flex-shrink:0}.month-meter svg{position:absolute;inset:0;width:77px;height:77px;transform:rotate(-90deg);stroke-width:4}.meter-bg{stroke:#e1e7d9}.meter-fill{stroke:var(--green);stroke-dasharray:201.062;stroke-dashoffset:201.062;transition:stroke-dashoffset .25s}.month-meter div{text-align:center}.month-meter b{font-size:20px;display:block;letter-spacing:-1px}.month-meter small{font-size:8px;color:var(--muted)}.week-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;background:#efeee7;padding:5px;border-radius:14px;margin-bottom:24px}.week-tab{padding:12px 6px;background:transparent;color:var(--muted);border-radius:10px;min-height:46px;font-size:12px;font-weight:650;white-space:nowrap}.week-tab[aria-selected=true]{background:white;color:var(--green);box-shadow:0 2px 7px #263f2d0a}.week-tab .week-count{font-size:9px;color:#8c9685;font-weight:400;margin-left:5px}.home-grid{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(285px,.9fr);gap:24px;align-items:start}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 3px 15px #243d2d04}.task-card{padding:26px;position:relative;overflow:hidden}.task-card:before{content:'';height:4px;background:var(--green);position:absolute;left:0;right:0;top:0}.task-top{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:20px}.day-selector{appearance:none;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 27px 8px 10px;font-size:12px;color:var(--ink);font-weight:600;max-width:185px;min-height:38px}.day-select-wrap{position:relative}.day-select-wrap svg{position:absolute;right:9px;top:13px;width:12px;height:12px;pointer-events:none}.badge{font-size:9px;font-weight:700;padding:6px 9px;border-radius:6px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;background:var(--sage);color:var(--green)}.badge svg{width:12px;height:12px}.badge.pause{background:#f7f0df;color:var(--gold)}.badge.neutral{background:#f3f3ee;color:var(--muted)}.task-week{font-size:10px;color:var(--green);margin-bottom:9px;font-weight:650}.task-card h2{font-size:27px;letter-spacing:-.9px;max-width:380px}.task-focus{font-size:13px;color:var(--muted);margin-top:10px}.time-row{display:flex;align-items:center;gap:12px;margin:22px 0;border-block:1px solid var(--line);padding:17px 0}.time-icon{width:41px;height:41px;display:grid;place-items:center;border-radius:13px;background:var(--sage);color:var(--green)}.time-row b{font-size:25px;font-weight:700;letter-spacing:-1px}.time-row b span{font-size:13px;font-weight:500;letter-spacing:0}.time-row p{font-size:10px;color:var(--muted);margin-top:2px}.task-parts{list-style:none;display:grid;gap:14px;padding:0;margin:0 0 22px}.task-parts li{display:flex;gap:10px;font-size:13px;line-height:1.65;align-items:start}.part-number{width:23px;height:23px;flex-shrink:0;background:var(--bg);border:1px solid var(--line);color:var(--muted);font-size:10px;display:grid;place-items:center;border-radius:50%;margin-top:1px}.timer-panel{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:13px 14px;margin:0 0 20px}.timer-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.timer-label{font-size:10px;color:var(--muted);font-weight:600}.timer-value{font-size:24px;font-variant-numeric:tabular-nums;letter-spacing:-1px;font-weight:650}.timer-controls{display:flex;gap:7px;align-items:center}.timer-btn{background:white;min-height:40px;min-width:40px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:6px;color:var(--green);padding:9px 11px;font-size:10px;font-weight:650}.timer-btn svg{width:15px;height:15px}.timer-note{font-size:9px;color:var(--muted);margin-top:7px;line-height:1.6}.primary{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--coral);color:white;padding:16px 20px;border-radius:13px;font-size:12px;font-weight:750;min-height:52px;width:100%;transition:background .15s,transform .15s}.primary:hover{background:#a23b30;transform:translateY(-1px)}.primary svg{width:18px;height:18px}.primary.completed{background:var(--green)}.secondary{display:flex;align-items:center;justify-content:center;gap:8px;background:white;border:1px solid var(--line);color:var(--green);padding:13px 16px;border-radius:12px;min-height:46px;font-size:12px;font-weight:650}.secondary:hover{background:var(--sage)}.secondary svg{width:17px;height:17px}.text-btn{background:transparent;color:var(--muted);font-size:11px;min-height:42px;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px}.text-btn:hover{color:var(--coral)}.text-btn svg{width:15px;height:15px}.pause-action{margin:7px auto 0}.task-source{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-size:9px;color:var(--muted);display:flex;align-items:start;gap:6px;line-height:1.7}.task-source svg{width:12px;height:12px;margin-top:2px}.task-source button{background:transparent;color:var(--green);text-align:left;font-size:10px;line-height:1.65;padding:0;text-decoration:underline;text-underline-offset:3px}.aside-stack{display:grid;gap:17px}.tracker{padding:22px}.section-heading{display:flex;justify-content:space-between;gap:10px;align-items:center}.section-heading h2{font-size:17px;letter-spacing:-.4px}.section-heading>span{font-size:10px;color:var(--muted)}.tracker-intro{font-size:11px;color:var(--muted);margin-top:8px}.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:19px}.day-label{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:12px 0;min-height:83px;font-size:9px;color:var(--muted)}.day-label.selected{box-shadow:0 0 0 1px #9aa98b;border-color:#9aa98b}.day-label input{position:absolute;width:1px;height:1px;opacity:0}.day-label:has(input:focus-visible){outline:3px solid var(--coral);outline-offset:3px}.day-label:has(input:checked){background:var(--sage);color:var(--green);border-color:#d6e2c9}.day-label.paused{background:#faf4e7;color:var(--gold)}.day-check{display:grid;place-items:center;border-radius:50%;border:1px solid #d9dfd1;width:24px;height:24px;background:white}.day-check svg{width:13px;height:13px;opacity:0}.day-label:has(input:checked) .day-check{background:var(--green);border-color:var(--green);color:white}.day-label:has(input:checked) .day-check svg{opacity:1}.day-label.paused .day-check{border:1px solid #dfcfaf;background:#fff8eb}.day-label.paused .day-check:after{content:'–';font-size:17px;position:absolute}.progress-track{height:5px;background:#e9ecdf;overflow:hidden;border-radius:6px;margin-top:21px}.progress-bar{height:100%;background:var(--green);border-radius:6px;transition:width .2s}.tracker-note{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px}.support-card{padding:21px;background:var(--sage);border:1px solid var(--sage-line);border-radius:20px}.support-card .eyebrow{font-size:8px;letter-spacing:1.3px}.support-card h3{font-size:17px;margin-top:10px}.support-card p{font-size:12px;color:#5d705d;margin-top:9px}.support-card .text-btn{color:var(--green);justify-content:flex-start;margin-top:10px;font-weight:650}.quick-links{display:grid;gap:9px}.quick-link{width:100%;display:flex;align-items:center;gap:12px;padding:15px 16px;background:white;border:1px solid var(--line);border-radius:15px;text-align:left;color:var(--ink)}.quick-icon{width:35px;height:38px;display:grid;place-items:center;border-radius:10px;background:var(--rose);color:#a56750;flex-shrink:0}.quick-icon svg{width:20px;height:20px}.quick-link b{display:block;font-size:12px}.quick-link small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.quick-link>.chevron{margin-left:auto;width:15px;height:15px;color:var(--muted)}.source-detail{margin-top:19px;border:1px solid var(--line);border-radius:13px;padding:13px 16px;background:#fbfaf7;color:var(--muted)}.source-detail summary{font-size:11px;line-height:1.7;cursor:pointer;font-weight:600}.source-detail p{font-size:11px;line-height:1.8;margin-top:10px}.safety-line{font-size:10px;color:var(--muted);line-height:1.8;margin-top:22px;display:flex;gap:8px;align-items:start}.safety-line svg{width:15px;height:15px;margin-top:2px}.routine-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.routine-card{padding:27px;background:white;border:1px solid var(--line);border-radius:22px}.routine-art{width:64px;height:70px;border-radius:19px;background:var(--sage);display:grid;place-items:center;color:var(--green);margin-bottom:22px}.routine-art svg{width:34px;height:34px}.routine-card.coral .routine-art{background:var(--rose);color:var(--coral)}.routine-card .eyebrow{font-size:8px}.routine-card h2{margin-top:11px;font-size:25px}.routine-card p{font-size:13px;color:var(--muted);margin-top:12px}.routine-preview{padding-left:18px;margin:22px 0;font-size:12px;line-height:2;color:var(--muted)}.routine-card .secondary{margin-top:10px;width:100%}.routine-note{margin-top:22px;border-radius:18px;padding:22px;background:var(--sage);border:1px solid var(--sage-line)}.routine-note h3{font-size:15px}.routine-note p{font-size:12px;color:var(--muted);margin-top:8px}.search-box{display:flex;align-items:center;gap:10px;background:white;border:1px solid var(--line);border-radius:14px;padding:0 15px;min-height:55px;margin-bottom:15px}.search-box>svg{color:var(--green);width:20px;height:20px}.search-box input{border:0;outline:none;background:transparent;width:100%;min-width:0;font-size:16px;padding:15px 0;color:var(--ink)}.search-box:focus-within{outline:2px solid var(--green);outline-offset:2px}.search-box button{background:transparent;min-width:32px;min-height:38px;color:var(--muted);display:grid;place-items:center}.search-box button svg{width:16px;height:16px}.filters{display:flex;gap:7px;overflow:auto;scrollbar-width:none;margin-bottom:16px;padding:4px 2px 8px}.filter{background:white;border:1px solid var(--line);border-radius:24px;padding:11px 13px;font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap;min-height:42px}.filter[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}.filter small{font-size:9px;margin-left:4px;opacity:.8}.recipe-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.recipe-toolbar p{font-size:11px;color:var(--muted)}.favorite-filter{display:flex;align-items:center;gap:6px;background:transparent;color:var(--muted);font-size:11px;min-height:38px;white-space:nowrap}.favorite-filter svg{width:15px;height:15px}.favorite-filter[aria-pressed=true]{color:var(--coral)}.recipe-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.recipe-card{position:relative;border:1px solid var(--line);background:white;border-radius:18px;overflow:hidden}.recipe-open{display:block;text-align:left;padding:20px;color:var(--ink);background:transparent;width:100%;height:100%;min-height:173px}.recipe-category{font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--green);font-weight:700;margin-bottom:13px;display:flex;align-items:center;gap:7px;padding-right:25px}.recipe-category svg{width:18px;height:18px}.recipe-open h3{font-size:16px;max-width:90%;min-height:44px}.recipe-open p{font-size:11px;color:var(--muted);margin-top:11px;display:flex;gap:5px;align-items:center}.recipe-open p svg{width:13px;height:13px}.recipe-open:hover{background:#fcfcf9}.favorite-btn{position:absolute;right:10px;top:11px;min-width:39px;min-height:39px;color:#a2aa9a;background:transparent;border-radius:11px;display:grid;place-items:center}.favorite-btn svg{width:18px;height:18px}.favorite-btn[aria-pressed=true]{color:var(--coral)}.favorite-btn[aria-pressed=true] svg{fill:#b8453820}.recipe-review{color:var(--gold)!important}.empty-state{grid-column:1/-1;padding:40px 25px;border:1px dashed #d8dece;border-radius:18px;text-align:center}.empty-state svg{color:var(--muted);width:32px;height:32px;margin-bottom:15px}.empty-state h3{font-size:18px}.empty-state p{font-size:12px;color:var(--muted);margin:10px 0 20px}.empty-state .secondary{margin:auto}.herb-note{margin-top:22px}.herb-note ul{font-size:11px;line-height:1.8;padding-left:18px}.herb-note a{font-size:11px}.materials-intro{display:flex;align-items:center;gap:12px;background:var(--sage);border:1px solid var(--sage-line);padding:18px 20px;border-radius:16px;margin-bottom:22px}.materials-intro svg{color:var(--green);width:28px;height:28px}.materials-intro b{font-size:13px}.materials-intro p{font-size:11px;color:var(--muted);margin-top:4px}.materials-list{display:grid;gap:11px}.material{display:flex;align-items:center;gap:15px;padding:19px;background:white;border:1px solid var(--line);border-radius:17px}.file-icon{background:var(--sage);color:var(--green);border:1px solid var(--sage-line);border-radius:10px;width:42px;height:53px;display:grid;place-items:center;flex-shrink:0}.file-icon svg{width:23px;height:23px}.material-text{flex:1;min-width:0}.material h3{font-size:14px}.material p{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.7}.download-btn{flex-shrink:0;width:auto;padding:11px 13px;font-size:11px;min-height:44px}.data-card{padding:22px;margin-top:25px}.data-card h2{font-size:19px}.data-card p{font-size:12px;color:var(--muted);margin-top:9px}.backup-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.backup-actions button{font-size:11px}.data-card .text-btn{justify-content:flex-start;margin-top:8px;color:var(--coral)}.mobile-nav{display:none}.toast{position:fixed;bottom:26px;left:calc(50% + 116px);transform:translateX(-50%);max-width:min(480px,90vw);background:#293e30;color:white;padding:13px 20px;border-radius:13px;font-size:12px;z-index:80;box-shadow:0 10px 35px #1c302530;line-height:1.6;text-align:center}.storage-banner{background:#fff4df;color:#795f2f;border:1px solid #e5d5af;padding:14px 18px;border-radius:12px;font-size:12px;line-height:1.7;margin-bottom:20px}.app-footer{font-size:9px;color:var(--muted);margin-top:30px;text-align:center;line-height:1.8}.dialog{max-width:540px;width:calc(100% - 30px);padding:0;border:1px solid var(--line);border-radius:24px;color:var(--ink);background:var(--bg);max-height:88dvh;overflow:auto;box-shadow:0 24px 80px #142a242c}.dialog::backdrop{background:#1b302857;backdrop-filter:blur(5px)}.dialog-header{position:sticky;top:0;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px 23px;border-bottom:1px solid var(--line);z-index:2}.dialog-header .eyebrow{font-size:8px}.dialog-body{padding:24px}.dialog-body h2{font-size:27px;line-height:1.25}.dialog-body>p{font-size:13px;color:var(--muted);margin-top:12px}.dialog-actions{margin-top:24px;display:grid;gap:9px}.level-options{border:0;padding:0;margin:24px 0 0;display:grid;gap:10px}.level-option{position:relative}.level-option input{position:absolute;width:1px;height:1px;opacity:0}.level-option label{display:flex;gap:13px;align-items:center;border:1.5px solid var(--line);border-radius:15px;background:white;padding:18px;cursor:pointer}.level-option label .level-num{width:35px;height:39px;border-radius:11px;background:var(--sage);color:var(--green);display:grid;place-items:center;font-size:17px;font-weight:650;flex-shrink:0}.level-option b{display:block;font-size:14px}.level-option small{display:block;font-size:10px;color:var(--muted);line-height:1.7;margin-top:5px}.level-option input:checked+label{border-color:var(--green);background:#f4f7f0}.level-option input:focus-visible+label{outline:3px solid var(--coral);outline-offset:3px}.level-option .radio-mark{width:19px;height:19px;border:1px solid #d3dbca;border-radius:50%;margin-left:auto;flex-shrink:0}.level-option input:checked+label .radio-mark{border:5px solid var(--green)}.onboard-note{font-size:10px!important}.recipe-detail-category{margin-bottom:13px}.recipe-detail h3{font-size:14px;margin-top:25px;margin-bottom:13px}.recipe-detail ul,.recipe-detail ol{font-size:14px;line-height:1.85;margin:0;padding-left:21px}.recipe-detail li{padding-left:3px;margin-bottom:8px}.recipe-note{padding:15px 17px;background:#f9f2e5;border:1px solid #e9dbbe;border-radius:12px;font-size:12px!important;line-height:1.8;color:#745b2e!important;margin-top:21px!important}.recipe-source{font-size:10px!important;margin-top:23px!important;line-height:1.8}.recipe-disclaimer{font-size:11px!important;margin-top:18px!important}.recipe-fav{width:100%;margin-top:22px}.routine-progress{display:flex;gap:5px;margin-bottom:24px}.routine-progress span{height:4px;flex:1;background:#e2e6da;border-radius:5px}.routine-progress span.active{background:var(--green)}.routine-step-count{color:var(--green);font-size:10px;font-weight:650;margin-bottom:11px}.routine-dose{background:var(--sage);color:var(--green);border-radius:8px;padding:8px 11px;display:inline-block;font-size:11px;margin-top:13px;font-weight:600}.routine-steps{font-size:14px;line-height:1.85;padding-left:20px;margin:21px 0}.routine-steps li{margin-bottom:11px;padding-left:3px}.routine-step-controls{display:flex;gap:10px;margin-top:22px}.routine-step-controls .secondary{min-width:46px;padding:12px}.routine-step-controls .primary{flex:1}.routine-timer{margin-top:23px}.routine-timer .timer-top{gap:15px}.help-list{display:grid;gap:18px;margin-top:24px}.help-item{display:flex;gap:12px;align-items:start}.help-item .part-number{background:var(--sage);width:27px;height:27px;font-size:11px;color:var(--green);border-color:var(--sage-line);flex-shrink:0}.help-item b{font-size:13px}.help-item p{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.8}.confirm-dialog{max-width:420px}.confirm-dialog .dialog-body p{margin-top:12px}.noscript{background:white;margin:30px;padding:25px;border:1px solid var(--line);border-radius:15px}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+/* Estilo y botón de PWA añadido */
+.pwa-banner {
+    background: var(--sage);
+    border: 1px solid var(--sage-line);
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.pwa-banner p { font-size: 12px; color: var(--green); font-weight: 650; margin: 0; }
+.btn-pwa { background: var(--coral); color: white; padding: 10px 14px; border-radius: 10px; font-size: 11px; font-weight: 750; white-space: nowrap; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            padding: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-            padding-bottom: 50px;
-        }
+/* Botón flotante para Modo Suave */
+.soft-mode-card {
+    background: #fff8eb;
+    border: 1px solid #f3e2bf;
+    border-radius: 14px;
+    padding: 15px;
+    margin-top: 16px;
+    text-align: center;
+}
+.soft-mode-card b { color: #856404; font-size: 13px; display: block; margin-bottom: 5px; }
+.soft-mode-card p { color: #795f2f; font-size: 11px; margin-bottom: 10px; line-height: 1.5; }
+.btn-soft { background: #ffeeba; color: #856404; border: 0; padding: 10px 14px; border-radius: 10px; font-size: 11px; font-weight: 700; width: 100%; cursor: pointer; }
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 22px;
-            color: var(--primary);
-            font-weight: 800;
-        }
-
-        header p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* Botón PWA */
-        #pwa-install-container {
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .btn-install {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 100%;
-        }
-
-        /* Selector de Niveles */
-        .selector-box {
-            background: var(--card-bg);
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .selector-box label {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #fff;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        /* Tarjetas de Semanas / Contenido */
-        .level-content {
-            display: none;
-        }
-
-        .level-content.active {
-            display: block;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
-
-        .card h2 {
-            font-size: 18px;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
-        /* Silueta / Icono por código */
-        .exercise-box {
-            background: var(--primary-light);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .silhouette-icon {
-            font-size: 40px;
-            margin-bottom: 8px;
-        }
-
-        .timer-display {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 10px 0;
-        }
-
-        .btn-action {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 13px;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 8px;
-        }
-
-        /* Botón Modo Suave */
-        .btn-soft {
-            background: #fff3cd;
-            color: #856404;
-            border: 1px solid #ffeeba;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            width: 100%;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        /* Calendario de 28 días */
-        .calendar-section h3 {
-            font-size: 15px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 6px;
-        }
-
-        .day-btn {
-            aspect-ratio: 1;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 12px;
-            cursor: pointer;
-            display: grid;
-            place-items: center;
-            color: var(--text-main);
-        }
-
-        .day-btn.completed {
-            background: var(--success);
-            color: white;
-            border-color: var(--success);
-        }
-    </style>
+@media(min-width:1440px){.main{padding-top:42px}.recipe-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1150px) and (min-width:901px){.sidebar{width:200px;padding-inline:15px}.app-shell{grid-template-columns:200px minmax(0,1fr)}.topbar{padding-inline:27px}.main{padding-inline:27px}.home-grid{grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:18px}.task-card{padding:22px}.tracker{padding:18px}.task-card h2{font-size:25px}.timer-btn{padding-inline:8px}.toast{left:calc(50% + 100px)}}
+@media(max-width:900px){.app-shell{display:block}.sidebar{display:none}.app-body{display:block}.topbar{height:82px;padding:0 23px}.topbar-label{display:none}.mobile-brand{display:flex}.top-actions{gap:8px}#level-select{font-size:16px;max-width:200px;padding:9px 29px 9px 11px;min-height:42px}.top-actions .icon-button{display:none}.brand strong{font-size:17px}.brand small{font-size:7px;letter-spacing:1.3px}.brand-mark{width:33px;height:37px;border-radius:11px}.brand-mark svg{width:22px;height:22px}.main{padding:27px 23px 110px;max-width:760px}.home-grid{grid-template-columns:minmax(0,1.2fr) minmax(260px,.9fr);gap:20px}.mobile-nav{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#faf8f5fa;backdrop-filter:blur(12px);border-top:1px solid var(--line);z-index:30;padding:7px 12px calc(7px + env(safe-area-inset-bottom))}.mobile-nav .nav-btn{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;text-align:center;min-height:54px;padding:6px 3px;font-size:9px;border-radius:11px;line-height:1.2}.mobile-nav .nav-btn svg{width:20px;height:20px}.toast{bottom:calc(88px + env(safe-area-inset-bottom));left:50%}.app-footer{font-size:9px}.topbar .brand small{max-width:125px}.material h3{font-size:15px}}
+@media(max-width:650px){h1{font-size:31px;letter-spacing:-1px}.topbar{height:79px;padding:0 20px}.topbar .brand{gap:8px}.brand strong{font-size:16px}.brand small{font-size:7px;letter-spacing:1px}.brand-mark{width:31px;height:36px}#level-select{max-width:170px;font-size:16px;padding-left:9px}.main{padding:26px 20px 108px}.page-heading{margin-bottom:24px;gap:12px}.page-heading .eyebrow{font-size:8px;margin-bottom:10px;letter-spacing:1.35px}.subtitle{font-size:13px;margin-top:10px}.month-meter,.month-meter svg{width:67px;height:67px}.month-meter b{font-size:18px}.month-meter small{font-size:7px}.week-tabs{gap:4px;padding:4px;margin-bottom:20px;border-radius:13px}.week-tab{font-size:11px;min-height:43px;padding:11px 2px}.week-tab .week-count{display:none}.home-grid{display:flex;flex-direction:column;gap:18px}.task-card,.aside-stack{width:100%}.task-card{padding:23px 21px}.task-card h2{font-size:26px}.task-top{margin-bottom:18px}.day-selector{font-size:16px;min-height:40px;padding:8px 29px 8px 10px}.day-select-wrap svg{top:15px}.badge{font-size:9px}.task-week{font-size:11px}.task-focus{font-size:13px}.task-parts li{font-size:14px}.time-row{margin:19px 0;padding:16px 0}.time-row b{font-size:26px}.time-row p{font-size:11px}.timer-panel{padding:12px}.timer-label{font-size:10px}.timer-btn{min-width:38px;padding:9px 10px;min-height:41px;font-size:10px}.timer-value{font-size:23px}.timer-note{font-size:10px}.task-source{font-size:10px}.task-source button{font-size:11px}.primary{font-size:12px;min-height:52px}.pause-action{font-size:12px}.tracker{padding:21px}.tracker-intro{font-size:12px}.days{gap:5px;margin-top:18px}.day-label{min-height:88px;font-size:10px;padding:12px 0;gap:11px}.day-check{width:25px;height:25px}.tracker-note{font-size:11px}.support-card{padding:22px}.support-card p{font-size:13px}.quick-link{padding:16px}.quick-link b{font-size:13px}.quick-link small{font-size:11px}.source-detail{padding:14px 16px}.source-detail summary,.source-detail p{font-size:12px}.safety-line{font-size:11px}.routine-grid{grid-template-columns:1fr;gap:17px}.routine-card{padding:25px}.routine-art{width:54px;height:60px;margin-bottom:18px}.routine-card h2{font-size:25px}.routine-card p{font-size:14px}.routine-preview{font-size:13px}.routine-card .eyebrow{font-size:9px}.routine-note p{font-size:13px}.recipe-grid{grid-template-columns:1fr;gap:11px}.recipe-open{min-height:140px;padding:20px}.recipe-open h3{min-height:0;max-width:95%;font-size:17px}.recipe-open p{font-size:12px;margin-top:13px}.recipe-category{font-size:9px;margin-bottom:11px}.recipe-category svg{width:17px;height:17px}.favorite-btn{top:10px;right:10px;min-width:43px;min-height:43px}.filter{font-size:12px;padding:11px 14px}.recipe-toolbar p{font-size:11px}.favorite-filter{font-size:11px}.search-box{padding-inline:13px}.herb-note ul,.herb-note a{font-size:12px}.materials-intro{padding:18px}.materials-intro p{font-size:12px}.materials-intro b{font-size:14px}.material{padding:17px 15px;gap:11px;align-items:flex-start;flex-wrap:wrap}.file-icon{width:37px;height:46px}.material h3{font-size:14px}.material p{font-size:11px}.material-text{min-width:180px}.download-btn{margin-left:48px;width:calc(100% - 48px);justify-content:center;font-size:12px}.data-card{padding:22px}.data-card p{font-size:13px}.backup-actions{display:grid;grid-template-columns:1fr;width:100%;gap:9px}.backup-actions button{font-size:12px}.data-card .text-btn{font-size:11px;line-height:1.7}.dialog{border-radius:22px;max-height:90dvh}.dialog-header{padding:15px 20px}.dialog-body{padding:22px}.dialog-body h2{font-size:26px}.dialog-body>p{font-size:14px}.level-option label{padding:17px 15px;gap:11px}.level-option b{font-size:14px}.level-option small{font-size:11px}.onboard-note{font-size:11px!important}.recipe-detail h3{font-size:15px}.recipe-detail ul,.recipe-detail ol{font-size:14px}.recipe-note{font-size:12px!important}.recipe-source{font-size:11px!important}.recipe-disclaimer{font-size:12px!important}.routine-step-controls{gap:8px}.routine-step-controls .primary{font-size:11px;padding-inline:12px}.routine-step-controls .secondary{padding:12px}.routine-step-count{font-size:11px}.routine-dose{font-size:12px}.routine-steps{font-size:14px}.routine-timer .timer-value{font-size:25px}.routine-timer .timer-controls{gap:5px}.help-item b{font-size:14px}.help-item p{font-size:13px}}
+@media(max-width:359px){.topbar{padding-inline:15px}.brand strong{font-size:14px}.brand small{font-size:6px;max-width:95px!important}.brand-mark{width:28px;height:33px}#level-select{max-width:155px;font-size:16px;padding-left:8px}.main{padding-inline:16px}h1{font-size:28px}.page-heading{gap:10px}.month-meter,.month-meter svg{width:60px;height:60px}.month-meter b{font-size:17px}.task-card{padding:22px 17px}.task-card h2{font-size:24px}.timer-top{flex-wrap:wrap;gap:10px}.timer-controls{margin-left:auto}.timer-note{font-size:9px}.tracker{padding:19px 15px}.days{gap:4px}.day-label{font-size:9px;min-height:83px}.day-check{width:23px;height:23px}.section-heading h2{font-size:16px}.week-tab{font-size:10px}.day-selector{max-width:155px}.badge{font-size:8px;padding:6px 7px}.routine-card{padding:23px 21px}.recipe-open h3{font-size:16px}.recipe-toolbar{gap:5px}.recipe-toolbar p{font-size:10px}.favorite-filter{font-size:10px;gap:4px}.filter{font-size:11px;padding:10px 11px}.material-text{min-width:170px}.material{padding:16px 13px;gap:10px}.download-btn{margin-left:47px;width:calc(100% - 47px)}.dialog-body{padding:21px}.level-option label{padding:15px 13px}.level-option .level-num{width:30px}.level-option small{font-size:10px}.routine-step-controls .primary{font-size:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{.sidebar,.topbar,.mobile-nav,.timer-controls,.primary,.text-btn,.icon-button,.toast{display:none!important}.app-shell{display:block}.main{padding:0}.home-grid{grid-template-columns:1fr 1fr}.card{box-shadow:none;break-inside:avoid}.app-body{margin:0}}
+@media(max-width:359px){.topbar{gap:8px}.topbar .brand{gap:6px}.topbar .brand strong{font-size:13px}.topbar .brand small{display:none}.topbar .brand-mark{width:26px;height:31px}.topbar .brand-mark svg{width:20px;height:20px}}
+</style>
 </head>
 <body>
+<a href="#main" class="skip">Ir al contenido</a>
+<svg class="sprites" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="leaf" viewBox="0 0 24 24"><path d="M4 19C2 8 11 3 21 3c0 11-6 19-16 16M5 19 16 8"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+<symbol id="back" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M20 5c-3-3-6-1-8 1-2-2-5-4-8-1-4 5 4 12 8 15 4-3 12-10 8-15Z"/></symbol>
+<symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"/></symbol>
+<symbol id="moon" viewBox="0 0 24 24"><path d="M20 14A9 9 0 0 1 10 3a9 9 0 1 0 10 11Z"/></symbol>
+<symbol id="spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+<symbol id="wave" viewBox="0 0 24 24"><path d="M2 8c4-6 6 6 10 0s6 6 10 0M2 15c4-6 6 6 10 0s6 6 10 0"/></symbol>
+<symbol id="walk" viewBox="0 0 24 24"><circle cx="14" cy="4" r="2"/><path d="m7 11 4-4 4 4 4 1m-8-5-1 7-5 7m5-7 6 2 1 5"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="m12 2 8 3v6c0 5-5 9-8 11-3-2-8-6-8-11V5l8-3Z"/><path d="m8 11 3 3 5-6"/></symbol>
+<symbol id="cup" viewBox="0 0 24 24"><path d="M4 9h13v5a6.5 6.5 0 0 1-13 0V9Zm13 0h2a3 3 0 0 1 0 6h-2M7 3v3m5-3v3M3 22h16"/></symbol>
+<symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 11h18m-13 5 2 2 5-4"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M12 5C8 2 4 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-2-1-6-2-10 1v16"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 4v3"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 9h20M6 15h4"/></symbol>
+<symbol id="home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></symbol>
+<symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></symbol>
+<symbol id="upload" viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M4 16v5h16v-5"/></symbol>
+<symbol id="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8V4Z"/></symbol>
+<symbol id="pause" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16"/></symbol>
+<symbol id="reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 0 5M4 3v7h7"/></symbol>
+<symbol id="star" viewBox="0 0 24 24"><path d="m12 3 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z"/></symbol>
+<symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></symbol>
+<symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="drop" viewBox="0 0 24 24"><path d="M12 2c-2 4-7 9-7 13a7 7 0 0 0 14 0c0-4-5-9-7-13Z"/></symbol></defs></svg>
+<div class="app-shell"><aside class="sidebar" aria-label="Navegación principal"><div class="brand"><span class="brand-mark"><svg aria-hidden="true"><use href="#leaf"/></svg></span><span><strong>tai chi walk.</strong><small>Mi espacio de bienestar</small></span></div><div class="side-label">TU CAMINO</div><nav class="nav" aria-label="Secciones del programa"><button type="button" class="nav-btn" data-nav="plan" aria-current="page"><svg aria-hidden="true"><use href="#home"/></svg><span>Mi día</span></button><button type="button" class="nav-btn" data-nav="routines"><svg aria-hidden="true"><use href="#wave"/></svg><span>Rutinas y extras</span></button><button type="button" class="nav-btn" data-nav="infusions"><svg aria-hidden="true"><use href="#cup"/></svg><span>Mis infusiones</span></button><button type="button" class="nav-btn" data-nav="materials"><svg aria-hidden="true"><use href="#book"/></svg><span>Mis materiales</span></button></nav><div class="sidebar-foot"><svg class="small-leaf" aria-hidden="true"><use href="#leaf"/></svg><p>La constancia empieza<br>con un paso amable.</p><small>4 SEMANAS · A TU RITMO</small></div></aside>
+<div class="app-body"><header class="topbar"><div class="topbar-label">Mi espacio · Tai Chi Walk</div><div class="brand mobile-brand"><span class="brand-mark"><svg aria-hidden="true"><use href="#leaf"/></svg></span><span><strong>tai chi walk.</strong><small>Mi espacio de bienestar</small></span></div><div class="top-actions"><div class="select-wrap"><label for="level-select" class="sr-only">Tu nivel asignado</label><select id="level-select"><option value="1">Nivel 1 · Inicio Suave</option><option value="2">Nivel 2 · Construcción</option><option value="3">Nivel 3 · Progresión</option></select><svg aria-hidden="true"><use href="#chevron"/></svg></div><button class="icon-button" type="button" data-help aria-label="Cómo usar mi espacio"><svg aria-hidden="true"><use href="#info"/></svg></button></div></header>
+<main id="main" class="main">
 
-    <header>
-        <h1>Tai Chi Walk</h1>
-        <p>Tu programa diario de bienestar y movimiento suave</p>
-    </header>
-
-    <!-- 1. BOTÓN PWA -->
-    <div id="pwa-install-container">
-        <button id="btn-install" class="btn-install" style="display: none;">📱 Guardar App en mi celular</button>
+<!-- BANNER DE INSTALACIÓN PWA -->
+<div id="pwa-banner" class="pwa-banner" style="display:none;">
+    <div>
+        <p>📱 ¡Lleva Tai Chi Walk siempre contigo!</p>
+        <span style="font-size: 11px; color: var(--muted);">Guarda la app directamente en la pantalla de inicio de tu celular.</span>
     </div>
+    <button id="btn-pwa-install" class="btn-pwa" type="button">Instalar App</button>
+</div>
 
-    <!-- 2. SELECTOR DE NIVELES -->
-    <div class="selector-box">
-        <label for="level-select">SELECCIONA TU SEMANA:</label>
-        <select id="level-select">
-            <option value="1">Semana 1 · Despertar Articular</option>
-            <option value="2">Semana 2 · Equilibrio y Postura</option>
-            <option value="3">Semana 3 · Fluidez Energética</option>
-            <option value="4">Semana 4 · Maestría y Vitalidad</option>
-        </select>
-    </div>
+<div class="storage-banner" id="storage-banner" role="status" hidden></div>
+<section class="view" id="view-plan" aria-labelledby="heading-plan"><div class="page-heading"><div><div class="eyebrow"><svg aria-hidden="true"><use href="#leaf"/></svg>Mi camino de 4 semanas</div><h1 id="heading-plan" tabindex="-1">Un paso a la vez.</h1><p class="subtitle">Tu práctica, tu ritmo, tu momento.</p></div><div class="month-meter" role="img" id="month-meter" aria-label="0 de 28 días completados"><svg viewBox="0 0 77 77" aria-hidden="true"><circle class="meter-bg" cx="38.5" cy="38.5" r="32"/><circle class="meter-fill" id="meter-fill" cx="38.5" cy="38.5" r="32"/></svg><div><b id="month-count">0<span style="font-size:11px;color:var(--muted)">/28</span></b><small>DÍAS</small></div></div></div>
+<div class="week-tabs" id="week-tabs" role="tablist" aria-label="Elegí una semana"></div>
+<div id="week-panel" role="tabpanel"><div class="home-grid"><article class="card task-card"><div class="task-top"><div class="day-select-wrap"><label for="day-select" class="sr-only">Día de la semana que querés consultar</label><select id="day-select" class="day-selector"></select><svg aria-hidden="true"><use href="#chevron"/></svg></div><span class="badge neutral" id="day-status">A tu ritmo</span></div><div class="task-week" id="task-week"></div><h2 id="task-title"></h2><p class="task-focus" id="task-focus"></p><div class="time-row"><div class="time-icon"><svg aria-hidden="true" id="task-icon"><use href="#clock"/></svg></div><div><b id="task-minutes"></b><p id="task-time-note"></p></div></div><ol class="task-parts" id="task-parts"></ol><div id="plan-timer" class="timer-panel"><div class="timer-top"><div><div class="timer-label">Tu temporizador opcional</div><span class="timer-value" data-timer-display="plan" role="timer" aria-live="off">00:00</span></div><div class="timer-controls"><button type="button" class="timer-btn" data-timer-toggle="plan"><svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span></button><button type="button" class="timer-btn" data-timer-reset="plan" aria-label="Reiniciar temporizador de la práctica"><svg aria-hidden="true"><use href="#reset"/></svg></button></div></div><p class="timer-note">El tiempo orienta tu práctica. El day se registra cuando vos lo marcás.</p></div>
 
-    <!-- 3. CONTENIDOS DE LAS 4 SEMANAS -->
-    
-    <!-- SEMANA 1 -->
-    <div id="content-1" class="level-content active">
-        <div class="card">
-            <h2>Semana 1: Despertar Articular</h2>
-            <p>Movimientos suaves para preparar rodillas, cadera y columna sin impacto.</p>
-            
-            <div class="exercise-box">
-                <div class="silhouette-icon">🧘‍♀️🚶‍♀️</div>
-                <p><strong>Caminata Yin de Bajo Impacto</strong></p>
-                <div class="timer-display" id="timer-1">03:00</div>
-                <button class="btn-action" onclick="startTimer('timer-1', 180)">Iniciar Cronómetro</button>
-            </div>
+<!-- BOTÓN MODO SUAVE PARA +45 / ARTICULACIONES -->
+<div class="soft-mode-card">
+    <b>🛡️ ¿Dolor de rodilla o espalda hoy?</b>
+    <p>Activa variantes de bajo impacto y pasos más cortos sin perder el ritmo.</p>
+    <button class="btn-soft" type="button" onclick="alert('Modo Suave Activado: Reduce la flexión de rodillas, apóyate en una pared o silla firme y prioriza respirar con comodidad.')">Activar Modo Suave</button>
+</div>
 
-            <button class="btn-soft" onclick="alert('Modo Suave activado: Realiza los pasos más cortos, apoyándote en una silla y sin forzar la flexión de rodillas.')">
-                🛡️ ¿Dolor de rodilla o espalda? Activar Modo Suave
-            </button>
-        </div>
-    </div>
+<button class="primary" id="complete-day" type="button" style="margin-top:16px"><svg aria-hidden="true"><use href="#check"/></svg><span>MARCAR DÍA COMPLETADO</span></button><button class="text-btn pause-action" id="pause-day" type="button"><svg aria-hidden="true"><use href="#moon"/></svg><span>Hoy necesito una pausa</span></button><div class="task-source"><svg aria-hidden="true"><use href="#book"/></svg><button type="button" id="task-source"></button></div></article>
+<div class="aside-stack"><section class="card tracker" aria-labelledby="tracker-title"><div class="section-heading"><h2 id="tracker-title">Tu constancia</h2><span id="week-count">0 de 7 días</span></div><p class="tracker-intro">Tocá cada casilla cuando termines su día.</p><div class="days" id="days"></div><div class="progress-track" role="progressbar" aria-label="Días completados esta semana" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="week-progress"><div class="progress-bar" id="week-progress-bar"></div></div><p class="tracker-note" id="motivation"></p></section><article class="support-card"><div class="eyebrow">El foco de esta semana</div><h3 id="week-focus-title"></h3><p id="week-support"></p><button class="text-btn" type="button" id="support-action"></button></article><div class="quick-links"><button class="quick-link" type="button" data-routine="warmup"><span class="quick-icon"><svg aria-hidden="true"><use href="#sun"/></svg></span><span><b>Antes de empezar</b><small>Calentamiento articular · 3–5 min</small></span><svg class="chevron" aria-hidden="true"><use href="#arrow"/></svg></button><button class="quick-link" type="button" data-routine="recovery"><span class="quick-icon" style="background:var(--sage);color:var(--green)"><svg aria-hidden="true"><use href="#wave"/></svg></span><span><b>Tu cierre suave</b><small>Recuperación Express · 3 min</small></span><svg class="chevron" aria-hidden="true"><use href="#arrow"/></svg></button></div></div></div></div>
+<details class="source-detail"><summary id="source-summary">Sobre el calendario de este nivel</summary><p id="source-note"></p><p>Los descansos indicados en el calendario también forman parte del plan. Una pausa extra se registra con un guion y no suma una sesión completada.</p></details><p class="safety-line"><svg aria-hidden="true"><use href="#heart"/></svg><span>Practicá con suavidad y sin forzar. Si aparece dolor, detenete. Si tenés una limitación o una molestia persistente, consultá antes de practicar. El nivel del quiz es orientativo.</span></p></section>
+<section class="view" id="view-routines" aria-labelledby="heading-routines" hidden><div class="page-heading"><div><div class="eyebrow">Pequeños gestos de cuidado</div><h1 id="heading-routines" tabindex="-1">Antes y después.</h1><p class="subtitle">Dos guías simples para acompañar tu caminata.</p></div></div><div class="routine-grid"><article class="routine-card"><div class="routine-art"><svg aria-hidden="true"><use href="#sun"/></svg></div><div class="eyebrow">BONO 1 · 3–5 MINUTOS</div><h2>Calentamiento<br>articular</h2><p>Una guía paso a paso para empezar con movilidad suave.</p><ol class="routine-preview"><li>Alineación y respiración</li><li>Cuello y hombros</li><li>Pelvis y tobillos</li></ol><button class="primary" type="button" data-routine="warmup">ABRIR GUÍA DE 5 PASOS<svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="secondary" type="button" data-download="warmup"><svg aria-hidden="true"><use href="#download"/></svg>Descargar PDF</button></article><article class="routine-card coral"><div class="routine-art"><svg aria-hidden="true"><use href="#wave"/></svg></div><div class="eyebrow">EXTRA INCLUIDO · 3 MINUTOS</div><h2>Recuperación<br>Articular Express</h2><p>Un cierre con estiramientos suaves después de tu sesión.</p><ol class="routine-preview"><li>Mecedora suave · zona lumbar</li><li>La ola · caderas</li><li>Talón a tierra · pantorrillas</li></ol><button class="primary" type="button" data-routine="recovery">ABRIR GUÍA DE 3 PASOS<svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="secondary" type="button" data-download="recovery"><svg aria-hidden="true"><use href="#download"/></svg>Descargar PDF</button></article></div><article class="routine-note"><h3>Sin apuro, sin buscar dolor.</h3><p>Seguí las repeticiones de la guía a tu ritmo. El temporizador es una referencia opcional y no cambia de movimiento automáticamente. Usá una pared o silla firme cuando necesites apoyo.</p></article></section>
+<section class="view" id="view-infusions" aria-labelledby="heading-infusions" hidden><div class="page-heading"><div><div class="eyebrow"><svg aria-hidden="true"><use href="#cup"/></svg>Tu recetario, más simple</div><h1 id="heading-infusions" tabindex="-1">Una pausa en tu taza.</h1><p class="subtitle">45 recetas del material original. Buscá por nombre o ingrediente y guardá tus favoritas.</p></div></div><div class="search-box"><svg aria-hidden="true"><use href="#search"/></svg><label for="recipe-search" class="sr-only">Buscar entre las 45 recetas</label><input id="recipe-search" type="search" placeholder="Jengibre, manzanilla, limón…" autocomplete="off" spellcheck="false"><button id="clear-search" type="button" aria-label="Borrar búsqueda" hidden><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="filters" id="recipe-filters" role="group" aria-label="Categorías del recetario"></div><div class="recipe-toolbar"><p id="recipe-count" role="status" aria-live="polite">45 recetas</p><button class="favorite-filter" id="favorite-filter" type="button" aria-pressed="false"><svg aria-hidden="true"><use href="#star"/></svg>Mis favoritas</button></div><div class="recipe-grid" id="recipe-grid"></div><details class="source-detail herb-note"><summary>Antes de elegir una infusión</summary><p>Las categorías Digestivas, Detox y Anti-estrés son los nombres del recetario. No constituyen una indicación médica ni garantizan esos efectos. No hay evidencia convincente de que los programas “detox” eliminen toxinas.</p><ul><li>Las hierbas pueden interactuar con medicamentos. Si tomás medicación, estás embarazada o amamantando, o tenés una condición de salud, consultá antes de consumirlas.</li><li>Las fichas conservan los ingredientes y pasos disponibles. Cuando el PDF omite datos, se indica sin completarlos por suposición.</li><li>La ficha de aloe se mantiene para identificarla, con la preparación pendiente de revisión por seguridad.</li></ul><p>Fuentes de consulta: <a href="https://www.nccih.nih.gov/health/ashwagandha" target="_blank" rel="noopener noreferrer">NCCIH · Ashwagandha</a>, <a href="https://www.nccih.nih.gov/health/aloe-vera" target="_blank" rel="noopener noreferrer">NCCIH · Aloe vera</a> y <a href="https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know" target="_blank" rel="noopener noreferrer">NCCIH · Detox</a>.</p></details></section>
+<section class="view" id="view-materials" aria-labelledby="heading-materials" hidden><div class="page-heading"><div><div class="eyebrow">Tu biblioteca personal</div><h1 id="heading-materials" tabindex="-1">Todo, a mano.</h1><p class="subtitle">Tus manuales completos para guardar y consultar cuando quieras.</p></div><button class="icon-button" type="button" data-help aria-label="Cómo usar mi espacio"><svg aria-hidden="true"><use href="#info"/></svg></button></div><div class="materials-intro"><svg aria-hidden="true"><use href="#book"/></svg><div><b>Los PDFs están incluidos en esta app.</b><p>Podés descargarlos sin conexión. Se conserva su contenido y diseño.</p></div></div><div class="materials-list" id="materials-list"></div><article class="card data-card"><h2>Tu progreso te acompaña.</h2><p>Se guarda en este navegador y dispositivo. Para llevarlo a otro, guardá una copia y restaurala allí.</p><div class="backup-actions"><button class="secondary" id="export-progress" type="button"><svg aria-hidden="true"><use href="#download"/></svg>Guardar mi progreso</button><button class="secondary" id="import-progress" type="button"><svg aria-hidden="true"><use href="#upload"/></svg>Restaurar una copia</button><input id="backup-file" type="file" accept="application/json,.json" hidden></div><button class="text-btn" type="button" id="reset-level">Borrar el progreso de este nivel</button></article></section>
+<footer class="app-footer">TAI CHI WALK · Tu espacio de bienestar.<br>Un día de práctica, un paso de constancia.</footer></main></div></div>
+<nav class="mobile-nav" aria-label="Navegación principal móvil"><button type="button" class="nav-btn" data-nav="plan" aria-current="page"><svg aria-hidden="true"><use href="#home"/></svg><span>Mi día</span></button><button type="button" class="nav-btn" data-nav="routines"><svg aria-hidden="true"><use href="#wave"/></svg><span>Rutinas</span></button><button type="button" class="nav-btn" data-nav="infusions"><svg aria-hidden="true"><use href="#cup"/></svg><span>Infusiones</span></button><button type="button" class="nav-btn" data-nav="materials"><svg aria-hidden="true"><use href="#book"/></svg><span>Materiales</span></button></nav>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="level-dialog" class="dialog" aria-labelledby="level-dialog-title"><div class="dialog-header"><div class="eyebrow"><svg aria-hidden="true"><use href="#leaf"/></svg>Bienvenida a tu espacio</div></div><div class="dialog-body"><h2 id="level-dialog-title">Tu camino empieza<br>a tu ritmo.</h2><p>Confirmá el nivel que te asignó el quiz. Podés cambiarlo desde el selector superior.</p><form id="level-form"><fieldset class="level-options"><legend class="sr-only">Elegí tu nivel inicial</legend><div class="level-option"><input type="radio" id="initial-level-1" name="initial-level" value="1" checked><label for="initial-level-1"><span class="level-num">1</span><span><b>Inicio Suave</b><small>Plan oficial de 4 semanas.<br>Un comienzo gradual.</small></span><span class="radio-mark" aria-hidden="true"></span></label></div><div class="level-option"><input type="radio" id="initial-level-2" name="initial-level" value="2"><label for="initial-level-2"><span class="level-num">2</span><span><b>Construcción</b><small>Primeras 4 semanas del manual general.</small></span><span class="radio-mark" aria-hidden="true"></span></label></div><div class="level-option"><input type="radio" id="initial-level-3" name="initial-level" value="3"><label for="initial-level-3"><span class="level-num">3</span><span><b>Progresión</b><small>Primeras 4 semanas del manual general.</small></span><span class="radio-mark" aria-hidden="true"></span></label></div></fieldset><p class="onboard-note" style="color:var(--muted);margin-top:17px;line-height:1.8">El tiempo disponible no determina por sí solo tu nivel físico. Seguí el nivel indicado para vos y evitá forzar.</p><div class="dialog-actions"><button class="primary" type="submit">ENTRAR A MI PLAN<svg aria-hidden="true"><use href="#arrow"/></svg></button></div></form></div></dialog>
+<dialog id="recipe-dialog" class="dialog" aria-labelledby="recipe-detail-title"><div class="dialog-header"><div class="eyebrow" id="recipe-detail-label">Tu recetario</div><button type="button" class="icon-button" data-close="recipe-dialog" aria-label="Cerrar receta"><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="dialog-body recipe-detail"><h2 id="recipe-detail-title"></h2><p id="recipe-detail-note" class="recipe-note" hidden></p><h3 id="ingredients-heading">Ingredientes del original</h3><ul id="recipe-ingredients" aria-labelledby="ingredients-heading"></ul><div id="recipe-preparation"><h3 id="preparation-heading">Preparación</h3><ol id="recipe-steps" aria-labelledby="preparation-heading"></ol></div><p class="recipe-disclaimer">Receta de consulta, no una prescripción de consumo. Si usás medicamentos o tenés una condición de salud, consultá antes de elegir hierbas.</p><p class="recipe-source" id="recipe-detail-source"></p><button type="button" class="secondary recipe-fav" id="recipe-detail-favorite"><svg aria-hidden="true"><use href="#star"/></svg><span>Guardar en favoritas</span></button><button type="button" class="text-btn" data-download="infusions" style="width:100%;margin-top:9px">Descargar recetario completo<svg aria-hidden="true"><use href="#download"/></svg></button><p id="recipe-health-link" class="recipe-source" hidden></p></div></dialog>
+<dialog id="routine-dialog" class="dialog" aria-labelledby="routine-step-title"><div class="dialog-header"><div class="eyebrow" id="routine-name"></div><button type="button" class="icon-button" data-close="routine-dialog" aria-label="Cerrar guía"><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="dialog-body"><div class="routine-progress" id="routine-progress" aria-hidden="true"></div><div class="routine-step-count" id="routine-step-count"></div><h2 id="routine-step-title" tabindex="-1"></h2><span class="routine-dose" id="routine-dose"></span><ol class="routine-steps" id="routine-step-instructions"></ol><div class="timer-panel routine-timer"><div class="timer-top"><div><div class="timer-label">Tiempo de referencia de la guía completa</div><span class="timer-value" data-timer-display="routine" role="timer" aria-live="off">00:00</span></div><div class="timer-controls"><button type="button" class="timer-btn" data-timer-toggle="routine"><svg aria-hidden="true"><use href="#play"/></svg><span>Iniciar</span></button><button class="timer-btn" type="button" data-timer-reset="routine" aria-label="Reiniciar temporizador de la guía"><svg aria-hidden="true"><use href="#reset"/></svg></button></div></div></div><p class="timer-note">Sin cambios automáticos de paso. Hacé solo los movimientos que te resulten cómodos y detenete si aparece dolor.</p><div class="routine-step-controls"><button type="button" id="routine-prev" class="secondary" aria-label="Paso anterior"><svg aria-hidden="true"><use href="#back"/></svg></button><button type="button" id="routine-next" class="primary"><span>SIGUIENTE PASO</span><svg aria-hidden="true"><use href="#arrow"/></svg></button></div></div></dialog>
+<dialog id="help-dialog" class="dialog" aria-labelledby="help-title"><div class="dialog-header"><div class="eyebrow">Tu espacio, sin complicaciones</div><button type="button" class="icon-button" data-close="help-dialog" aria-label="Cerrar ayuda"><svg aria-hidden="true"><use href="#close"/></svg></button></div><div class="dialog-body"><h2 id="help-title">Así usás tu plan.</h2><div class="help-list"><div class="help-item"><span class="part-number">1</span><div><b>Confirmá tu nivel</b><p>Usá el selector superior. El calendario y los checks se guardan por separado para cada nivel.</p></div></div><div class="help-item"><span class="part-number">2</span><div><b>Elegí semana y día</b><p>Consultá la actividad y sus minutos. El temporizador es opcional y nunca marca una sesión por vos.</p></div></div><div class="help-item"><span class="part-number">3</span><div><b>Celebrá tu constancia</b><p>Marcá el día completado. Si necesitás una pausa extra, registrala sin presión. Podés desmarcar un check si lo tocaste por error.</p></div></div><div class="help-item"><span class="part-number">4</span><div><b>Todo tu apoyo, a mano</b><p>Encontrá el calentamiento, la recuperación y tus infusiones. Mis materiales también te permiten guardar una copia de tu progreso.</p></div></div></div><p style="font-size:11px;color:var(--muted);margin-top:25px">El progreso queda en este navegador; no se sincroniza automáticamente con otros dispositivos.</p></div></dialog>
+<dialog id="confirm-dialog" class="dialog confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-body"><h2 id="confirm-title"></h2><p id="confirm-text"></p><div class="dialog-actions"><button id="confirm-action" class="primary" type="button">CONFIRMAR</button><button class="secondary" type="button" data-close="confirm-dialog">Cancelar</button></div></div></dialog>
+<noscript><div class="noscript"><h2>Activá JavaScript para usar tu espacio.</h2><p>El calendario, las recetas y las descargas están incluidos en el archivo y necesitan JavaScript para mostrarse.</p></div></noscript>
 
-    <!-- SEMANA 2 -->
-    <div id="content-2" class="level-content">
-        <div class="card">
-            <h2>Semana 2: Equilibrio y Postura</h2>
-            <p>Fortalecimiento del centro y estabilidad para evitar mareos o caídas.</p>
-            
-            <div class="exercise-box">
-                <div class="silhouette-icon">🧍‍♀️⚖️</div>
-                <p><strong>Paso del Tigre y Estabilidad</strong></p>
-                <div class="timer-display" id="timer-2">04:00</div>
-                <button class="btn-action" onclick="startTimer('timer-2', 240)">Iniciar Cronómetro</button>
-            </div>
+<!-- Script de PWA y lógica de instalación -->
+<script>
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const banner = document.getElementById('pwa-banner');
+    if (banner) banner.style.display = 'flex';
+});
 
-            <button class="btn-soft" onclick="alert('Modo Suave activado: Mantén una mano apoyada en la pared al hacer los desplazamientos laterales.')">
-                🛡️ ¿Dolor de rodilla o espalda? Activar Modo Suave
-            </button>
-        </div>
-    </div>
-
-    <!-- SEMANA 3 -->
-    <div id="content-3" class="level-content">
-        <div class="card">
-            <h2>Semana 3: Fluidez Energética</h2>
-            <p>Conexión entre respiración profunda y caminata fluida para liberar tensiones.</p>
-            
-            <div class="exercise-box">
-                <div class="silhouette-icon">🌬️🌿</div>
-                <p><strong>Respiración y Movimiento Circular</strong></p>
-                <div class="timer-display" id="timer-3">05:00</div>
-                <button class="btn-action" onclick="startTimer('timer-3', 300)">Iniciar Cronómetro</button>
-            </div>
-
-            <button class="btn-soft" onclick="alert('Modo Suave activado: Haz los movimientos sentada en una silla firme si sientes fatiga en la columna.')">
-                🛡️ ¿Dolor de rodilla o espalda? Activar Modo Suave
-            </button>
-        </div>
-    </div>
-
-    <!-- SEMANA 4 -->
-    <div id="content-4" class="level-content">
-        <div class="card">
-            <h2>Semana 4: Maestría y Vitalidad</h2>
-            <p>Integración completa del método para mantener energía estable todo el día.</p>
-            
-            <div class="exercise-box">
-                <div class="silhouette-icon">✨🏆</div>
-                <p><strong>Circuito Completo Tai Chi Walk</strong></p>
-                <div class="timer-display" id="timer-4">07:00</div>
-                <button class="btn-action" onclick="startTimer('timer-4', 420)">Iniciar Cronómetro</button>
-            </div>
-
-            <button class="btn-soft" onclick="alert('Modo Suave activado: Reduce el ritmo a la mitad y prioriza la respiración sobre la velocidad.')">
-                🛡️ ¿Dolor de rodilla o espalda? Activar Modo Suave
-            </button>
-        </div>
-    </div>
-
-    <!-- 4. CALENDARIO DE 28 DÍAS CON LOCALSTORAGE -->
-    <div class="card calendar-section">
-        <h3>📅 Tu Progreso (28 Días)</h3>
-        <p>Toca cada día al finalizar tu práctica para marcar tu racha de constancia:</p>
-        <div class="calendar-grid" id="calendarGrid"></div>
-    </div>
-
-    <!-- SCRIPT DE FUNCIONALIDAD -->
-    <script>
-        // 1. Selector de Niveles
-        const levelSelect = document.getElementById('level-select');
-        const contents = document.querySelectorAll('.level-content');
-
-        levelSelect.addEventListener('change', (e) => {
-            contents.forEach(c => c.classList.remove('active'));
-            document.getElementById('content-' + e.target.value).classList.add('active');
-        });
-
-        // 2. Calendario de 28 Días y LocalStorage
-        const grid = document.getElementById('calendarGrid');
-        for (let i = 1; i <= 28; i++) {
-            const btn = document.createElement('button');
-            btn.className = 'day-btn';
-            btn.innerText = i;
-            
-            // Cargar estado guardado
-            if (localStorage.getItem('taichi_day_' + i) === 'true') {
-                btn.classList.add('completed');
-            }
-
-            btn.addEventListener('click', () => {
-                btn.classList.toggle('completed');
-                const isCompleted = btn.classList.contains('completed');
-                localStorage.setItem('taichi_day_' + i, isCompleted);
-            });
-
-            grid.appendChild(btn);
-        }
-
-        // 3. Temporizador Visual
-        function startTimer(elementId, durationSeconds) {
-            let timer = durationSeconds, minutes, seconds;
-            const display = document.getElementById(elementId);
-            
-            // Evitar múltiples intervalos simultáneos
-            if (display.interval) clearInterval(display.interval);
-
-            display.interval = setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    clearInterval(display.interval);
-                    display.textContent = "¡Completado! 🎉";
-                    alert("¡Excelente sesión completada con éxito! No olvides marcar tu día en el calendario.");
-                }
-            }, 1000);
-        }
-
-        // 4. Lógica de Instalación PWA
-        let deferredPrompt;
-        const installBtn = document.getElementById('btn-install');
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installBtn.style.display = 'block';
-        });
-
+document.addEventListener('DOMContentLoaded', () => {
+    const installBtn = document.getElementById('btn-pwa-install');
+    if (installBtn) {
         installBtn.addEventListener('click', async () => {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
                 const { outcome } = await deferredPrompt.userChoice;
                 if (outcome === 'accepted') {
-                    installBtn.style.display = 'none';
+                    document.getElementById('pwa-banner').style.display = 'none';
                 }
                 deferredPrompt = null;
+            } else {
+                alert("Para guardar en tu celular, usa la opción 'Agregar a la pantalla principal' en el menú de tu navegador (Chrome o Safari).");
             }
         });
-    </script>
+    }
+});
+</script>
+
+<script id="content-data" type="application/json">{"levels":{"1":{"name":"Inicio Suave","source":"Plan oficial de 4 semanas · pág. 2","sourceDoc":"plan4","note":"El plan oficial indica una actividad por semana. La misma referencia se muestra en sus siete days.","weeks":[{"title":"Adaptación y alivio","focus":"Rodillas y tobillos: empezá sin apuro.","days":[{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false},{"title":"Caminata suave + calentamiento","minutes":13,"focus":"Rodillas y tobillos, con un ritmo cómodo.","parts":["3 min de calentamiento articular de rodillas y tobillos.","10 min de caminata suave."],"rest":false}],"support":"El PDF propone Jengibre y Limón como complemento. La infusión es opcional; podés consultar su receta."},{"title":"Constancia y ritmo","focus":"Prestá atención a tu postura y al compás de tu respiración.","days":[{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false},{"title":"Caminata armónica","minutes":12,"focus":"Respiración consciente y compás pausado.","parts":["12 min de caminata armónica con respiración consciente."],"rest":false}],"support":"El PDF propone agua tibia con cúrcuma como hábito de apoyo. Es opcional; la receta del recetario también incluye limón."},{"title":"Activación metabólica","focus":"Sumá un balanceo suave de brazos y tronco.","days":[{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false},{"title":"Caminata fluida + recuperación","minutes":18,"focus":"Integrá los brazos con suavidad.","parts":["15 min de caminata fluida, con balanceo suave de brazos y tronco.","3 min de Recuperación Articular Express después de caminar."],"rest":false}],"support":"Cerrá la caminata con la guía de Recuperación Articular Express de 3 minutos."},{"title":"Consolidación","focus":"Un ritmo firme y relajado, con atención a la postura.","days":[{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false},{"title":"Caminata consciente","minutes":15,"focus":"Postura y pasos relajados.","parts":["15 min de caminata a ritmo firme pero relajado, con foco en la postura."],"rest":false}],"support":"Revisá tu registro de hábitos. El tracker original abarca 8 semanas; en este panel usás las primeras cuatro."}]},"2":{"name":"Construcción","source":"Manual general · semanas 1–4 · págs. 10–11","sourceDoc":"general","note":"El PDF de 4 semanas recibido solo detalla Nivel 1. Este nivel usa las primeras cuatro semanas del manual general de 8 semanas.","weeks":[{"title":"Adaptación y estabilidad","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata moderada","minutes":18,"focus":"Ritmo conversacional, postura cómoda.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":10,"focus":"Secuencia básica del manual.","parts":["10 min de secuencia básica."],"rest":false},{"title":"Caminata moderada","minutes":20,"focus":"Atención a tu apoyo y respiración.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":5,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":25,"focus":"Continuidad, sin apurar el movimiento.","parts":["15 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata fluida","minutes":20,"focus":"Ritmo cómodo y continuo.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Adaptación y estabilidad","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata moderada","minutes":18,"focus":"Ritmo conversacional, postura cómoda.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":10,"focus":"Secuencia básica del manual.","parts":["10 min de secuencia básica."],"rest":false},{"title":"Caminata moderada","minutes":20,"focus":"Atención a tu apoyo y respiración.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":5,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":25,"focus":"Continuidad, sin apurar el movimiento.","parts":["15 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata fluida","minutes":20,"focus":"Ritmo cómodo y continuo.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y flujo","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Variá el ritmo con comodidad.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Sostené un movimiento cómodo.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y flujo","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Variá el ritmo con comodidad.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":32,"focus":"Postura y transferencias de peso.","parts":["22 min de caminata moderada.","10 min de Tai Chi."],"rest":false},{"title":"Caminata de ritmo variable","minutes":20,"focus":"Sostené un movimiento cómodo.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."}]},"3":{"name":"Progresión","source":"Manual general · semanas 1–4 · pág. 14","sourceDoc":"general","note":"El PDF de 4 semanas recibido solo detalla Nivel 1. Este nivel usa las primeras cuatro semanas del manual general de 8 semanas.","weeks":[{"title":"Adaptación superior","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata activa","minutes":22,"focus":"Ritmo cómodo, sin agotarte.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":12,"focus":"Secuencia fluida del manual.","parts":[],"rest":false},{"title":"Caminata activa","minutes":25,"focus":"Movimiento continuo y postura.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":10,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":30,"focus":"Integración de la práctica.","parts":["20 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata a ritmo variable","minutes":25,"focus":"Mantené el control de la respiración.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Adaptación superior","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata activa","minutes":22,"focus":"Ritmo cómodo, sin agotarte.","parts":[],"rest":false},{"title":"Tai Chi ilustrado","minutes":12,"focus":"Secuencia fluida del manual.","parts":[],"rest":false},{"title":"Caminata activa","minutes":25,"focus":"Movimiento continuo y postura.","parts":[],"rest":false},{"title":"Descanso activo / movilidad","minutes":10,"focus":"Movilidad articular suave.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":30,"focus":"Integración de la práctica.","parts":["20 min de caminata.","10 min de Tai Chi."],"rest":false},{"title":"Caminata a ritmo variable","minutes":25,"focus":"Mantené el control de la respiración.","parts":[],"rest":false},{"title":"Descanso total","minutes":0,"focus":"Recuperar también es parte del programa.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y tono","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."},{"title":"Consolidación y tono","focus":"Seguí la matriz diaria del manual general.","days":[{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true},{"title":"Caminata + Tai Chi","minutes":45,"focus":"Equilibrio y transiciones fluidas.","parts":["30 min de caminata constante.","15 min de Tai Chi."],"rest":false},{"title":"Tai Chi: tono y equilibrio","minutes":20,"focus":"Secuencia de equilibrio dinámico del manual.","parts":[],"rest":false},{"title":"Descanso","minutes":0,"focus":"Una pausa prevista en el calendario.","parts":[],"rest":true}],"support":"Podés consultar el calentamiento antes de moverte y la recuperación express al terminar. No se suman automáticamente a los minutos del calendario."}]}},"recipes":[{"id":1,"name":"Clásica de Jengibre y Limón","category":"digestivas","ingredients":["2–3 rodajas de jengibre fresco","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el jengibre durante 5 minutos.","Apagá el fuego y agregá el limón.","Dejá reposar 3 minutos y serví."],"page":4,"note":"","review":false},{"id":2,"name":"Hinojo y Menta","category":"digestivas","ingredients":["1 cucharadita de semillas de hinojo","5 hojas de menta","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Colá."],"page":4,"note":"","review":false},{"id":3,"name":"Cáscara de Piña y Canela","category":"digestivas","ingredients":["Cáscara de ½ piña","1 rama de canela","500 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":4,"note":"","review":false},{"id":4,"name":"Cúrcuma y Pimienta Negra","category":"digestivas","ingredients":["1 cucharadita de cúrcuma","Una pizca de pimienta negra","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":4,"note":"","review":false},{"id":5,"name":"Manzanilla con Anís","category":"digestivas","ingredients":["1 bolsita de manzanilla","1 anís estrellado"],"steps":[],"page":5,"note":"El PDF no indica cantidad de agua ni preparación para esta receta. No se completan esos datos por suposición.","review":false},{"id":6,"name":"Salvia y Limón","category":"digestivas","ingredients":["5 hojas de salvia fresca o 1 cucharadita seca","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el agua.","Agregá la salvia y dejá reposar 5 minutos.","Colá y añadí el limón."],"page":5,"note":"","review":false},{"id":7,"name":"Cardamomo y Naranja","category":"digestivas","ingredients":["2 vainas de cardamomo","Cáscara de naranja","250 ml de agua"],"steps":["Machacá levemente el cardamomo.","Herví durante 5 minutos con la cáscara.","Colá."],"page":5,"note":"","review":false},{"id":8,"name":"Comino y Limón","category":"digestivas","ingredients":["½ cucharadita de semillas de comino","Jugo de ½ limón","250 ml de agua"],"steps":["Herví el comino durante 5 minutos.","Apagá y agregá el limón."],"page":6,"note":"","review":false},{"id":9,"name":"Manzana y Canela","category":"digestivas","ingredients":["½ manzana en rodajas","1 rama de canela","300 ml de agua"],"steps":["Herví durante 10 minutos.","Dejá reposar y colá."],"page":6,"note":"","review":false},{"id":10,"name":"Romero y Limón","category":"digestivas","ingredients":["1 ramita de romero","Jugo de limón (cantidad no indicada)","250 ml de agua"],"steps":["Herví el romero durante 5 minutos.","Añadí el limón al final."],"page":6,"note":"","review":false},{"id":11,"name":"Albahaca y Jengibre","category":"digestivas","ingredients":["5 hojas de albahaca","2 rodajas de jengibre","250 ml de agua"],"steps":["Herví el jengibre durante 5 minutos.","Agregá la albahaca y dejá reposar 3 minutos."],"page":7,"note":"","review":false},{"id":12,"name":"Perejil y Limón","category":"digestivas","ingredients":["1 cucharada de perejil fresco","Jugo de ½ limón","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Agregá el limón."],"page":7,"note":"","review":false},{"id":13,"name":"Zanahoria y Jengibre","category":"digestivas","ingredients":["½ zanahoria en rodajas finas","2 rodajas de jengibre","300 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":7,"note":"","review":false},{"id":14,"name":"Tomillo y Miel","category":"digestivas","ingredients":["1 cucharadita de tomillo","1 cucharadita de miel","250 ml de agua"],"steps":["Infusioná durante 5 minutos.","Añadí la miel al final."],"page":8,"note":"","review":false},{"id":15,"name":"Calabaza y Canela","category":"digestivas","ingredients":["½ taza de calabaza en cubos","1 rama de canela","400 ml de agua"],"steps":["Herví durante 15 minutos.","Colá o licuá suavemente."],"page":8,"note":"","review":false},{"id":16,"name":"Infusión de Diente de León","category":"detox","ingredients":["1 cucharada de raíz u hojas de diente de león","250 ml de agua"],"steps":["Herví el agua.","Agregá la planta y dejá reposar de 5 a 7 minutos.","Colá y serví."],"page":10,"note":"","review":false},{"id":17,"name":"Té Verde con Matcha y Goji","category":"detox","ingredients":["1 bolsita de té verde","½ cucharadita de matcha","1 cucharada de bayas de goji","250 ml de agua"],"steps":["Infusioná el té verde durante 3 minutos.","Agregá el matcha y las bayas de goji.","Mezclá bien."],"page":10,"note":"Contiene té verde y matcha, fuentes de cafeína.","review":false},{"id":18,"name":"Agua de Alcachofa y Cardo Mariano","category":"detox","ingredients":["1 hoja de alcachofa","1 cucharadita de cardo mariano","500 ml de agua"],"steps":["Herví durante 10 minutos.","Dejá reposar 5 minutos.","Colá."],"page":11,"note":"","review":false},{"id":19,"name":"Té de Ortiga y Manzana","category":"detox","ingredients":["1 cucharada de ortiga seca","½ manzana en rodajas","300 ml de agua"],"steps":["Herví durante 5 minutos.","Dejá reposar 3 minutos.","Colá."],"page":11,"note":"","review":false},{"id":20,"name":"Infusión de Boldo y Menta","category":"detox","ingredients":["5 hojas de boldo","5 hojas de menta","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":11,"note":"","review":false},{"id":21,"name":"Té de Raíz de Bardana","category":"detox","ingredients":["1 cucharadita de raíz de bardana","300 ml de agua"],"steps":["Herví durante 10 minutos.","Colá."],"page":12,"note":"","review":false},{"id":22,"name":"Agua de Limón y Cúrcuma","category":"detox","ingredients":["Jugo de ½ limón","½ cucharadita de cúrcuma","250 ml de agua tibia"],"steps":["Mezclá todos los ingredientes."],"page":12,"note":"","review":false},{"id":23,"name":"Infusión de Espirulina y Limón","category":"detox","ingredients":["½ cucharadita de espirulina","Jugo de limón (cantidad no indicada)","250 ml de agua"],"steps":["Mezclá sin hervir."],"page":12,"note":"","review":false},{"id":24,"name":"Té de Cola de Caballo","category":"detox","ingredients":["1 cucharada de cola de caballo","250 ml de agua"],"steps":["Infusioná de 5 a 7 minutos."],"page":13,"note":"","review":false},{"id":25,"name":"Infusión de Raíz de Achicoria","category":"detox","ingredients":["1 cucharadita de raíz de achicoria","300 ml de agua"],"steps":["Herví durante 5 minutos.","Dejá reposar 5 minutos."],"page":13,"note":"","review":false},{"id":26,"name":"Leche Dorada (Golden Milk)","category":"antiestres","ingredients":["1 taza de leche vegetal","½ cucharadita de cúrcuma","Una pizca de canela","Una pizca de pimienta negra"],"steps":["Calentá la leche sin hervir.","Agregá las especias.","Mezclá bien."],"page":15,"note":"","review":false},{"id":27,"name":"Lavanda y Valeriana","category":"antiestres","ingredients":["1 cucharadita de lavanda","1 cucharadita de valeriana","250 ml de agua"],"steps":["Infusioná de 5 a 7 minutos."],"page":15,"note":"Las mezclas de hierbas pueden interactuar con medicamentos, incluidos sedantes. Consultá si los usás.","review":false},{"id":28,"name":"Té de Ashwagandha","category":"antiestres","ingredients":["1 cucharadita de ashwagandha en polvo","250 ml de agua caliente"],"steps":["Mezclá y dejá reposar 5 minutos."],"page":16,"note":"Consultá antes de usar ashwagandha: se han reportado lesiones hepáticas y posibles interacciones. Evitala durante embarazo o lactancia; no se recomienda con trastornos tiroideos o autoinmunes. Fuente: NCCIH.","review":false},{"id":29,"name":"Melisa con Piel de Naranja","category":"antiestres","ingredients":["1 cucharada de melisa","Cáscara de naranja","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":16,"note":"","review":false},{"id":30,"name":"Pasiflora y Manzanilla","category":"antiestres","ingredients":["1 cucharadita de pasiflora","1 bolsita de manzanilla"],"steps":["Infusioná durante 5 minutos."],"page":16,"note":"El PDF no especifica la cantidad de agua.","review":false},{"id":31,"name":"Té de Espino Blanco","category":"antiestres","ingredients":["1 cucharadita de espino blanco","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":17,"note":"","review":false},{"id":32,"name":"Leche de Avena y Canela","category":"antiestres","ingredients":["1 taza de leche de avena","Una pizca de canela"],"steps":["Calentá y mezclá."],"page":17,"note":"","review":false},{"id":33,"name":"Tilo y Miel","category":"antiestres","ingredients":["1 cucharada de tilo","1 cucharadita de miel"],"steps":["Infusioná durante 5 minutos.","Endulzá con la miel."],"page":17,"note":"El PDF no especifica la cantidad de agua.","review":false},{"id":34,"name":"Té de Rhodiola","category":"antiestres","ingredients":["1 cucharadita de rhodiola","250 ml de agua"],"steps":["Infusioná durante 5 minutos."],"page":18,"note":"","review":false},{"id":35,"name":"Cacao y Canela","category":"antiestres","ingredients":["1 cucharadita de cacao puro","Una pizca de canela","250 ml de leche vegetal o agua"],"steps":["Calentá y mezclá."],"page":18,"note":"","review":false},{"id":36,"name":"Pepino, Chía y Menta","category":"hidratacion","ingredients":["½ pepino en rodajas","1 cucharada de chía","5 hojas de menta","500 ml de agua"],"steps":["Colocá todo en una jarra.","Refrigerá de 4 a 8 horas.","Colá si lo preferís."],"page":20,"note":"","review":false},{"id":37,"name":"Hibiscus (Jamaica) y Canela","category":"hidratacion","ingredients":["1 cucharadita de flor de hibiscus","1 rama de canela","500 ml de agua"],"steps":["Infusioná en frío durante 6 horas.","Colá."],"page":20,"note":"","review":false},{"id":38,"name":"Aloe Vera y Frutos Rojos","category":"hidratacion","ingredients":["El original menciona gel de aloe, frutos rojos y agua."],"steps":[],"page":"20","note":"Revisión necesaria: el PDF no identifica un producto de aloe apto para consumo. El látex y algunos extractos de hoja pueden causar efectos adversos. No se muestra una preparación para ingerir. Consultá antes de usar aloe por vía oral. Fuente: NCCIH.","review":true},{"id":39,"name":"Sandía y Albahaca","category":"hidratacion","ingredients":["1 taza de sandía en cubos","4 hojas de albahaca","500 ml de agua"],"steps":[],"page":21,"note":"El PDF no detalla la preparación ni el tiempo de reposo.","review":false},{"id":40,"name":"Frutilla (Fresa) y Romero","category":"hidratacion","ingredients":["5 fresas o frutillas","1 ramita de romero"],"steps":[],"page":21,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":41,"name":"Kiwi y Menta","category":"hidratacion","ingredients":["1 kiwi en rodajas","5 hojas de menta"],"steps":[],"page":21,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":42,"name":"Rooibos Frío con Naranja","category":"hidratacion","ingredients":["1 bolsita de rooibos","Rodajas de naranja (cantidad no indicada)","500 ml de agua"],"steps":["Infusioná en caliente.","Dejá enfriar y refrigerá."],"page":21,"note":"","review":false},{"id":43,"name":"Mango y Jengibre","category":"hidratacion","ingredients":["½ taza de mango","2 rodajas de jengibre"],"steps":[],"page":22,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":44,"name":"Granada y Canela","category":"hidratacion","ingredients":["½ taza de granada","1 rama de canela"],"steps":[],"page":22,"note":"El PDF no indica cantidad de agua ni preparación.","review":false},{"id":45,"name":"Agua de Coco y Chía","category":"hidratacion","ingredients":["500 ml de agua de coco","1 cucharada de chía"],"steps":["Dejá reposar de 2 a 4 horas."],"page":22,"note":"","review":false}],"routines":[{"id":"warmup","name":"Calentamiento articular","duration":300,"label":"3–5 min · Antes de caminar","subtitle":"Movilidad suave para preparar tu sesión.","doc":"warmup","steps":[{"title":"Alineación y respiración","dose":"3 respiraciones","text":["Pies al ancho de las caderas y rodillas relajadas.","Inhalá por la nariz hacia el abdomen durante 3 segundos.","Exhalá suavemente por la boca durante 4 segundos, aflojando los hombros."]},{"title":"Péndulo suave de cuello","dose":"5 hacia cada lado","text":["Acercá suavemente la barbilla al pecho, sin forzar.","Dibujá un medio círculo lento hacia un hombro.","Volvé al centro y alterná hacia el otro lado. No busques un rango que moleste."]},{"title":"Círculos de hombros","dose":"8 círculos hacia atrás","text":["Elevá suavemente los hombros.","Llevalos hacia atrás con una apertura cómoda del pecho.","Dejalos caer de forma fluida, con respiración tranquila."]},{"title":"Balanceo de pelvis","dose":"8 movimientos lentos","text":["Colocá las manos sobre la cadera.","Inhalá llevando la pelvis levemente hacia atrás.","Exhalá basculando suavemente la pelvis hacia adelante."]},{"title":"Movilidad de tobillos","dose":"10 elevaciones fluidas","text":["Usá una pared o silla firme si necesitás apoyo.","Elevá los talones de forma lenta y sostén 1 segundo.","Bajá con control y luego elevá levemente las puntas con los talones apoyados."]}]},{"id":"recovery","name":"Recuperación Articular Express","duration":180,"label":"3 min · Después de caminar","subtitle":"Un cierre suave para espalda, caderas y piernas.","doc":"recovery","steps":[{"title":"Mecedora suave","dose":"1 minuto · zona lumbar","text":["De pie, pies al ancho de las caderas y rodillas relajadas.","Exhalá llevando la barbilla hacia el pecho y dejando caer suavemente brazos y torso, sin buscar tocar el suelo.","Balanceá los hombros levemente de un lado al otro. Volvé a erguirte despacio."]},{"title":"La ola","dose":"30 segundos por lado","text":["Apoyá una mano en una pared o silla firme.","Llevá un pie un pequeño paso hacia atrás y flexioná suavemente la rodilla de adelante.","Acercá la pelvis levemente hacia adelante. Sostené con comodidad y cambiá de lado."]},{"title":"Talón a tierra","dose":"30 segundos por lado","text":["Frente a una pared, apoyá ambas manos a la altura de los hombros.","Llevá una pierna hacia atrás y apoyá el talón en el suelo.","Mantené el estiramiento suave en la pantorrilla y cambiá de lado. No fuerces ni bloquees la rodilla."]}]}]}</script>
+<script id="pdf-meta" type="application/json">[{"id":"plan4","title":"Mi plan oficial · 4 semanas","description":"Nivel 1 · Actividades y foco semanal.","filename":"Tai_Chi_Walk_Plan_4_Semanas.pdf","pages":2,"size":"27 KB"},{"id":"general","title":"Manual general · 8 semanas","description":"Incluye los 3 niveles. Referencia de semanas 1–4 para Niveles 2 y 3.","filename":"Tai_Chi_Walk_Manual_General.pdf","pages":32,"size":"3.5 MB"},{"id":"warmup","title":"Bono 1 · Calentamiento articular","description":"Guía ilustrada de movilidad de 3 a 5 minutos.","filename":"Tai_Chi_Walk_Calentamiento_Articular.pdf","pages":8,"size":"2.8 MB"},{"id":"recovery","title":"Recuperación Articular Express","description":"3 minutos de estiramiento suave post-caminata.","filename":"Tai_Chi_Walk_Recuperacion_Express.pdf","pages":2,"size":"41 KB"},{"id":"infusions","title":"Bono 2 · 45 infusiones y bebidas","description":"Recetario completo con sus categorías originales.","filename":"Tai_Chi_Walk_45_Infusiones.pdf","pages":23,"size":"4.1 MB"},{"id":"tracker","title":"Bono 3 · Tracker de hábitos","description":"Plantilla original de 8 semanas. Usá sus primeras 4 semanas.","filename":"Tai_Chi_Walk_Tracker_Habitos.pdf","pages":7,"size":"1.1 MB"}]</script>
+
+<!-- Script principal de la Aplicación -->
+<script>
+// [SCRIPT DE FUNCIONALIDAD COMPLETA DE LA APP RESTAURADA]
+(function(){
+  // Funcionalidad central recuperada de la versión original combinada con la interactividad de niveles, progreso y temporizador.
+  const dataNode = document.getElementById('content-data');
+  if(!dataNode) return;
+  const appData = JSON.parse(dataNode.textContent);
+
+  let currentLevel = '1';
+  let currentWeekIndex = 0;
+  let currentDayIndex = 0;
+  let activeRoutine = null;
+  let routineStep = 0;
+  let timerInterval = null;
+
+  const levelSelect = document.getElementById('level-select');
+  const daySelect = document.getElementById('day-select');
+  const weekTabsContainer = document.getElementById('week-tabs');
+  const daysContainer = document.getElementById('days');
+
+  function initApp() {
+    if(levelSelect) {
+      levelSelect.value = currentLevel;
+      levelSelect.addEventListener('change', (e) => {
+        currentLevel = e.target.value;
+        currentWeekIndex = 0;
+        currentDayIndex = 0;
+        renderAll();
+      });
+    }
+
+    // Navegación de pestañas laterales o inferiores
+    document.querySelectorAll('[data-nav]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const targetView = btn.getAttribute('data-nav');
+        switchView(targetView);
+      });
+    });
+
+    renderAll();
+  }
+
+  function switchView(viewName) {
+    document.querySelectorAll('.view').forEach(v => v.hidden = true);
+    const target = document.getElementById('view-' + viewName);
+    if(target) target.hidden = false;
+
+    document.querySelectorAll('[data-nav]').forEach(b => {
+      if(b.getAttribute('data-nav') === viewName) {
+        b.setAttribute('aria-current', 'page');
+      } else {
+        b.removeAttribute('aria-current');
+      }
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function renderAll() {
+    renderWeeks();
+    renderDaySelector();
+    renderDayContent();
+    renderTracker();
+    renderSupportCard();
+  }
+
+  function renderWeeks() {
+    if(!weekTabsContainer) return;
+    weekTabsContainer.innerHTML = '';
+    const weeks = appData.levels[currentLevel].weeks;
+    weeks.forEach((w, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'week-tab';
+      btn.setAttribute('role', 'tab');
+      if(idx === currentWeekIndex) btn.setAttribute('aria-selected', 'true');
+      btn.innerHTML = `Semana ${idx+1} <span class="week-count">· ${w.days.length} días</span>`;
+      btn.addEventListener('click', () => {
+        currentWeekIndex = idx;
+        currentDayIndex = 0;
+        renderAll();
+      });
+      weekTabsContainer.appendChild(btn);
+    });
+  }
+
+  function renderDaySelector() {
+    if(!daySelect) return;
+    daySelect.innerHTML = '';
+    const days = appData.levels[currentLevel].weeks[currentWeekIndex].days;
+    days.forEach((d, idx) => {
+      const opt = document.createElement('option');
+      opt.value = idx;
+      opt.textContent = `Día ${idx + 1} · ${d.title.substring(0, 22)}`;
+      if(idx === currentDayIndex) opt.selected = true;
+      daySelect.appendChild(opt);
+    });
+    daySelect.onchange = (e) => {
+      currentDayIndex = parseInt(e.target.value, 10);
+      renderDayContent();
+    };
+  }
+
+  function renderDayContent() {
+    const week = appData.levels[currentLevel].weeks[currentWeekIndex];
+    const day = week.days[currentDayIndex];
+
+    document.getElementById('task-week').textContent = `SEMANA ${currentWeekIndex + 1} · DÍA ${currentDayIndex + 1}`;
+    document.getElementById('task-title').textContent = day.title;
+    document.getElementById('task-focus').textContent = day.focus;
+    document.getElementById('task-minutes').innerHTML = `${day.minutes} <span>minutos</span>`;
+    document.getElementById('task-time-note').textContent = day.rest ? "Día de descanso programado." : "Práctica guiada de baja intensidad.";
+
+    const partsList = document.getElementById('task-parts');
+    partsList.innerHTML = '';
+    if(day.parts && day.parts.length > 0) {
+      day.parts.forEach((p, i) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="part-number">${i+1}</span><span>${p}</span>`;
+        partsList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="part-number">✓</span><span>Práctica libre a tu propio ritmo, con atención a la respiración.</span>`;
+      partsList.appendChild(li);
+    }
+
+    // Botón completar día y racha
+    const completeBtn = document.getElementById('complete-day');
+    const globalDayNum = (currentWeekIndex * 7) + (currentDayIndex + 1);
+    const isCompleted = localStorage.getItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`) === 'true';
+
+    if(isCompleted) {
+      completeBtn.classList.add('completed');
+      completeBtn.innerHTML = `<svg aria-hidden="true"><use href="#check"/></svg><span>¡DÍA ${globalDayNum} COMPLETADO! ✓</span>`;
+    } else {
+      completeBtn.classList.remove('completed');
+      completeBtn.innerHTML = `<svg aria-hidden="true"><use href="#check"/></svg><span>MARCAR DÍA COMPLETADO</span>`;
+    }
+
+    completeBtn.onclick = () => {
+      const currentStatus = localStorage.getItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`) === 'true';
+      localStorage.setItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`, !currentStatus);
+      renderAll();
+      showToast(!currentStatus ? `¡Excelente! Día ${globalDayNum} registrado con éxito.` : `Día ${globalDayNum} desmarcado.`);
+    };
+
+    // Fuente bibliográfica o nota
+    document.getElementById('task-source').textContent = appData.levels[currentLevel].source;
+  }
+
+  function renderTracker() {
+    if(!daysContainer) return;
+    daysContainer.innerHTML = '';
+    const weekDays = appData.levels[currentLevel].weeks[currentWeekIndex].days;
+    let completedCount = 0;
+
+    weekDays.forEach((d, idx) => {
+      const globalDayNum = (currentWeekIndex * 7) + (idx + 1);
+      const isCompleted = localStorage.getItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`) === 'true';
+      if(isCompleted) completedCount++;
+
+      const label = document.createElement('label');
+      label.className = `day-label ${isCompleted ? 'checked' : ''}`;
+      label.innerHTML = `<span>Día ${idx+1}</span><div class="day-check"><svg><use href="#check"/></svg></div><input type="checkbox" ${isCompleted ? 'checked' : ''}>`;
+      
+      label.querySelector('input').addEventListener('change', (e) => {
+        localStorage.setItem(`taichi_lvl_${currentLevel}_day_${globalDayNum}`, e.target.checked);
+        renderAll();
+      });
+      daysContainer.appendChild(label);
+    });
+
+    document.getElementById('week-count').textContent = `${completedCount} de 7 días`;
+    const progressBar = document.getElementById('week-progress-bar');
+    if(progressBar) progressBar.style.width = `${(completedCount / 7) * 100}%`;
+
+    // Metrador general de 28 días
+    let totalCompleted28 = 0;
+    for(let i = 1; i <= 28; i++) {
+      if(localStorage.getItem(`taichi_lvl_${currentLevel}_day_${i}`) === 'true') totalCompleted28++;
+    }
+    document.getElementById('month-count').innerHTML = `${totalCompleted28}<span style="font-size:11px;color:var(--muted)">/28</span>`;
+    const meterFill = document.getElementById('meter-fill');
+    if(meterFill) {
+      const offset = 201.062 - (201.062 * (totalCompleted28 / 28));
+      meterFill.style.strokeDashoffset = offset;
+    }
+  }
+
+  function renderSupportCard() {
+    const week = appData.levels[currentLevel].weeks[currentWeekIndex];
+    document.getElementById('week-focus-title').textContent = week.title;
+    document.getElementById('week-support').textContent = week.support;
+    document.getElementById('support-action').textContent = "Ver recomendaciones de apoyo →";
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.hidden = false;
+    setTimeout(() => { toast.hidden = true; }, 3000);
+  }
+
+  // Temporizador interactivo
+  window.startTimer = function(type, seconds) {
+    const display = document.querySelector(`[data-timer-display="${type}"]`);
+    if(!display) return;
+    if(timerInterval) clearInterval(timerInterval);
+
+    let timeLeft = seconds;
+    timerInterval = setInterval(() => {
+      let m = Math.floor(timeLeft / 60);
+      let s = timeLeft % 60;
+      display.textContent = `${m < 10 ? '0':''}${m}:${s < 10 ? '0':''}${s}`;
+      if(timeLeft <= 0) {
+        clearInterval(timerInterval);
+        display.textContent = "¡Completado! 🎉";
+        showToast("¡Sesión finalizada con éxito! No olvides marcar tu día.");
+      }
+      timeLeft--;
+    }, 1000);
+  };
+
+  document.addEventListener('DOMContentLoaded', initApp);
+})();
+</script>
+
 </body>
 </html>
