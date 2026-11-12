@@ -759,10 +759,10 @@ function downloadPdfMock(title, filename) {
     const driveLinks = {
         "plan4": "https://drive.google.com/open?id=1r2ivfp-NJeyRsJcftXWcimkNTytQmtXg",
         "general": "https://drive.google.com/open?id=1sct98yerBuk1-SBIsZHcUmYRO_demvXBL32xXNX8TLc",
-        "warmup": "https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=sharing",
-        "recovery": "https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing",
-        "infusions": "https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing",
-        "tracker": "https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing"
+        "warmup": onclick="window.open('https://drive.google.com/file/d/1CcV0s9fX7-X-tu_n8gi1DWmcwL69gP8b/view?usp=sharing', '_blank')",
+        "recovery": onclick="window.open('https://drive.google.com/file/d/1Ov7X3HurXtJ9qWMpynTlK1jdaSQYi9y6/view?usp=sharing', '_blank')",
+        "infusions": onclick="window.open('https://drive.google.com/file/d/1vVuEQ_6BsdS9fModTlg_tZYCcHYNXaFm/view?usp=sharing', '_blank')",
+        "tracker": onclick="window.open('https://drive.google.com/file/d/1iGqhv6JS-Rt2ZqX_4nR82qkHqeME2qqm/view?usp=sharing', '_blank')"
     };
 
     const f = (filename || "").toLowerCase();
